@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="tr" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anatolian Warriors - Hakkımızda</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800;900&amp;family=Russo+One&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    
+    .font-exo { font-family: 'Exo 2', sans-serif; }
+    .font-russo { font-family: 'Russo One', sans-serif; }
+    
+    .text-glow {
+      text-shadow: 0 0 20px rgba(239, 68, 68, 0.5), 0 0 40px rgba(239, 68, 68, 0.3);
+    }
+    
+    .card-shine {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card-shine::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      transition: left 0.5s;
+    }
+    
+    .card-shine:hover::before {
+      left: 100%;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .float-animation {
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    .gradient-border {
+      border: 2px solid transparent;
+      background: linear-gradient(#1a1a1a, #1a1a1a) padding-box,
+                  linear-gradient(135deg, #ef4444, #dc2626, #991b1b) border-box;
+    }
+    
+    .icon-circle {
+      background: radial-gradient(circle, rgba(239, 68, 68, 0.2) 0%, transparent 70%);
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full m-0 p-0 bg-black">
+  <div class="h-full w-full overflow-auto"><!-- Hero Section -->
+   <section class="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 via-black to-black px-6 py-20">
+    <div class="absolute inset-0 opacity-10">
+     <div class="absolute top-20 left-10 w-64 h-64 bg-red-600 rounded-full blur-3xl"></div>
+     <div class="absolute bottom-20 right-10 w-96 h-96 bg-red-800 rounded-full blur-3xl"></div>
+    </div>
+    <div class="max-w-6xl mx-auto relative z-10">
+     <div class="grid lg:grid-cols-2 gap-12 items-center"><!-- Content -->
+      <div>
+      <a href="/"> <div class="inline-block px-4 py-2 bg-red-600/20 border border-red-600/50 rounded-full mb-6"><span class="font-exo text-red-500 font-semibold text-sm">🏔️ ANATOLIAN WARRIORS</span>
+       </div> </a>
+       <h1 id="main-title" class="font-russo text-5xl md:text-6xl lg:text-7xl text-white mb-6 text-glow leading-tight">Anatolian Warriors Nedir?</h1>
+       <p id="main-subtitle" class="font-exo text-xl md:text-2xl text-gray-300 font-semibold mb-6">Güç, hız, dayanıklılık, denge ve mental odaklanmayı bir araya getiren yüksek tempolu, profesyonel bir parkur yarışması</p>
+       <p id="intro-text" class="font-exo text-lg text-gray-400 mb-8 leading-relaxed">Yarışmacılar, farklı zorluk seviyelerine sahip birden fazla parkuru, en kısa sürede ve hatasız şekilde tamamlamaya çalışırlar. Dünyanın en büyük engel parkuru yarışmalarından ilham alan, ancak kendi markası, kendi formatı ve kendi kuralları olan bağımsız, profesyonel ve uzun vadeli bir spor &amp; eğlence projesidir.</p>
+       <div class="bg-gradient-to-r from-red-600/20 to-transparent border-l-4 border-red-600 p-4 rounded">
+        <p class="font-exo text-sm text-gray-400 mb-1">🎯 AMACIMIZ</p>
+        <p id="goal-text" class="font-exo text-base text-white font-semibold">Türkiye ve çevre ülkelerde en büyük ve en prestijli parkur yarışması platformunu kurmak</p>
+       </div>
+      </div><!-- Visual -->
+      <div class="flex justify-center">
+       <div class="relative float-animation">
+        <div class="absolute inset-0 bg-red-600 rounded-3xl blur-2xl opacity-30"></div>
+        <div class="relative bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-3xl gradient-border">
+         <svg class="w-full h-80" viewbox="0 0 300 300" fill="none"><!-- Turkey Map Simplified --> <path d="M50 150 L80 120 L120 130 L150 110 L180 120 L220 130 L250 140 L270 150 L260 170 L240 180 L200 175 L160 180 L120 170 L80 175 L50 160 Z" stroke="#ef4444" stroke-width="3" fill="rgba(239, 68, 68, 0.1)" /> <circle cx="150" cy="150" r="8" fill="#ef4444" /> <text x="150" y="200" text-anchor="middle" class="font-russo" fill="#ef4444" font-size="20">
+           TÜRKİYE
+          </text> <!-- Warrior Icon --> <g transform="translate(130, 130)">
+           <circle cx="20" cy="10" r="6" fill="#ef4444" />
+           <line x1="20" y1="16" x2="20" y2="35" stroke="#ef4444" stroke-width="3" />
+           <line x1="20" y1="22" x2="12" y2="28" stroke="#ef4444" stroke-width="3" />
+           <line x1="20" y1="22" x2="28" y2="28" stroke="#ef4444" stroke-width="3" />
+           <line x1="20" y1="35" x2="12" y2="45" stroke="#ef4444" stroke-width="3" />
+           <line x1="20" y1="35" x2="28" y2="45" stroke="#ef4444" stroke-width="3" />
+          </g>
+         </svg>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Prize Section -->
+   <section class="py-20 px-6 bg-gradient-to-b from-black to-gray-900">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-12">
+      <h2 class="font-russo text-4xl md:text-5xl text-white mb-4">🏆 Ödül ve Katılım</h2>
+     </div>
+     <div class="grid md:grid-cols-3 gap-6">
+      <div class="card-shine bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl gradient-border text-center">
+       <div class="icon-circle w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4"><span class="text-4xl">💳</span>
+       </div>
+       <h3 class="font-exo text-sm text-gray-400 mb-2">KATILIM ÜCRETİ</h3>
+       <p id="entry-fee" class="font-russo text-3xl text-red-500">4.999 TL</p>
+      </div>
+      <div class="card-shine bg-gradient-to-br from-red-900/30 to-gray-900 p-8 rounded-2xl gradient-border text-center transform scale-105">
+       <div class="icon-circle w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4"><span class="text-4xl">🏆</span>
+       </div>
+       <h3 class="font-exo text-sm text-gray-400 mb-2">ŞAMPİYONLUK ÖDÜLÜ</h3>
+       <p id="prize-amount" class="font-russo text-3xl text-red-500 text-glow">2.000.000 TL</p>
+      </div>
+      <div class="card-shine bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl gradient-border text-center">
+       <div class="icon-circle w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4"><span class="text-4xl">📅</span>
+       </div>
+       <h3 class="font-exo text-sm text-gray-400 mb-2">BAŞLANGIÇ TARİHİ</h3>
+       <p id="competition-date" class="font-russo text-3xl text-red-500">1 Haziran</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Format Section -->
+   <section class="py-20 px-6 bg-gray-900">
+    <div class="max-w-5xl mx-auto">
+     <div class="text-center mb-12">
+      <h2 id="format-title" class="font-russo text-4xl md:text-5xl text-white mb-4">🧱 Yarışma Formatı</h2>
+      <p class="font-exo text-lg text-gray-400">Birden fazla etap ve birden fazla parkurdan oluşur</p>
+     </div>
+     <div class="grid md:grid-cols-5 gap-4 mb-12">
+      <div class="bg-gradient-to-br from-red-900/30 to-gray-800 p-6 rounded-xl text-center">
+       <div class="text-3xl mb-2">
+        💪
+       </div>
+       <p class="font-exo text-white font-semibold">Güç</p>
+      </div>
+      <div class="bg-gradient-to-br from-red-900/30 to-gray-800 p-6 rounded-xl text-center">
+       <div class="text-3xl mb-2">
+        🏃
+       </div>
+       <p class="font-exo text-white font-semibold">Hız</p>
+      </div>
+      <div class="bg-gradient-to-br from-red-900/30 to-gray-800 p-6 rounded-xl text-center">
+       <div class="text-3xl mb-2">
+        🔋
+       </div>
+       <p class="font-exo text-white font-semibold">Dayanıklılık</p>
+      </div>
+      <div class="bg-gradient-to-br from-red-900/30 to-gray-800 p-6 rounded-xl text-center">
+       <div class="text-3xl mb-2">
+        ⚖️
+       </div>
+       <p class="font-exo text-white font-semibold">Denge</p>
+      </div>
+      <div class="bg-gradient-to-br from-red-900/30 to-gray-800 p-6 rounded-xl text-center">
+       <div class="text-3xl mb-2">
+        🎯
+       </div>
+       <p class="font-exo text-white font-semibold">Koordinasyon</p>
+      </div>
+     </div>
+     <div class="bg-gradient-to-r from-red-600/20 to-transparent border-l-4 border-red-600 p-6 rounded-lg">
+      <p class="font-exo text-sm text-gray-400 mb-2">⏱️ PUANLAMA SİSTEMİ</p>
+      <p id="scoring-text" class="font-exo text-xl text-white font-semibold">Parkuru hatasız ve en kısa sürede bitiren yarışmacı kazanır.</p>
+     </div>
+    </div>
+   </section><!-- Rules Section -->
+   <section class="py-20 px-6 bg-black">
+    <div class="max-w-6xl mx-auto">
+     <div class="grid md:grid-cols-2 gap-12"><!-- Rules -->
+      <div>
+       <h2 id="rules-title" class="font-russo text-4xl text-white mb-6">🧠 Temel Kurallar</h2>
+       <ul class="space-y-4">
+        <li class="flex items-start gap-3"><span class="text-red-500 text-xl mt-1">▪</span> <span class="font-exo text-gray-300">Yarışma tamamen <strong class="text-white">zaman bazlıdır</strong></span></li>
+        <li class="flex items-start gap-3"><span class="text-red-500 text-xl mt-1">▪</span> <span class="font-exo text-gray-300">Engelden düşme: Parkura geri dönme şansı yoktur. Parkur, aşama sayısı ve süre baz alınarak tamamlanmış kabul edilir.</span></li>
+        <li class="flex items-start gap-3"><span class="text-red-500 text-xl mt-1">▪</span> <span class="font-exo text-gray-300">Engel kurallarına uygun geçilmezse: Engel geçersiz sayılır</span></li>
+        <li class="flex items-start gap-3"><span class="text-red-500 text-xl mt-1">▪</span> <span class="font-exo text-gray-300">Hakem kararları <strong class="text-white">kesindir</strong></span></li>
+        <li class="flex items-start gap-3"><span class="text-red-500 text-xl mt-1">▪</span> <span class="font-exo text-gray-300">Tüm yarışlar video kaydı altına alınır</span></li>
+       </ul>
+      </div><!-- Eligibility -->
+      <div>
+       <h2 id="eligibility-title" class="font-russo text-4xl text-white mb-6">🧍‍♂️ Kimler Katılabilir?</h2>
+       <ul class="space-y-4">
+        <li class="flex items-start gap-3"><span class="text-red-500 text-xl mt-1">✓</span> <span class="font-exo text-gray-300">15 yaş ve üzeri herkes</span></li>
+        <li class="flex items-start gap-3"><span class="text-red-500 text-xl mt-1">✓</span> <span class="font-exo text-gray-300">Kadın ve erkek yarışmacılar katılabilir</span></li>
+        <li class="flex items-start gap-3"><span class="text-red-500 text-xl mt-1">✓</span> <span class="font-exo text-gray-300">Sağlıklı olduklarını kabul ederler</span></li>
+        <li class="flex items-start gap-3"><span class="text-red-500 text-xl mt-1">✓</span> <span class="font-exo text-gray-300">Ciddi bir sağlık problemleri olmadığını kabul ederler</span></li>
+        <li class="flex items-start gap-3"><span class="text-red-500 text-xl mt-1">✓</span> <span class="font-exo text-gray-300">Yarışmaya kendi sorumluluklarında katıldıklarını kabul ederler</span></li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </section><!-- Security Section -->
+   <section class="py-20 px-6 bg-gradient-to-b from-gray-900 to-black">
+    <div class="max-w-4xl mx-auto">
+     <h2 id="security-title" class="font-russo text-4xl text-white mb-8 text-center">🛡️ Güvenlik</h2>
+     <div class="grid md:grid-cols-3 gap-6 mb-8">
+      <div class="bg-gray-800/50 p-6 rounded-xl text-center">
+       <div class="text-3xl mb-3">
+        ✓
+       </div>
+       <p class="font-exo text-gray-300">Yüksek güvenlik standartları</p>
+      </div>
+      <div class="bg-gray-800/50 p-6 rounded-xl text-center">
+       <div class="text-3xl mb-3">
+        ✓
+       </div>
+       <p class="font-exo text-gray-300">Korumalı zeminler ve düşüş alanları</p>
+      </div>
+      <div class="bg-gray-800/50 p-6 rounded-xl text-center">
+       <div class="text-3xl mb-3">
+        ✓
+       </div>
+       <p class="font-exo text-gray-300">Hazır sağlık ekibi</p>
+      </div>
+     </div>
+     <div class="bg-gradient-to-r from-yellow-900/30 to-transparent border-l-4 border-yellow-600 p-6 rounded-lg">
+      <p class="font-exo text-sm text-yellow-500 mb-2">⚠️ UYARI</p>
+      <p id="security-warning" class="font-exo text-base text-gray-300">Bu bir ekstrem spor yarışmasıdır ve belirli riskler içerir. Katılım tamamen <strong class="text-white">kişisel sorumluluk</strong> kapsamındadır.</p>
+     </div>
+    </div>
+   </section><!-- Competition Rules Section -->
+   <section class="py-16 px-6 bg-black">
+    <div class="max-w-5xl mx-auto">
+     <div class="mb-12">
+      <h2 class="font-bebas text-5xl md:text-6xl text-white mb-2 text-center">🏆 YARISMA KURALLARI</h2>
+      <div class="h-1 w-24 bg-gradient-to-r from-red-600 to-orange-600 mx-auto mt-4"></div>
+     </div><!-- Rule 1 -->
+     <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-gray-700 rounded-xl p-6 mb-6">
+      <h3 class="font-bebas text-2xl text-red-500 mb-3 flex items-center gap-2"><span>1️⃣</span> Yarışmanın Genel Yapısı</h3>
+      <ul class="font-rajdhani text-gray-300 space-y-2 ml-4">
+       <li>✓ Yarışmalar <strong class="text-white">çok aşamalı ve eleme sistemiyle</strong> düzenlenir</li>
+       <li>✓ Her sporcu her parkur aşamasında <strong class="text-white">en fazla 2 deneme (Attempt)</strong> hakkına sahiptir</li>
+       <li>✓ Denemeler <strong class="text-white">aynı gün içinde yapılmak zorunda değildir</strong></li>
+       <li>✓ Yarışmalar <strong class="text-white">tek parkur hattı (Single Lane)</strong> üzerinden gerçekleştirilir</li>
+      </ul>
+     </div><!-- Rule 2 -->
+     <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-gray-700 rounded-xl p-6 mb-6">
+      <h3 class="font-bebas text-2xl text-orange-500 mb-3 flex items-center gap-2"><span>2️⃣</span> Deneme Hakları ve Zaman Kaydı</h3>
+      <div class="ml-4 space-y-4">
+       <div>
+        <h4 class="font-rajdhani font-bold text-white mb-2">Deneme Sayısı:</h4>
+        <ul class="font-rajdhani text-gray-300 space-y-1">
+         <li>• <strong>1. Deneme:</strong> Cezasız</li>
+         <li>• <strong>2. Deneme:</strong> %3 zaman cezası</li>
+        </ul>
+       </div>
+       <div>
+        <h4 class="font-rajdhani font-bold text-white mb-2">Zamanın Hesaplanması:</h4>
+        <p class="font-rajdhani text-gray-300 mb-2">Her aşama için <strong>yalnızca sporcunun en iyi denemesi</strong> değerlendirmeye alınır.</p>
+        <p class="font-rajdhani text-gray-300 text-sm bg-gray-800 p-3 rounded">Nihai süre = Kaydedilen süre + ilgili deneme cezası</p>
+       </div>
+      </div>
+     </div><!-- Rule 3 -->
+     <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-red-600/30 rounded-xl p-6 mb-6 border-l-4 border-l-red-600">
+      <h3 class="font-bebas text-2xl text-red-500 mb-3 flex items-center gap-2"><span>⏱️</span> Zaman Sınırı (Time Cap)</h3>
+      <div class="font-rajdhani text-gray-300 space-y-2 ml-4">
+       <p>✓ Qualifier aşamasında her deneme için <strong class="text-white">maksimum süre 180 saniyedir</strong></p>
+       <p>✓ 1. deneme 250 saniyeyi aşarsa: <strong class="text-red-400">2. deneme hakkını kaybeder</strong></p>
+       <p class="text-sm text-gray-400 italic">Bu kural, yarışma temposunu korumak ve izleyici deneyimini artırmak amacıyla uygulanır.</p>
+      </div>
+     </div><!-- Rule 4 -->
+     <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-orange-600/30 rounded-xl p-6 mb-6 border-l-4 border-l-orange-600">
+      <h3 class="font-bebas text-2xl text-orange-500 mb-3 flex items-center gap-2"><span>🚫</span> Denemenin Geçersiz Sayılması (Elimination Rule)</h3>
+      <div class="font-rajdhani text-gray-300 space-y-2 ml-4">
+       <p>Her deneme, <strong>başlangıç düdüğünün çalmasıyla</strong> başlar. Aşağıdaki durumlardan herhangi birinde deneme tamamen geçersiz (elendi) sayılır:</p>
+       <ul class="list-disc list-inside space-y-1 mt-2">
+        <li>Sporcu parkura devam edemeyecek duruma gelirse</li>
+        <li>Düşme gerçekleşirse</li>
+        <li>Sporcu yorgunluk, sakatlık veya kendi isteğiyle durursa</li>
+        <li>Hakem tarafından güvenlik gerekçesiyle durdurulursa</li>
+       </ul>
+       <p class="text-sm bg-red-900/30 p-2 rounded mt-2 border-l-2 border-red-500">📌 <strong>Önemli:</strong> Parkur içindeki dinlenme alanları dahil, sporcu parkura devam edemez hale gelirse, o deneme tamamen kaybedilmiş sayılır.</p>
+      </div>
+     </div><!-- Rule 5 -->
+     <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-gray-700 rounded-xl p-6 mb-6">
+      <h3 class="font-bebas text-2xl text-green-500 mb-3 flex items-center gap-2"><span>📊</span> İlerleme ve Performans Değerlendirmesi</h3>
+      <ul class="font-rajdhani text-gray-300 space-y-2 ml-4">
+       <li>✓ Sporcu, parkurda ilerlediği sürece yarışmaya devam eder</li>
+       <li>✓ Deneme sona erdiğinde: <strong class="text-white">geçilen son engel</strong> ve <strong class="text-white">kaydedilen süre</strong> esas alınır</li>
+      </ul>
+     </div><!-- Rule 6 -->
+     <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-gray-700 rounded-xl p-6 mb-6">
+      <h3 class="font-bebas text-2xl text-yellow-500 mb-3 flex items-center gap-2"><span>🏅</span> Sıralama Sistemi</h3>
+      <div class="font-rajdhani text-gray-300 ml-4">
+       <p class="mb-3">Sporcular her aşamada aşağıdaki kriterlere göre sıralanır:</p>
+       <ol class="space-y-2 list-decimal list-inside">
+        <li><strong class="text-white">En iyi nihal süre (Best Run Only)</strong></li>
+        <li>Süre eşitliğinde: <strong class="text-white">Parkurda daha fazla ilerleme</strong></li>
+        <li>Tam eşitlik durumunda: <strong class="text-white">Yarışma hakem kurulunun kararı geçerlidir</strong></li>
+       </ol>
+      </div>
+     </div><!-- Rule 7 -->
+     <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-gray-700 rounded-xl p-6 mb-6">
+      <h3 class="font-bebas text-2xl text-blue-500 mb-3 flex items-center gap-2"><span>🎯</span> Aşamalar ve Eleme Sistemi</h3>
+      <div class="space-y-4 ml-4">
+       <div class="bg-gray-800 p-4 rounded border-l-4 border-blue-500">
+        <h4 class="font-rajdhani font-bold text-blue-400 mb-2">🔹 Qualifier Aşaması</h4>
+        <p class="font-rajdhani text-gray-300 text-sm">Tüm sporcular bu aşamada yarışır. Denemeler belirtilen kurallara göre yapılır. En başarılı sporcular yarı finale yükselir.</p>
+       </div>
+       <div class="bg-gray-800 p-4 rounded border-l-4 border-purple-500">
+        <h4 class="font-rajdhani font-bold text-purple-400 mb-2">🔹 Semi-Final Aşaması</h4>
+        <p class="font-rajdhani text-gray-300 text-sm">Sadece Qualifier'dan geçen sporcular katılır. Parkur zorluk seviyesi artırılır. Final'e çıkacak sporcular belirlenir.</p>
+       </div>
+       <div class="bg-gray-800 p-4 rounded border-l-4 border-red-600">
+        <h4 class="font-rajdhani font-bold text-red-400 mb-2">🔹 Final Aşaması</h4>
+        <p class="font-rajdhani text-gray-300 text-sm">Yarışmanın en üst seviyesidir. <strong>Yalnızca 1 deneme hakkı</strong> vardır. Anatolian Warriors şampiyonu bu aşamada belirlenir.</p>
+       </div>
+      </div>
+     </div><!-- Rule 8-11 -->
+     <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-gray-700 rounded-xl p-6">
+       <h3 class="font-bebas text-xl text-indigo-500 mb-3">⏰ Zamanlama ve Katılım</h3>
+       <ul class="font-rajdhani text-gray-300 space-y-2 text-sm">
+        <li>✓ Sporcular kendilerine bildirilen saatten önce hazır bulunmalıdır</li>
+        <li>✓ Geç kalınması durumunda ilgili deneme iptal edilebilir</li>
+        <li>✓ Deneme saatleri değiştirilemez</li>
+       </ul>
+      </div>
+      <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-gray-700 rounded-xl p-6">
+       <h3 class="font-bebas text-xl text-cyan-500 mb-3">🛡️ Güvenlik Kuralları</h3>
+       <ul class="font-rajdhani text-gray-300 space-y-2 text-sm">
+        <li>✓ Tüm sporcular güvenlik kurallarına uymak zorundadır</li>
+        <li>✓ Gerekli koruyucu ekipmanların kullanımı zorunludur</li>
+        <li>✓ Hakem kararları kesin ve bağlayıcıdır</li>
+       </ul>
+      </div>
+      <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-gray-700 rounded-xl p-6">
+       <h3 class="font-bebas text-xl text-pink-500 mb-3">📋 Organizasyon Yetkileri</h3>
+       <ul class="font-rajdhani text-gray-300 space-y-2 text-sm">
+        <li>✓ Güvenlik nedeniyle parkur değişikliği yapabilir</li>
+        <li>✓ Hava koşullarına göre düzenleme yapabilir</li>
+        <li>✓ Tüm resmi duyurular resmi kanallar üzerinden yapılır</li>
+       </ul>
+      </div>
+      <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-red-600/50 rounded-xl p-6 border-l-4 border-l-red-600">
+       <h3 class="font-bebas text-xl text-red-500 mb-3">✅ Kuralların Kabulü</h3>
+       <p class="font-rajdhani text-gray-300 text-sm">Yarışmaya kayıt olan her sporcu, bu kuralları <strong class="text-white">okumuş ve kabul etmiş sayılır</strong>. Kuralları bilmemek herhangi bir hak veya muafiyet kazandırmaz.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- FAQ Section -->
+   <section class="py-20 px-6 bg-gray-900">
+    <div class="max-w-4xl mx-auto">
+     <h2 id="faq-title" class="font-russo text-4xl md:text-5xl text-white mb-12 text-center">    Sık Sorulan Sorular</h2>
+     <div class="space-y-4">
+      <details class="bg-gray-800/50 rounded-xl overflow-hidden group"><summary class="font-exo text-lg text-white p-6 cursor-pointer hover:bg-gray-800/70 transition-colors"> ❓ Profesyonel sporcu olmam gerekiyor mu? </summary>
+       <div class="px-6 pb-6 font-exo text-gray-300">
+        Hayır. Ancak iyi bir fiziksel kondisyonunuz olmalıdır.
+       </div>
+      </details>
+      <details class="bg-gray-800/50 rounded-xl overflow-hidden group"><summary class="font-exo text-lg text-white p-6 cursor-pointer hover:bg-gray-800/70 transition-colors"> ❓ Engelden düşersem ne olur? </summary>
+       <div class="px-6 pb-6 font-exo text-gray-300">
+        Parkura geri dönme şansı yoktur. Parkur, aşama sayısı ve süre baz alınarak tamamlanmış kabul edilir.
+       </div>
+      </details>
+      <details class="bg-gray-800/50 rounded-xl overflow-hidden group"><summary class="font-exo text-lg text-white p-6 cursor-pointer hover:bg-gray-800/70 transition-colors"> ❓ Kaç parkur var? </summary>
+       <div class="px-6 pb-6 font-exo text-gray-300">
+        Yarışma birden fazla etap ve parkurdan oluşur. Parkur sayısı etaplara göre değişir.
+       </div>
+      </details>
+      <details class="bg-gray-800/50 rounded-xl overflow-hidden group"><summary class="font-exo text-lg text-white p-6 cursor-pointer hover:bg-gray-800/70 transition-colors"> ❓ Kayıt ücretini geri alabilir miyim? </summary>
+       <div class="px-6 pb-6 font-exo text-gray-300">
+        Hayır. Kayıt ücreti <strong class="text-white">iade edilmez</strong>.
+       </div>
+      </details>
+      <details class="bg-gray-800/50 rounded-xl overflow-hidden group"><summary class="font-exo text-lg text-white p-6 cursor-pointer hover:bg-gray-800/70 transition-colors"> ❓ Görüntülerim kullanılacak mı? </summary>
+       <div class="px-6 pb-6 font-exo text-gray-300">
+        Evet. Kayıt olan herkes görüntülerinin tanıtım, yayın ve pazarlama amaçlı kullanılmasını kabul eder.
+       </div>
+      </details>
+      <!--<details class="bg-gray-800/50 rounded-xl overflow-hidden group"><summary class="font-exo text-lg text-white p-6 cursor-pointer hover:bg-gray-800/70 transition-colors"> ❓ Eşitlik olursa ne olur? </summary>
+       <div class="px-6 pb-6 font-exo text-gray-300">
+        Dijital zaman ölçümü yapılır. Gerekirse ek yarış (tie-break) yapılır.
+       </div>
+      </details>-->
+     </div>
+    </div>
+   </section><!-- Legal Notes -->
+   <section class="py-20 px-6 bg-black">
+    <div class="max-w-4xl mx-auto">
+     <h2 class="font-russo text-4xl text-white mb-8 text-center">⚖️ Hukuki Notlar</h2>
+     <div class="bg-gray-800/30 border border-gray-700 rounded-xl p-8">
+      <ul class="space-y-4">
+       <li class="flex items-start gap-3"><span class="text-red-500 text-xl mt-1">•</span> <span class="font-exo text-gray-300">Anatolian Warriors bağımsız bir markadır</span></li>
+       <li class="flex items-start gap-3"><span class="text-red-500 text-xl mt-1">•</span> <span class="font-exo text-gray-300">Kurallar ve format organizasyona aittir</span></li>
+       <li class="flex items-start gap-3"><span class="text-red-500 text-xl mt-1">•</span> <span class="font-exo text-gray-300">Hile, kural ihlali veya sportmenlik dışı davranı   = <strong class="text-red-500">diskalifiye</strong></span></li>
+      </ul>
+     </div>
+    </div>
+   </section><!-- Final CTA -->
+   <section class="py-32 px-6 bg-gradient-to-b from-gray-900 via-black to-gray-900 relative overflow-hidden">
+    <div class="absolute inset-0">
+     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-red-600 rounded-full blur-3xl opacity-20"></div>
+    </div>
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+     <div class="mb-8"><span class="text-6xl">🚀</span>
+     </div>
+     <h2 class="font-russo text-3xl md:text-4xl text-white mb-6">Son Söz</h2>
+     <blockquote id="final-quote" class="font-exo text-2xl md:text-3xl text-gray-300 mb-8 italic">
+      "Bu sadece bir yarış değil. Bu, <span class="text-red-500 font-bold">kendinle yaptığın bir savaş</span>."
+     </blockquote>
+     <div class="mb-8">
+      <p class="font-exo text-lg text-gray-400 mb-2">Eğer:</p>
+      <ul class="font-exo text-xl text-white space-y-2">
+       <li>✓ Gücüne güveniyorsan</li>
+       <li>✓ Hızına güveniyorsan</li>
+       <li>✓ Vazgeçmem diyorsan</li>
+      </ul>
+     </div>
+     <div class="inline-block">
+      <a href="/Regis.html" target="_blank" rel="noopener noreferrer" class="inline-block group relative">
+       <div class="bg-gradient-to-r from-red-600 to-red-700 p-1 rounded-2xl">
+       <div class="bg-black px-8 py-4 rounded-xl">
+        <p id="final-cta" class="font-russo text-2xl md:text-3xl text-red-500 text-glow">🔥 Anatolian Warriors Seni Bekliyor</p>
+       </div>
+      </div> </a>
+     </div>
+     <div class="mt-12">
+      <p class="font-exo text-lg text-gray-400 mb-4">Merak ettiğiniz başka bir şey varsa</p><a href="https://wa.me/15482617439" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white font-exo font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-green-600/50">
+       <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+       </svg><span>WhatsApp'tan Bize Ulaşın</span> </a>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="py-8 px-6 bg-black border-t border-gray-800">
+    <div class="max-w-6xl mx-auto text-center">
+     <p class="font-exo text-sm text-gray-500">© 2026 <a href="/">Anatolian Warriors</a>. Tüm hakları saklıdır.</p>
+    </div>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      main_title: 'Anatolian Warriors Nedir?',
+      main_subtitle: 'Güç, hız, dayanıklılık, denge ve mental odaklanmayı bir araya getiren yüksek tempolu, profesyonel bir parkur yarışması',
+      intro_text: 'Yarışmacılar, farklı zorluk seviyelerine sahip birden fazla parkuru, en kısa sürede ve hatasız şekilde tamamlamaya çalışırlar. Dünyanın en büyük engel parkuru yarışmalarından ilham alan, ancak kendi markası, kendi formatı ve kendi kuralları olan bağımsız, profesyonel ve uzun vadeli bir spor & eğlence projesidir.',
+      goal_text: 'Türkiye ve çevre ülkelerde en büyük ve en prestijli parkur yarışması platformunu kurmak',
+      entry_fee: '4.999 TL',
+      prize_amount: '10.000.000 TL',
+      competition_date: 'Nisan',
+      format_title: '🧱 Yarışma Formatı',
+      scoring_text: 'Parkuru hatasız ve en kısa sürede bitiren yarışmacı kazanır.',
+      rules_title: '🧠 Temel Kurallar',
+      eligibility_title: '🧍‍♂️ Kimler Katılabilir?',
+      security_title: '🛡️ Güvenlik',
+      security_warning: 'Bu bir ekstrem spor yarışmasıdır ve belirli riskler içerir. Katılım tamamen kişisel sorumluluk kapsamındadır.',
+      faq_title: '📋 Sık Sorulan Sorular',
+      final_quote: 'Bu sadece bir yarış değil. Bu, kendinle yaptığın bir savaş.',
+      final_cta: '🔥 Anatolian Warriors Seni Bekliyor',
+      background_color: '#000000',
+      primary_color: '#ef4444',
+      text_color: '#ffffff',
+      accent_color: '#1f2937'
+    };
+    
+    async function onConfigChange(config) {
+      document.getElementById('main-title').textContent = config.main_title || defaultConfig.main_title;
+      document.getElementById('main-subtitle').textContent = config.main_subtitle || defaultConfig.main_subtitle;
+      document.getElementById('intro-text').textContent = config.intro_text || defaultConfig.intro_text;
+      document.getElementById('goal-text').textContent = config.goal_text || defaultConfig.goal_text;
+      document.getElementById('entry-fee').textContent = config.entry_fee || defaultConfig.entry_fee;
+      document.getElementById('prize-amount').textContent = config.prize_amount || defaultConfig.prize_amount;
+      document.getElementById('competition-date').textContent = config.competition_date || defaultConfig.competition_date;
+      document.getElementById('format-title').textContent = config.format_title || defaultConfig.format_title;
+      document.getElementById('scoring-text').textContent = config.scoring_text || defaultConfig.scoring_text;
+      document.getElementById('rules-title').textContent = config.rules_title || defaultConfig.rules_title;
+      document.getElementById('eligibility-title').textContent = config.eligibility_title || defaultConfig.eligibility_title;
+      document.getElementById('security-title').textContent = config.security_title || defaultConfig.security_title;
+      document.getElementById('security-warning').textContent = config.security_warning || defaultConfig.security_warning;
+      document.getElementById('faq-title').textContent = config.faq_title || defaultConfig.faq_title;
+      document.getElementById('final-quote').innerHTML = config.final_quote || defaultConfig.final_quote;
+      document.getElementById('final-cta').textContent = config.final_cta || defaultConfig.final_cta;
+    }
+    
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => { config.background_color = value; window.elementSdk.setConfig({ background_color: value }); }
+          },
+          {
+            get: () => config.primary_color || defaultConfig.primary_color,
+            set: (value) => { config.primary_color = value; window.elementSdk.setConfig({ primary_color: value }); }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => { config.text_color = value; window.elementSdk.setConfig({ text_color: value }); }
+          },
+          {
+            get: () => config.accent_color || defaultConfig.accent_color,
+            set: (value) => { config.accent_color = value; window.elementSdk.setConfig({ accent_color: value }); }
+          }
+        ],
+        borderables: [],
+        fontEditable: undefined,
+        fontSizeable: undefined
+      };
+    }
+    
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ['main_title', config.main_title || defaultConfig.main_title],
+        ['main_subtitle', config.main_subtitle || defaultConfig.main_subtitle],
+        ['intro_text', config.intro_text || defaultConfig.intro_text],
+        ['goal_text', config.goal_text || defaultConfig.goal_text],
+        ['entry_fee', config.entry_fee || defaultConfig.entry_fee],
+        ['prize_amount', config.prize_amount || defaultConfig.prize_amount],
+        ['competition_date', config.competition_date || defaultConfig.competition_date],
+        ['format_title', config.format_title || defaultConfig.format_title],
+        ['scoring_text', config.scoring_text || defaultConfig.scoring_text],
+        ['rules_title', config.rules_title || defaultConfig.rules_title],
+        ['eligibility_title', config.eligibility_title || defaultConfig.eligibility_title],
+        ['security_title', config.security_title || defaultConfig.security_title],
+        ['security_warning', config.security_warning || defaultConfig.security_warning],
+        ['faq_title', config.faq_title || defaultConfig.faq_title],
+        ['final_quote', config.final_quote || defaultConfig.final_quote],
+        ['final_cta', config.final_cta || defaultConfig.final_cta]
+      ]);
+    }
+    
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c53e6ed16f02468',t:'MTc2OTYzOTA4OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+</html>
