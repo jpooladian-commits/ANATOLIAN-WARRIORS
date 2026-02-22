@@ -1,358 +1,485 @@
-
 <!doctype html>
 <html lang="tr" class="h-full">
- <head>
+<head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-W6LQTKR9P3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W6LQTKR9P3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-W6LQTKR9P3');
+  </script>
 
-  gtag('config', 'G-W6LQTKR9P3');
-</script>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- reCAPTCHA v2 -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anatolian Warriors - KAYIT FORMU - Kayıt Formu</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Rajdhani:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 
-  
   <style>
-    body {
-      box-sizing: border-box;
-    }
-    
+    body { box-sizing: border-box; }
+
     .font-bebas { font-family: 'Bebas Neue', sans-serif; }
     .font-rajdhani { font-family: 'Rajdhani', sans-serif; }
-    
-    .text-glow-red {
-      text-shadow: 0 0 30px rgba(220, 38, 38, 0.8), 0 0 60px rgba(220, 38, 38, 0.4);
-    }
-    
-    .text-glow-orange {
-      text-shadow: 0 0 20px rgba(249, 115, 22, 0.6);
-    }
-    
+
+    .text-glow-red { text-shadow: 0 0 30px rgba(220, 38, 38, 0.8), 0 0 60px rgba(220, 38, 38, 0.4); }
+    .text-glow-orange { text-shadow: 0 0 20px rgba(249, 115, 22, 0.6); }
+
     @keyframes pulse-glow {
       0%, 100% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.5); }
       50% { box-shadow: 0 0 40px rgba(220, 38, 38, 0.8), 0 0 60px rgba(220, 38, 38, 0.4); }
     }
-    
-    .pulse-glow {
-      animation: pulse-glow 2s ease-in-out infinite;
-    }
-    
+    .pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+
     @keyframes slide-up {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    
-    .slide-up {
-      animation: slide-up 0.6s ease-out forwards;
-    }
-    
+    .slide-up { animation: slide-up 0.6s ease-out forwards; }
+
     @keyframes success-bounce {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.05); }
     }
-    
-    .success-bounce {
-      animation: success-bounce 0.5s ease-in-out;
-    }
-    
+    .success-bounce { animation: success-bounce 0.5s ease-in-out; }
+
     input:focus, select:focus, textarea:focus {
       outline: none;
       border-color: #dc2626;
       box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
     }
-    
+
     .warrior-silhouette {
       position: absolute;
       opacity: 0.05;
       pointer-events: none;
     }
   </style>
+
   <style>@view-transition { navigation: auto; }</style>
- </head>
- <body class="h-full m-0 p-0 bg-black">
-  <div class="h-full w-full overflow-auto"><!-- Hero Section -->
-   <section class="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-950 via-black to-gray-950 px-6 py-20 overflow-hidden"><!-- Background Effects -->
-    <div class="absolute inset-0">
-     <div class="absolute top-1/4 -left-20 w-96 h-96 bg-red-600 rounded-full blur-3xl opacity-20"></div>
-     <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-orange-600 rounded-full blur-3xl opacity-20"></div>
-    </div><!-- Warrior Silhouette SVG -->
-    <svg class="warrior-silhouette w-full h-full" viewbox="0 0 800 800" fill="none"><g transform="translate(350, 150)"><!-- Head -->
-      <circle cx="50" cy="50" r="40" fill="currentColor" class="text-red-700" /> <!-- Body -->
-      <rect x="30" y="90" width="40" height="120" fill="currentColor" class="text-red-700" /> <!-- Arms - flexed -->
-      <rect x="-20" y="100" width="50" height="20" fill="currentColor" class="text-red-700" transform="rotate(-30 5 110)" />
-      <rect x="70" y="100" width="50" height="20" fill="currentColor" class="text-red-700" transform="rotate(30 95 110)" /> <!-- Legs - running -->
-      <rect x="30" y="210" width="18" height="80" fill="currentColor" class="text-red-700" transform="rotate(-20 39 210)" />
-      <rect x="52" y="210" width="18" height="80" fill="currentColor" class="text-red-700" transform="rotate(20 61 210)" />
-     </g>
-    </svg>
-    <div class="max-w-5xl mx-auto text-center relative z-10"><!-- Logo Badge -->
-     <a href="/"><div class="inline-block mb-6 px-6 py-3 bg-gradient-to-r from-red-600/20 to-orange-600/20 border-2 border-red-600 rounded-full"><span class="font-bebas text-red-500 text-xl tracking-wider">🏔️ ANATOLIAN WARRIORS</span>
-     </div></a><!-- Main Title -->
-     <h1 id="hero-title" class="font-bebas text-6xl md:text-8xl lg:text-9xl text-white mb-6 text-glow-red leading-none">KAYIT FORMU</h1>
-     <p id="hero-subtitle" class="font-rajdhani text-2xl md:text-3xl text-orange-500 font-bold mb-8 text-glow-orange">💥 Kendinle Yarışmaya Hazır Mısın?</p>
-     <p id="hero-description" class="font-rajdhani text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">Bu sadece bir yarış değil. Bu, <strong class="text-white">sınırlarını test ettiğin bir meydan okuma</strong>. Gücüne, hızına ve kararlılığına güveniyorsan, şimdi kayıt ol ve yerini ayırt!</p><!-- Quick Stats -->
-     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-      <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-red-600/30 rounded-xl p-6 pulse-glow">
-       <div class="text-4xl mb-2">
-        🏆
-       </div>
-       <div class="font-rajdhani text-sm text-gray-400 mb-1">
-        ŞAMPİYONLUK ÖDÜLÜ
-       </div>
-       <div id="prize-amount" class="font-bebas text-4xl text-red-500 text-glow-red">
-        1.000.000 TL
-       </div>
+</head>
+
+<body class="h-full m-0 p-0 bg-black">
+  <div class="h-full w-full overflow-auto">
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-950 via-black to-gray-950 px-6 py-20 overflow-hidden">
+      <!-- Background Effects -->
+      <div class="absolute inset-0">
+        <div class="absolute top-1/4 -left-20 w-96 h-96 bg-red-600 rounded-full blur-3xl opacity-20"></div>
+        <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-orange-600 rounded-full blur-3xl opacity-20"></div>
       </div>
-      <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-orange-600/30 rounded-xl p-6">
-       <div class="text-4xl mb-2">
-        💳
-       </div>
-       <div class="font-rajdhani text-sm text-gray-400 mb-1">
-        KATILIM ÜCRETİ (KDV dahil)
-       </div>
-       <div id="entry-fee" class="font-bebas text-4xl text-orange-500">
-        8.400 TL
-       </div>
+
+      <!-- Warrior Silhouette SVG -->
+      <svg class="warrior-silhouette w-full h-full" viewBox="0 0 800 800" fill="none">
+        <g transform="translate(350, 150)">
+          <circle cx="50" cy="50" r="40" fill="currentColor" class="text-red-700" />
+          <rect x="30" y="90" width="40" height="120" fill="currentColor" class="text-red-700" />
+          <rect x="-20" y="100" width="50" height="20" fill="currentColor" class="text-red-700" transform="rotate(-30 5 110)" />
+          <rect x="70" y="100" width="50" height="20" fill="currentColor" class="text-red-700" transform="rotate(30 95 110)" />
+          <rect x="30" y="210" width="18" height="80" fill="currentColor" class="text-red-700" transform="rotate(-20 39 210)" />
+          <rect x="52" y="210" width="18" height="80" fill="currentColor" class="text-red-700" transform="rotate(20 61 210)" />
+        </g>
+      </svg>
+
+      <div class="max-w-5xl mx-auto text-center relative z-10">
+        <a href="/">
+          <div class="inline-block mb-6 px-6 py-3 bg-gradient-to-r from-red-600/20 to-orange-600/20 border-2 border-red-600 rounded-full">
+            <span class="font-bebas text-red-500 text-xl tracking-wider">🏔️ ANATOLIAN WARRIORS</span>
+          </div>
+        </a>
+
+        <h1 id="hero-title" class="font-bebas text-6xl md:text-8xl lg:text-9xl text-white mb-6 text-glow-red leading-none">KAYIT FORMU</h1>
+        <p id="hero-subtitle" class="font-rajdhani text-2xl md:text-3xl text-orange-500 font-bold mb-8 text-glow-orange">💥 Kendinle Yarışmaya Hazır Mısın?</p>
+        <p id="hero-description" class="font-rajdhani text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
+          Bu sadece bir yarış değil. Bu, <strong class="text-white">sınırlarını test ettiğin bir meydan okuma</strong>. Gücüne, hızına ve kararlılığına güveniyorsan, şimdi kayıt ol ve yerini ayırt!
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-red-600/30 rounded-xl p-6 pulse-glow">
+            <div class="text-4xl mb-2">🏆</div>
+            <div class="font-rajdhani text-sm text-gray-400 mb-1">ŞAMPİYONLUK ÖDÜLÜ</div>
+            <div id="prize-amount" class="font-bebas text-4xl text-red-500 text-glow-red">1.000.000 TL</div>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-orange-600/30 rounded-xl p-6">
+            <div class="text-4xl mb-2">💳</div>
+            <div class="font-rajdhani text-sm text-gray-400 mb-1">KATILIM ÜCRETİ (KDV dahil)</div>
+            <div id="entry-fee" class="font-bebas text-4xl text-orange-500">8.400 TL</div>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-red-600/30 rounded-xl p-6">
+            <div class="text-4xl mb-2">📅</div>
+            <div class="font-rajdhani text-sm text-gray-400 mb-1">BAŞLANGIÇ</div>
+            <div id="competition-date" class="font-bebas text-4xl text-red-500">1. Temmuz</div>
+          </div>
+        </div>
       </div>
-      <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-red-600/30 rounded-xl p-6">
-       <div class="text-4xl mb-2">
-        📅
-       </div>
-       <div class="font-rajdhani text-sm text-gray-400 mb-1">
-        BAŞLANGIÇ
-       </div>
-       <div id="competition-date" class="font-bebas text-4xl text-red-500">
-        1. Temmuz
-       </div>
+    </section>
+
+    <!-- Format Section -->
+    <section class="py-16 px-6 bg-gray-950">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="font-bebas text-5xl text-center text-white mb-12">🧱 YARIŞMA FORMATI</h2>
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+          <div class="bg-gradient-to-br from-red-900/20 to-gray-900 border border-red-600/30 rounded-xl p-6">
+            <div class="text-3xl mb-3">⏱️</div>
+            <h3 class="font-rajdhani text-xl text-white font-bold mb-2">Zaman Bazlı</h3>
+            <p class="font-rajdhani text-gray-400">Parkuru hatasız ve en kısa sürede tamamla</p>
+          </div>
+          <div class="bg-gradient-to-br from-orange-900/20 to-gray-900 border border-orange-600/30 rounded-xl p-6">
+            <div class="text-3xl mb-3">🎯</div>
+            <h3 class="font-rajdhani text-xl text-white font-bold mb-2">Çoklu Etap</h3>
+            <p class="font-rajdhani text-gray-400">Birden fazla etap ve parkurdan oluşur</p>
+          </div>
+        </div>
       </div>
-     </div>
-    </div>
-   </section><!-- Format Section -->
-   <section class="py-16 px-6 bg-gray-950">
-    <div class="max-w-4xl mx-auto">
-     <h2 class="font-bebas text-5xl text-center text-white mb-12">🧱 YARIŞMA FORMATI</h2>
-     <div class="grid md:grid-cols-2 gap-8 mb-8">
-      <div class="bg-gradient-to-br from-red-900/20 to-gray-900 border border-red-600/30 rounded-xl p-6">
-       <div class="text-3xl mb-3">
-        ⏱️
-       </div>
-       <h3 class="font-rajdhani text-xl text-white font-bold mb-2">Zaman Bazlı</h3>
-       <p class="font-rajdhani text-gray-400">Parkuru hatasız ve en kısa sürede tamamla</p>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section class="py-20 px-6 bg-black">
+      <div class="max-w-3xl mx-auto">
+
+        <div class="text-center mb-12">
+          <h2 id="form-title" class="font-bebas text-6xl text-white mb-4 text-glow-red">📝 KAYIT FORMU</h2>
+          <p class="font-rajdhani text-lg text-gray-400">⚠️ Lütfen bilgilerinizi eksiksiz ve doğru giriniz</p>
+        </div>
+
+        <!-- Success Message -->
+        <div id="success-message" class="hidden bg-gradient-to-r from-green-900/50 to-green-800/50 border-2 border-green-500 rounded-2xl p-8 mb-8 text-center success-bounce">
+          <div class="text-6xl mb-4">🎉</div>
+          <h3 class="font-bebas text-4xl text-green-400 mb-3">BAŞVURUN ALINDI!</h3>
+          <p class="font-bebas text-2xl text-white">ANATOLIAN WARRIORS AİLESİNE HOŞ GELDİN! 💪</p>
+          <p id="success-message-text" class="font-rajdhani text-xl text-gray-300 mb-2">
+            🚨 Kaydınla ilgili sana bir mesaj gönderdik. Eğer birkaç dakika içinde mesaj ulaşmazsa, aşağıdaki WhatsApp düğmesi üzerinden mutlaka bizimle iletişime geç.
+          </p>
+        </div>
+
+        <!-- Form -->
+        <form id="registration-form" class="space-y-8">
+
+          <!-- Personal Information -->
+          <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-red-600/30 rounded-2xl p-8">
+            <h3 class="font-bebas text-3xl text-red-500 mb-6">🔹 KİŞİSEL BİLGİLER</h3>
+
+            <div class="space-y-4">
+              <div>
+                <label class="block font-rajdhani text-white font-semibold mb-2" for="full-name">Ad Soyad *</label>
+                <input type="text" id="full-name" required class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block font-rajdhani text-white font-semibold mb-2" for="birth-date">Doğum Tarihi *</label>
+                  <input type="date" id="birth-date" required class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
+                </div>
+                <div>
+                  <label class="block font-rajdhani text-white font-semibold mb-2" for="gender">Cinsiyet *</label>
+                  <select id="gender" required class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
+                    <option value="">Seçiniz</option>
+                    <option value="Erkek">Erkek</option>
+                    <option value="Kadın">Kadın</option>
+                    <option value="Belirtmek İstemiyorum">Belirtmek İstemiyorum</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-rajdhani text-white font-semibold mb-2" for="phone">Telefon Numarası *</label>
+                <input type="tel" id="phone" required placeholder="+90 5XX XXX XX XX" class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
+              </div>
+
+              <div>
+                <label class="block font-rajdhani text-white font-semibold mb-2" for="email">E-posta Adresi *</label>
+                <input type="email" id="email" required class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
+              </div>
+
+              <div>
+                <label class="block font-rajdhani text-white font-semibold mb-2" for="city">Yaşadığınız Şehir / Ülke *</label>
+                <input type="text" id="city" required placeholder="Örn: İstanbul, Türkiye" class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
+              </div>
+            </div>
+          </div>
+
+          <!-- Physical Information -->
+          <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-orange-600/30 rounded-2xl p-8">
+            <h3 class="font-bebas text-3xl text-orange-500 mb-6">🔹 FİZİKSEL BİLGİLER</h3>
+
+            <div class="space-y-4">
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block font-rajdhani text-white font-semibold mb-2" for="height">Boy (cm) *</label>
+                  <input type="number" id="height" required min="100" max="250" class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
+                </div>
+                <div>
+                  <label class="block font-rajdhani text-white font-semibold mb-2" for="weight">Kilo (kg) *</label>
+                  <input type="number" id="weight" required min="30" max="200" class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-rajdhani text-white font-semibold mb-2" for="previous-experience">Daha önce benzer yarışmalara katıldınız mı? *</label>
+                <select id="previous-experience" required class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
+                  <option value="">Seçiniz</option>
+                  <option value="Evet">Evet</option>
+                  <option value="Hayır">Hayır</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block font-rajdhani text-white font-semibold mb-2" for="sports-background">Spor geçmişiniz var mı? (Kısa açıklama)</label>
+                <textarea id="sports-background" rows="3" placeholder="Örn: 5 yıl CrossFit, 3 yıl jimnastik..." class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Emergency Contact -->
+          <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-red-600/30 rounded-2xl p-8">
+            <h3 class="font-bebas text-3xl text-red-500 mb-6">🔹 ACİL DURUM BİLGİSİ</h3>
+
+            <div class="space-y-4">
+              <div>
+                <label class="block font-rajdhani text-white font-semibold mb-2" for="emergency-name">Acil durumda aranacak kişi adı *</label>
+                <input type="text" id="emergency-name" required class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
+              </div>
+
+              <div>
+                <label class="block font-rajdhani text-white font-semibold mb-2" for="emergency-phone">Acil durum telefon numarası *</label>
+                <input type="tel" id="emergency-phone" required placeholder="+90 5XX XXX XX XX" class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
+              </div>
+            </div>
+          </div>
+
+          <!-- Consent Checkboxes -->
+          <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-yellow-600/30 rounded-2xl p-8">
+            <h3 class="font-bebas text-3xl text-yellow-500 mb-6">⚠️ ONAY KUTULARI</h3>
+
+            <div class="space-y-4">
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="checkbox" id="accept-age" required class="mt-1 w-5 h-5 accent-red-600">
+                <span class="font-rajdhani text-gray-300 group-hover:text-white transition-colors">15 yaşından büyük olduğumu beyan ederim *</span>
+              </label>
+
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="checkbox" id="accept-health" required class="mt-1 w-5 h-5 accent-red-600">
+                <span class="font-rajdhani text-gray-300 group-hover:text-white transition-colors">Sağlık durumumun bu yarışmaya katılmaya uygun olduğunu kabul ediyorum *</span>
+              </label>
+
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="checkbox" id="accept-risks" required class="mt-1 w-5 h-5 accent-red-600">
+                <span class="font-rajdhani text-gray-300 group-hover:text-white transition-colors">Yarışmanın fiziksel riskler içerdiğini biliyorum ve sorumluluğu kabul ediyorum *</span>
+              </label>
+
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="checkbox" id="accept-media" required class="mt-1 w-5 h-5 accent-red-600">
+                <span class="font-rajdhani text-gray-300 group-hover:text-white transition-colors">Organizasyon sırasında çekilen fotoğraf ve videolarımın kullanılmasını kabul ediyorum *</span>
+              </label>
+
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="checkbox" id="accept-rules" required class="mt-1 w-5 h-5 accent-red-600">
+                <span class="font-rajdhani text-gray-300 group-hover:text-white transition-colors">
+                  <a style="color: green;" href="/Hakkimizda.html" target="_blank" rel="noopener noreferrer">Kuralları</a> okudum ve kabul ediyorum *
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Payment Note -->
+          <div class="bg-gradient-to-r from-blue-900/30 to-transparent border-l-4 border-blue-500 p-6 rounded-lg">
+            <p class="font-rajdhani text-sm text-blue-400 mb-2">💳 ÖDEME BİLGİSİ</p>
+            <p class="font-rajdhani text-gray-300">
+              Kayıt başvurunuz alındıktan sonra ödeme bilgileri tarafınıza SMS yoluyla iletilecektir. Kayıt ücreti <strong class="text-white">iade edilmez</strong>.
+            </p>
+          </div>
+
+          <!-- Important Note -->
+          <div class="bg-gradient-to-r from-yellow-900/30 to-transparent border-l-4 border-yellow-500 p-6 rounded-lg">
+            <p class="font-rajdhani text-sm text-yellow-400 mb-2">🚨 ÖNEMLİ NOT</p>
+            <p class="font-rajdhani text-gray-300">
+              Başvurunun doldurulması, yarışmaya kesin katılım anlamına gelmez. Organizasyon, ön değerlendirme yapma hakkını saklı tutar.
+            </p>
+          </div>
+
+          <!-- reCAPTCHA -->
+          <div class="flex justify-center">
+            <div class="g-recaptcha" data-sitekey="6LeMC1osAAAAAIbeVUxEonENO6Al_ggK39O6oyLf"></div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" id="submit-btn"
+            class="w-full bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white font-bebas text-3xl py-6 rounded-xl transition-all duration-300 transform hover:scale-105 pulse-glow">
+            <span id="submit-button-text">🔥 ŞİMDİ BAŞVUR - WARRIOR OL!</span>
+          </button>
+        </form>
       </div>
-      <div class="bg-gradient-to-br from-orange-900/20 to-gray-900 border border-orange-600/30 rounded-xl p-6">
-       <div class="text-3xl mb-3">
-        🎯
-       </div>
-       <h3 class="font-rajdhani text-xl text-white font-bold mb-2">Çoklu Etap</h3>
-       <p class="font-rajdhani text-gray-400">Birden fazla etap ve parkurdan oluşur</p>
+    </section>
+
+    <!-- WhatsApp Contact -->
+    <section class="py-12 px-6 bg-gray-950">
+      <div class="max-w-2xl mx-auto text-center">
+        <p class="font-rajdhani text-lg text-gray-400 mb-4">Merak ettiğiniz bir şey varsa</p>
+        <a href="https://wa.me/15482617439" target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white font-rajdhani font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+          </svg>
+          <span>WhatsApp'tan Bize Ulaşın</span>
+        </a>
       </div>
-     </div>
-    </div>
-   </section><!-- Registration Form Section -->
-   <section class="py-20 px-6 bg-black">
-    <div class="max-w-3xl mx-auto">
-     <div class="text-center mb-12">
-      <h2 id="form-title" class="font-bebas text-6xl text-white mb-4 text-glow-red">📝 KAYIT FORMU</h2>
-      <p class="font-rajdhani text-lg text-gray-400">⚠️ Lütfen bilgilerinizi eksiksiz ve doğru giriniz</p>
-     </div><!-- Success Message (Hidden by default) -->
-     <div id="success-message" class="hidden bg-gradient-to-r from-green-900/50 to-green-800/50 border-2 border-green-500 rounded-2xl p-8 mb-8 text-center success-bounce">
-      <div class="text-6xl mb-4">
-       🎉
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 bg-black border-t border-gray-800">
+      <div class="max-w-6xl mx-auto text-center">
+        <p class="font-rajdhani text-sm text-gray-500">© 2026 <a href="/">Anatolian Warriors</a>. Tüm hakları saklıdır.</p>
       </div>
-      <h3 class="font-bebas text-4xl text-green-400 mb-3">BAŞVURUN ALINDI!</h3>
-      <p class="font-bebas text-2xl text-white">ANATOLIAN WARRIORS AİLESİNE HOŞ GELDİN! 💪</p>
- <!-- <p id="success-message-text" class="font-rajdhani text-xl text-gray-300 mb-2">En kısa sürede seninle iletişime geçeceğiz.</p>-->
-      <p id="success-message-text" class="font-rajdhani text-xl text-gray-300 mb-2">🚨 Kaydınla ilgili sana bir mesaj gönderdik. Eğer birkaç dakika içinde mesaj ulaşmazsa, aşağıdaki WhatsApp düğmesi üzerinden mutlaka bizimle iletişime geç.</p>
-     </div><!-- Form -->
-     <form id="registration-form" class="space-y-8"><!-- Personal Information -->
-      <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-red-600/30 rounded-2xl p-8">
-       <h3 class="font-bebas text-3xl text-red-500 mb-6">🔹 KİŞİSEL BİLGİLER</h3>
-       <div class="space-y-4">
-        <div><label class="block font-rajdhani text-white font-semibold mb-2" for="full-name">Ad Soyad *</label> <input type="text" id="full-name" required class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
-        </div>
-        <div class="grid md:grid-cols-2 gap-4">
-         <div><label class="block font-rajdhani text-white font-semibold mb-2" for="birth-date">Doğum Tarihi *</label> <input type="date" id="birth-date" required class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
-         </div>
-         <div><label class="block font-rajdhani text-white font-semibold mb-2" for="gender">Cinsiyet *</label> <select id="gender" required class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all"> <option value="">Seçiniz</option> <option value="Erkek">Erkek</option> <option value="Kadın">Kadın</option> <option value="Belirtmek İstemiyorum">Belirtmek İstemiyorum</option> </select>
-         </div>
-        </div>
-        <div><label class="block font-rajdhani text-white font-semibold mb-2" for="phone">Telefon Numarası *</label> <input type="tel" id="phone" required placeholder="+90 5XX XXX XX XX" class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
-        </div>
-        <div><label class="block font-rajdhani text-white font-semibold mb-2" for="email">E-posta Adresi *</label> <input type="email" id="email" required class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
-        </div>
-        <div><label class="block font-rajdhani text-white font-semibold mb-2" for="city">Yaşadığınız Şehir / Ülke *</label> <input type="text" id="city" required placeholder="Örn: İstanbul, Türkiye" class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
-        </div>
-       </div>
-      </div><!-- Physical Information -->
-      <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-orange-600/30 rounded-2xl p-8">
-       <h3 class="font-bebas text-3xl text-orange-500 mb-6">🔹 FİZİKSEL BİLGİLER</h3>
-       <div class="space-y-4">
-        <div class="grid md:grid-cols-2 gap-4">
-         <div><label class="block font-rajdhani text-white font-semibold mb-2" for="height">Boy (cm) *</label> <input type="number" id="height" required min="100" max="250" class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
-         </div>
-         <div><label class="block font-rajdhani text-white font-semibold mb-2" for="weight">Kilo (kg) *</label> <input type="number" id="weight" required min="30" max="200" class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
-         </div>
-        </div>
-        <div><label class="block font-rajdhani text-white font-semibold mb-2" for="previous-experience">Daha önce benzer yarışmalara katıldınız mı? *</label> <select id="previous-experience" required class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all"> <option value="">Seçiniz</option> <option value="Evet">Evet</option> <option value="Hayır">Hayır</option> </select>
-        </div>
-        <div><label class="block font-rajdhani text-white font-semibold mb-2" for="sports-background">Spor geçmişiniz var mı? (Kısa açıklama)</label> <textarea id="sports-background" rows="3" placeholder="Örn: 5 yıl CrossFit, 3 yıl jimnastik..." class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all"></textarea>
-        </div>
-       </div>
-      </div><!-- Emergency Contact -->
-      <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-red-600/30 rounded-2xl p-8">
-       <h3 class="font-bebas text-3xl text-red-500 mb-6">🔹 ACİL DURUM BİLGİSİ</h3>
-       <div class="space-y-4">
-        <div><label class="block font-rajdhani text-white font-semibold mb-2" for="emergency-name">Acil durumda aranacak kişi adı *</label> <input type="text" id="emergency-name" required class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
-        </div>
-        <div><label class="block font-rajdhani text-white font-semibold mb-2" for="emergency-phone">Acil durum telefon numarası *</label> <input type="tel" id="emergency-phone" required placeholder="+90 5XX XXX XX XX" class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
-        </div>
-       </div>
-      </div><!-- Consent Checkboxes -->
-      <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-yellow-600/30 rounded-2xl p-8">
-       <h3 class="font-bebas text-3xl text-yellow-500 mb-6">⚠️ ONAY KUTULARI</h3>
-       <div class="space-y-4"><label class="flex items-start gap-3 cursor-pointer group"> <input type="checkbox" id="accept-age" required class="mt-1 w-5 h-5 accent-red-600"> <span class="font-rajdhani text-gray-300 group-hover:text-white transition-colors">15 yaşından büyük olduğumu beyan ederim *</span> </label> <label class="flex items-start gap-3 cursor-pointer group"> <input type="checkbox" id="accept-health" required class="mt-1 w-5 h-5 accent-red-600"> <span class="font-rajdhani text-gray-300 group-hover:text-white transition-colors">Sağlık durumumun bu yarışmaya katılmaya uygun olduğunu kabul ediyorum *</span> </label> <label class="flex items-start gap-3 cursor-pointer group"> <input type="checkbox" id="accept-risks" required class="mt-1 w-5 h-5 accent-red-600"> <span class="font-rajdhani text-gray-300 group-hover:text-white transition-colors">Yarışmanın fiziksel riskler içerdiğini biliyorum ve sorumluluğu kabul ediyorum *</span> </label> <label class="flex items-start gap-3 cursor-pointer group"> <input type="checkbox" id="accept-media" required class="mt-1 w-5 h-5 accent-red-600"> <span class="font-rajdhani text-gray-300 group-hover:text-white transition-colors">Organizasyon sırasında çekilen fotoğraf ve videolarımın kullanılmasını kabul ediyorum *</span> </label> <label class="flex items-start gap-3 cursor-pointer group"> <input type="checkbox" id="accept-rules" required class="mt-1 w-5 h-5 accent-red-600"> <span class="font-rajdhani text-gray-300 group-hover:text-white transition-colors"><a style="color: green;" href="/Hakkimizda.html" target="_blank" rel="noopener noreferrer" class="inline-block group relative">Kuralları</a> okudum ve kabul ediyorum *</span> </label>
-       </div>
-      </div><!-- Payment Note -->
-      <div class="bg-gradient-to-r from-blue-900/30 to-transparent border-l-4 border-blue-500 p-6 rounded-lg">
-       <p class="font-rajdhani text-sm text-blue-400 mb-2">💳 ÖDEME BİLGİSİ</p>
-       <p class="font-rajdhani text-gray-300">Kayıt başvurunuz alındıktan sonra ödeme bilgileri tarafınıza SMS yoluyla iletilecektir. Kayıt ücreti <strong class="text-white">iade edilmez</strong>.</p>
-      </div><!-- Important Note -->
-      <div class="bg-gradient-to-r from-yellow-900/30 to-transparent border-l-4 border-yellow-500 p-6 rounded-lg">
-       <p class="font-rajdhani text-sm text-yellow-400 mb-2">🚨 ÖNEMLİ NOT</p>
-       <p class="font-rajdhani text-gray-300">Başvurunun doldurulması, yarışmaya kesin katılım anlamına gelmez. Organizasyon, ön değerlendirme yapma hakkını saklı tutar.</p>
-      </div><!-- Submit Button --> 
-<div class="flex justify-center">
-  <div 
-    class="g-recaptcha"
-    data-sitekey="6LeMC1osAAAAAIbeVUxEonENO6Al_ggK39O6oyLf">
+    </footer>
+
   </div>
-</div>
 
-<button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white font-bebas text-3xl py-6 rounded-xl transition-all duration-300 transform hover:scale-105 pulse-glow"> <span id="submit-button-text">🔥 ŞİMDİ BAŞVUR - WARRIOR OL!</span> </button>
-     </form>
-    </div>
-   </section><!-- WhatsApp Contact -->
-   <section class="py-12 px-6 bg-gray-950">
-    <div class="max-w-2xl mx-auto text-center">
-     <p class="font-rajdhani text-lg text-gray-400 mb-4">Merak ettiğiniz bir şey varsa</p><a href="https://wa.me/15482617439" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white font-rajdhani font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105">
-      <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-      </svg><span>WhatsApp'tan Bize Ulaşın</span> </a>
-    </div>
-   </section><!-- Footer -->
-   <footer class="py-8 px-6 bg-black border-t border-gray-800">
-    <div class="max-w-6xl mx-auto text-center">
-     <p class="font-rajdhani text-sm text-gray-500">© 2026 <a href="/">Anatolian Warriors</a>. Tüm hakları saklıdır.</p>
-    </div>
-   </footer>
-  </div>
-  
-
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c5451d451792468',t:'MTc2OTY0MzQ2Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxqU2T-yV9uW5lzCJRuu1P7mxwnKWJK3ro6qEfz5_lDOeL1fGbcjDMAGSZ4C-vLuRYSVg/exec";
-
-  const form = document.getElementById("registration-form");
-  const submitBtn = document.getElementById("submit-btn");
-  const submitText = document.getElementById("submit-button-text");
-  const successBox = document.getElementById("success-message");
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    submitBtn.disabled = true;
-    submitText.innerText = "📤 GÖNDERİLİYOR...";
-
-    const data = {
-      full_name: document.getElementById("full-name").value,
-      birth_date: document.getElementById("birth-date").value,
-      gender: document.getElementById("gender").value,
-      phone: document.getElementById("phone").value,
-      email: document.getElementById("email").value,
-      city: document.getElementById("city").value,
-      height: document.getElementById("height").value,
-      weight: document.getElementById("weight").value,
-      previous_experience: document.getElementById("previous-experience").value,
-      sports_background: document.getElementById("sports-background").value || "",
-      emergency_contact_name: document.getElementById("emergency-name").value,
-      emergency_contact_phone: document.getElementById("emergency-phone").value,
-      accept_age: document.getElementById("accept-age").checked,
-      accept_health: document.getElementById("accept-health").checked,
-      accept_risks: document.getElementById("accept-risks").checked,
-      accept_media: document.getElementById("accept-media").checked,
-      accept_rules: document.getElementById("accept-rules").checked,
-      recaptcha_token: grecaptcha.getResponse()
-    };
-
-    if (!data.recaptcha_token) {
-      alert("❗ Lütfen robot olmadığınızı doğrulayın.");
-      submitBtn.disabled = false;
-      submitText.innerText = "🔥 ŞİMDİ BAŞVUR - WARRIOR OL!";
-      return;
+  <!-- (Optional) Cloudflare snippet preserved from your original -->
+  <script>
+  (function(){
+    function c(){
+      var b=a.contentDocument||a.contentWindow.document;
+      if(b){
+        var d=b.createElement('script');
+        d.innerHTML="window.__CF$cv$params={r:'9c5451d451792468',t:'MTc2OTY0MzQ2Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+        b.getElementsByTagName('head')[0].appendChild(d);
+      }
     }
-
-    try {
-      const res = await fetch(SCRIPT_URL, {
-        method: "POST",
-        headers: { "Content-Type": "text/plain;charset=utf-8" },
-        body: JSON.stringify(data)
-      });
-
-      const text = await res.text();
-      let result;
-      try { result = JSON.parse(text); }
-      catch {
-        console.error("NOT JSON:", text);
-        throw new Error("Sunucudan geçersiz yanıt alındı.");
+    if(document.body){
+      var a=document.createElement('iframe');
+      a.height=1; a.width=1;
+      a.style.position='absolute';
+      a.style.top=0; a.style.left=0;
+      a.style.border='none';
+      a.style.visibility='hidden';
+      document.body.appendChild(a);
+      if('loading'!==document.readyState) c();
+      else if(window.addEventListener) document.addEventListener('DOMContentLoaded',c);
+      else {
+        var e=document.onreadystatechange||function(){};
+        document.onreadystatechange=function(b){
+          e(b);
+          'loading'!==document.readyState&&(document.onreadystatechange=e,c());
+        }
       }
+    }
+  })();
+  </script>
 
+  <!-- Form submit script (UPDATED for reCAPTCHA + JSON) -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // ✅ Put your latest Apps Script Web App URL here
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxqU2T-yV9uW5lzCJRuu1P7mxwnKWJK3ro6qEfz5_lDOeL1fGbcjDMAGSZ4C-vLuRYSVg/exec";
 
+    const form = document.getElementById("registration-form");
+    const submitBtn = document.getElementById("submit-btn");
+    const submitText = document.getElementById("submit-button-text");
+    const successBox = document.getElementById("success-message");
 
-console.log("SERVER RESULT:", result);
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
 
+      submitBtn.disabled = true;
+      submitText.innerText = "📤 GÖNDERİLİYOR...";
 
-      if (result.success) {
-        form.classList.add("hidden");
-        successBox.classList.remove("hidden");
-        successBox.scrollIntoView({ behavior: "smooth" });
-        grecaptcha.reset();
-        return;
-      }
-
-      if (result.duplicate) {
-        alert("❗ Bu telefon numarası ile daha önce kayıt yapılmış.");
-        grecaptcha.reset();
+      // ✅ ensure reCAPTCHA is loaded
+      if (!window.grecaptcha || typeof grecaptcha.getResponse !== "function") {
+        alert("❗ reCAPTCHA yüklenemedi. Lütfen sayfayı yenileyin.");
         submitBtn.disabled = false;
         submitText.innerText = "🔥 ŞİMDİ BAŞVUR - WARRIOR OL!";
         return;
       }
 
-      throw new Error(result.error || "Bilinmeyen hata");
+      const recaptchaToken = grecaptcha.getResponse();
+      if (!recaptchaToken) {
+        alert("❗ Lütfen robot olmadığınızı doğrulayın.");
+        submitBtn.disabled = false;
+        submitText.innerText = "🔥 ŞİMDİ BAŞVUR - WARRIOR OL!";
+        return;
+      }
 
-    } catch (err) {
-      console.error("FETCH ERROR:", err);
-      alert("❌ Form gönderilirken hata oluştu: " + (err.message || err));
-      grecaptcha.reset();
-      submitBtn.disabled = false;
-      submitText.innerText = "🔥 ŞİMDİ BAŞVUR - WARRIOR OL!";
-    }
+      const data = {
+        full_name: document.getElementById("full-name").value,
+        birth_date: document.getElementById("birth-date").value,
+        gender: document.getElementById("gender").value,
+        phone: document.getElementById("phone").value,
+        email: document.getElementById("email").value,
+        city: document.getElementById("city").value,
+        height: document.getElementById("height").value,
+        weight: document.getElementById("weight").value,
+        previous_experience: document.getElementById("previous-experience").value,
+        sports_background: document.getElementById("sports-background").value || "",
+        emergency_contact_name: document.getElementById("emergency-name").value,
+        emergency_contact_phone: document.getElementById("emergency-phone").value,
+        accept_age: document.getElementById("accept-age").checked,
+        accept_health: document.getElementById("accept-health").checked,
+        accept_risks: document.getElementById("accept-risks").checked,
+        accept_media: document.getElementById("accept-media").checked,
+        accept_rules: document.getElementById("accept-rules").checked,
+        recaptcha_token: recaptchaToken
+      };
+
+      try {
+        const res = await fetch(SCRIPT_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json;charset=utf-8" },
+          body: JSON.stringify(data)
+        });
+
+        const text = await res.text();
+        let result;
+        try { result = JSON.parse(text); }
+        catch {
+          console.error("NOT JSON:", text);
+          throw new Error("Sunucudan geçersiz yanıt alındı.");
+        }
+
+        console.log("SERVER RESULT:", result);
+
+        if (result.success) {
+          form.classList.add("hidden");
+          successBox.classList.remove("hidden");
+          successBox.scrollIntoView({ behavior: "smooth" });
+          try { grecaptcha.reset(); } catch(e) {}
+          return;
+        }
+
+        if (result.duplicate) {
+          alert("❗ Bu telefon numarası ile daha önce kayıt yapılmış.");
+          try { grecaptcha.reset(); } catch(e) {}
+          submitBtn.disabled = false;
+          submitText.innerText = "🔥 ŞİMDİ BAŞVUR - WARRIOR OL!";
+          return;
+        }
+
+        if (result.error === "reCAPTCHA verification failed.") {
+          alert("❗ reCAPTCHA doğrulaması başarısız. Lütfen tekrar deneyin.");
+          try { grecaptcha.reset(); } catch(e) {}
+          submitBtn.disabled = false;
+          submitText.innerText = "🔥 ŞİMDİ BAŞVUR - WARRIOR OL!";
+          return;
+        }
+
+        throw new Error(result.error || "Bilinmeyen hata");
+
+      } catch (err) {
+        console.error("FETCH ERROR:", err);
+        alert("❌ Form gönderilirken hata oluştu: " + (err.message || err));
+        try { grecaptcha.reset(); } catch(e) {}
+        submitBtn.disabled = false;
+        submitText.innerText = "🔥 ŞİMDİ BAŞVUR - WARRIOR OL!";
+      }
+    });
   });
-});
-</script>
+  </script>
 
 </body>
 </html>
-
-
-
-
-
-
