@@ -285,60 +285,53 @@
   }
 
   form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const data = getFormData();
+  const data = getFormData();
 
-    // basic guard
-    if (!data.company_name || !data.sector || !data.full_name || !data.email || !data.phone || !data.message) {
-      showBox("err", "Lütfen zorunlu alanları doldurun.");
-      return;
-    }
+  if (!data.company_name || !data.sector || !data.full_name || !data.email || !data.phone || !data.message) {
+    showBox("err", "Lütfen zorunlu alanları doldurun.");
+    return;
+  }
 
-    setSubmitting(true);
+  setSubmitting(true);
 
-    try {
-      // ✅ Send to Apps Script (avoid CORS preflight by using text/plain)
-      const payload = {
-        action: "lead.create",
-        data: {
-          company_name: data.company_name,
-          sector: data.sector,
-          full_name: data.full_name,
-          email: data.email,
-          phone: data.phone,
-          budget_range: data.budget_range || "",
-          package_interest: data.package_interest || "",
-          goals: data.goals || "",
-          message: data.message,
-          source_page: "Sponsorluk.html"
-        }
-      };
-
-      const res = await fetch(FORM_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "text/plain;charset=utf-8" },
-        body: JSON.stringify(payload)
-      });
-
-      let out = null;
-      try { out = await res.json(); } catch (_) {}
-
-      if (!res.ok || !out || out.ok !== true) {
-        throw new Error((out && out.error) ? out.error : "Request failed");
+  try {
+    const payload = {
+      action: "lead.create",
+      data: {
+        company_name: data.company_name,
+        sector: data.sector,
+        full_name: data.full_name,
+        email: data.email,
+        phone: data.phone,
+        budget_range: data.budget_range || "",
+        package_interest: data.package_interest || "",
+        goals: data.goals || "",
+        message: data.message,
+        source_page: "Sponsorluk.html"
       }
+    };
 
-      showBox("ok", "Başvurunuz alındı ✅ Ekibimiz en kısa sürede sizinle iletişime geçecek.");
-      form.reset();
-    } catch (err) {
-      // fallback to mailto (optional)
-      // window.location.href = toMailto(data);
-      showBox("err", "Gönderilemedi. Lütfen tekrar deneyin. (Gerekirse e-posta ile gönderebilirsiniz.)");
-      console.error(err);
-    } finally {
-      setSubmitting(false);
-    }
-  });
+    // ✅ IMPORTANT: no-cors to avoid false "failed" due to CORS response blocking
+    await fetch(FORM_ENDPOINT, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(payload)
+    });
+
+    // ✅ If request is sent, we treat it as success (server already saves + emails)
+    showBox("ok", "Başvurunuz alındı ✅ Ekibimiz en kısa sürede sizinle iletişime geçecek.");
+    form.reset();
+
+  } catch (err) {
+    console.error(err);
+    showBox("err", "Gönderilemedi. Lütfen tekrar deneyin. (Gerekirse e-posta ile gönderebilirsiniz.)");
+  } finally {
+    setSubmitting(false);
+  }
+});
 </script>
 </body>
 </html>
