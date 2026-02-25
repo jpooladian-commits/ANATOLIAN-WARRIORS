@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="tr" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anatolian Warriors - Sponsorluk Başvurusu</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body { box-sizing: border-box; }
+    .font-bebas { font-family: 'Bebas Neue', sans-serif; }
+    .font-rajdhani { font-family: 'Rajdhani', sans-serif; }
+
+    .bg-pattern {
+      background-image:
+        radial-gradient(circle at 20% 80%, rgba(220, 38, 38, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.10) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(30, 30, 30, 1) 0%, rgba(10, 10, 10, 1) 100%);
+    }
+
+    .glass {
+      background: rgba(0,0,0,0.28);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .soft-border {
+      border: 1px solid rgba(239, 68, 68, 0.28);
+    }
+
+    .field {
+      background: rgba(0,0,0,0.25);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: rgba(248,250,252,0.92);
+      outline: none;
+    }
+    .field:focus {
+      border-color: rgba(239, 68, 68, 0.75);
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.20);
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 18px rgba(220, 38, 38, 0.55), 0 0 36px rgba(220, 38, 38, 0.22); }
+      50% { box-shadow: 0 0 28px rgba(220, 38, 38, 0.75), 0 0 60px rgba(220, 38, 38, 0.35); }
+    }
+    .btn-glow { animation: pulse-glow 2s ease-in-out infinite; }
+  </style>
+</head>
+
+<body class="h-full bg-pattern text-white">
+  <div class="min-h-screen w-full flex items-center justify-center px-4 py-10">
+    <div class="w-full max-w-3xl">
+
+      <!-- Header -->
+      <div class="text-center mb-6">
+        <a href="/" class="inline-block">
+          <div class="font-bebas tracking-[0.18em] text-4xl md:text-5xl text-white">
+            ANATOLIAN <span class="text-red-500">WARRIORS</span>
+          </div>
+        </a>
+        <div class="font-rajdhani text-gray-300 mt-2 text-base md:text-lg">
+          Sponsorluk Başvurusu Formu
+        </div>
+
+        <div class="mt-4 flex flex-wrap items-center justify-center gap-2">
+          <a href="/Hakkimizda.html" class="px-4 py-2 rounded-xl glass soft-border font-rajdhani font-bold text-sm hover:bg-red-600/10 transition">
+            Hakkımızda
+          </a>
+          <a href="/Sponsorlar.html" class="px-4 py-2 rounded-xl glass soft-border font-rajdhani font-bold text-sm hover:bg-red-600/10 transition">
+            Mevcut Sponsorlar
+          </a>
+          <a href="/Iletisim.html" class="px-4 py-2 rounded-xl glass soft-border font-rajdhani font-bold text-sm hover:bg-red-600/10 transition">
+            İletişim
+          </a>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="glass rounded-2xl p-5 md:p-7 soft-border">
+        <div class="flex items-start gap-3 mb-5">
+          <div class="w-10 h-10 rounded-xl bg-red-600/20 border border-red-500/30 flex items-center justify-center">
+            🤝
+          </div>
+          <div>
+            <div class="font-rajdhani font-extrabold text-xl md:text-2xl">
+              Markanızı sahaya taşıyalım
+            </div>
+            <div class="font-rajdhani text-gray-300 text-sm md:text-base mt-1">
+              Başvurunuzu doldurun. Ekibimiz en kısa sürede sizinle iletişime geçsin.
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <form id="sponsorForm" class="space-y-5">
+
+          <!-- Company row -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="font-rajdhani font-bold text-sm text-gray-200">Şirket / Marka Adı *</label>
+              <input name="company_name" required class="field w-full mt-2 px-4 py-3 rounded-xl" placeholder="Örn: ABC Holding" />
+            </div>
+            <div>
+              <label class="font-rajdhani font-bold text-sm text-gray-200">Sektör *</label>
+              <select name="sector" required class="field w-full mt-2 px-4 py-3 rounded-xl">
+                <option value="" disabled selected>Seçiniz</option>
+                <option>Otomotiv</option>
+                <option>Finans / Banka</option>
+                <option>Teknoloji</option>
+                <option>Enerji</option>
+                <option>Perakende</option>
+                <option>Gıda / İçecek</option>
+                <option>Sağlık</option>
+                <option>Turizm</option>
+                <option>Diğer</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Contact row -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="md:col-span-1">
+              <label class="font-rajdhani font-bold text-sm text-gray-200">Yetkili Ad Soyad *</label>
+              <input name="full_name" required class="field w-full mt-2 px-4 py-3 rounded-xl" placeholder="Örn: Ahmet Yılmaz" />
+            </div>
+            <div class="md:col-span-1">
+              <label class="font-rajdhani font-bold text-sm text-gray-200">E-posta *</label>
+              <input name="email" type="email" required class="field w-full mt-2 px-4 py-3 rounded-xl" placeholder="ornek@firma.com" />
+            </div>
+            <div class="md:col-span-1">
+              <label class="font-rajdhani font-bold text-sm text-gray-200">Telefon *</label>
+              <input name="phone" required class="field w-full mt-2 px-4 py-3 rounded-xl" placeholder="+90 5xx xxx xx xx" />
+            </div>
+          </div>
+
+          <!-- Budget / Package -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="font-rajdhani font-bold text-sm text-gray-200">Tahmini Bütçe Aralığı</label>
+              <select name="budget_range" class="field w-full mt-2 px-4 py-3 rounded-xl">
+                <option value="" selected>Seçiniz (opsiyonel)</option>
+                <option>250.000 TL altı</option>
+                <option>250.000 – 750.000 TL</option>
+                <option>750.000 – 2.000.000 TL</option>
+                <option>2.000.000 TL ve üzeri</option>
+              </select>
+            </div>
+            <div>
+              <label class="font-rajdhani font-bold text-sm text-gray-200">İlgilendiğiniz Paket</label>
+              <select name="package_interest" class="field w-full mt-2 px-4 py-3 rounded-xl">
+                <option value="" selected>Seçiniz (opsiyonel)</option>
+                <option>Title Sponsor</option>
+                <option>Ana Sponsor</option>
+                <option>Resmi Partner</option>
+                <option>Ürün / Hizmet Sponsorluğu</option>
+                <option>Medya Partnerliği</option>
+                <option>Karar vermedim</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Goals -->
+          <div>
+            <div class="font-rajdhani font-bold text-sm text-gray-200">Hedefiniz nedir? (birden fazla seçebilirsiniz)</div>
+            <div class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-3">
+              <label class="glass rounded-xl px-4 py-3 soft-border cursor-pointer flex items-center gap-3">
+                <input type="checkbox" name="goal" value="Marka bilinirliği" class="accent-red-500">
+                <span class="font-rajdhani font-semibold text-gray-100">Marka bilinirliği</span>
+              </label>
+              <label class="glass rounded-xl px-4 py-3 soft-border cursor-pointer flex items-center gap-3">
+                <input type="checkbox" name="goal" value="Satış / Lead" class="accent-red-500">
+                <span class="font-rajdhani font-semibold text-gray-100">Satış / Lead</span>
+              </label>
+              <label class="glass rounded-xl px-4 py-3 soft-border cursor-pointer flex items-center gap-3">
+                <input type="checkbox" name="goal" value="İşveren markası" class="accent-red-500">
+                <span class="font-rajdhani font-semibold text-gray-100">İşveren markası</span>
+              </label>
+              <label class="glass rounded-xl px-4 py-3 soft-border cursor-pointer flex items-center gap-3">
+                <input type="checkbox" name="goal" value="Topluluk / PR" class="accent-red-500">
+                <span class="font-rajdhani font-semibold text-gray-100">Topluluk / PR</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div>
+            <label class="font-rajdhani font-bold text-sm text-gray-200">Mesajınız / İstekleriniz *</label>
+            <textarea name="message" required rows="5"
+              class="field w-full mt-2 px-4 py-3 rounded-xl"
+              placeholder="Hangi şehir, hangi dönem, ne tür görünürlük istediğiniz vb."></textarea>
+            <div class="font-rajdhani text-xs text-gray-400 mt-2">
+              Not: Başvurunuzu hızlandırmak için hedef kitleniz, kampanya planınız veya brief’inizi yazabilirsiniz.
+            </div>
+          </div>
+
+          <!-- Consent -->
+          <div class="flex items-start gap-3 glass rounded-xl px-4 py-3 soft-border">
+            <input id="consent" type="checkbox" required class="mt-1 accent-red-500">
+            <label for="consent" class="font-rajdhani text-sm text-gray-200">
+              Verdiğim bilgilerin, sponsorluk başvurusu değerlendirmesi için kullanılmasını kabul ediyorum.
+            </label>
+          </div>
+
+          <!-- Actions -->
+          <div class="flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
+            <div class="font-rajdhani text-sm text-gray-400">
+              Alternatif: WhatsApp üzerinden hızlı iletişim
+              <a class="text-red-400 font-bold hover:underline" href="https://wa.me/" target="_blank" rel="noopener noreferrer">tıklayın</a>
+            </div>
+
+            <button type="submit"
+              class="relative overflow-hidden px-7 py-4 rounded-xl font-bebas text-xl tracking-wider bg-gradient-to-r from-red-700 to-red-500 border-2 border-red-400 hover:border-red-300 hover:scale-[1.02] transition btn-glow">
+              BAŞVURUYU GÖNDER
+            </button>
+          </div>
+
+          <!-- Result -->
+          <div id="resultBox" class="hidden mt-4 rounded-xl px-4 py-3 font-rajdhani"></div>
+        </form>
+      </div>
+
+      <!-- Footer -->
+      <div class="text-center mt-6 text-gray-500 font-rajdhani text-xs">
+        © 2026 Anatolian Warriors. Tüm hakları saklıdır.
+      </div>
+    </div>
+  </div>
+
+<script>
+  // ✅ Web App URL (Apps Script)
+  const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycby2H1zdlta9fMfjwDATCmxzLDNxbdtn8hr9fmfaWV2VdsMEB1Fk8uw9l_5BrO4xZVtn/exec";
+
+  const TO_EMAIL = "info@anatolianwarriors.com.tr";
+  const SUBJECT = "Sponsorluk Başvurusu - Anatolian Warriors";
+
+  const form = document.getElementById("sponsorForm");
+  const box = document.getElementById("resultBox");
+
+  function showBox(type, msg) {
+    box.className =
+      "mt-4 rounded-xl px-4 py-3 font-rajdhani soft-border " +
+      (type === "ok" ? "bg-green-600/10 text-green-200" : "bg-red-600/10 text-red-200");
+    box.textContent = msg;
+    box.classList.remove("hidden");
+  }
+
+  function setSubmitting(isSubmitting) {
+    const btn = form.querySelector('button[type="submit"]');
+    if (!btn) return;
+    btn.disabled = isSubmitting;
+    btn.style.opacity = isSubmitting ? "0.75" : "1";
+    btn.style.cursor = isSubmitting ? "not-allowed" : "pointer";
+  }
+
+  function getFormData() {
+    const fd = new FormData(form);
+    const goals = [];
+    form.querySelectorAll('input[name="goal"]:checked').forEach(el => goals.push(el.value));
+
+    const obj = Object.fromEntries(fd.entries());
+    obj.goals = goals.join(", ");
+    return obj;
+  }
+
+  function toMailto(data) {
+    const lines = [
+      `Şirket/Marka: ${data.company_name || "-"}`,
+      `Sektör: ${data.sector || "-"}`,
+      `Yetkili: ${data.full_name || "-"}`,
+      `E-posta: ${data.email || "-"}`,
+      `Telefon: ${data.phone || "-"}`,
+      `Bütçe: ${data.budget_range || "-"}`,
+      `Paket: ${data.package_interest || "-"}`,
+      `Hedefler: ${data.goals || "-"}`,
+      ``,
+      `Mesaj:`,
+      `${data.message || "-"}`
+    ];
+    const body = encodeURIComponent(lines.join("\n"));
+    const subject = encodeURIComponent(SUBJECT);
+    return `mailto:${encodeURIComponent(TO_EMAIL)}?subject=${subject}&body=${body}`;
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const data = getFormData();
+
+    // basic guard
+    if (!data.company_name || !data.sector || !data.full_name || !data.email || !data.phone || !data.message) {
+      showBox("err", "Lütfen zorunlu alanları doldurun.");
+      return;
+    }
+
+    setSubmitting(true);
+
+    try {
+      // ✅ Send to Apps Script (avoid CORS preflight by using text/plain)
+      const payload = {
+        action: "lead.create",
+        data: {
+          company_name: data.company_name,
+          sector: data.sector,
+          full_name: data.full_name,
+          email: data.email,
+          phone: data.phone,
+          budget_range: data.budget_range || "",
+          package_interest: data.package_interest || "",
+          goals: data.goals || "",
+          message: data.message,
+          source_page: "Sponsorluk.html"
+        }
+      };
+
+      const res = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload)
+      });
+
+      let out = null;
+      try { out = await res.json(); } catch (_) {}
+
+      if (!res.ok || !out || out.ok !== true) {
+        throw new Error((out && out.error) ? out.error : "Request failed");
+      }
+
+      showBox("ok", "Başvurunuz alındı ✅ Ekibimiz en kısa sürede sizinle iletişime geçecek.");
+      form.reset();
+    } catch (err) {
+      // fallback to mailto (optional)
+      // window.location.href = toMailto(data);
+      showBox("err", "Gönderilemedi. Lütfen tekrar deneyin. (Gerekirse e-posta ile gönderebilirsiniz.)");
+      console.error(err);
+    } finally {
+      setSubmitting(false);
+    }
+  });
+</script>
+</body>
+</html>
