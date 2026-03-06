@@ -1,30 +1,46 @@
 <!doctype html>
 <html lang="tr" class="h-full">
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-W6LQTKR9P3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-W6LQTKR9P3');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W6LQTKR9P3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-W6LQTKR9P3');
+  </script>
+
   <meta name="google-site-verification" content="y1dW25xZokS_XC6GpeCSsbPBeTHNA8R1Zcnbfi7YaUM" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anatolian Warriors - GÜÇLÜ TÜRKİYE</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Rajdhani:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700;800&display=swap" rel="stylesheet">
   <script src="/_sdk/element_sdk.js"></script>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
 
   <style>
-    body { box-sizing: border-box; }
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      box-sizing: border-box;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
 
     .font-bebas { font-family: 'Bebas Neue', sans-serif; }
     .font-rajdhani { font-family: 'Rajdhani', sans-serif; }
 
     @keyframes pulse-glow {
-      0%, 100% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.6), 0 0 40px rgba(220, 38, 38, 0.3); }
-      50% { box-shadow: 0 0 30px rgba(220, 38, 38, 0.8), 0 0 60px rgba(220, 38, 38, 0.5); }
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(220, 38, 38, 0.6), 0 0 40px rgba(220, 38, 38, 0.3);
+      }
+      50% {
+        box-shadow: 0 0 30px rgba(220, 38, 38, 0.8), 0 0 60px rgba(220, 38, 38, 0.5);
+      }
     }
 
     @keyframes loading-progress {
@@ -49,6 +65,21 @@
     @keyframes slide-up {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes prize-soft-glow {
+      0%, 100% {
+        box-shadow:
+          0 0 0 1px rgba(248, 113, 113, 0.25) inset,
+          0 0 30px rgba(220, 38, 38, 0.28),
+          0 0 70px rgba(220, 38, 38, 0.18);
+      }
+      50% {
+        box-shadow:
+          0 0 0 1px rgba(248, 113, 113, 0.35) inset,
+          0 0 45px rgba(239, 68, 68, 0.36),
+          0 0 95px rgba(239, 68, 68, 0.22);
+      }
     }
 
     .animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
@@ -81,7 +112,6 @@
         radial-gradient(circle at 50% 50%, rgba(30, 30, 30, 1) 0%, rgba(10, 10, 10, 1) 100%);
     }
 
-    /* ====== Title: always ONE LINE + auto scale ====== */
     #main-title {
       margin: 4px 0;
       line-height: 0.9;
@@ -92,7 +122,6 @@
       letter-spacing: 0.08em;
     }
 
-    /* ====== Official permissions ticker ====== */
     @keyframes org-fade-up {
       0%   { opacity: 0; transform: translateY(10px); }
       18%  { opacity: .88; transform: translateY(0px); }
@@ -125,10 +154,12 @@
       z-index: 1;
       opacity: 0.65;
     }
+
     .org-ticker::before {
       top: 0;
       background: linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0));
     }
+
     .org-ticker::after {
       bottom: 0;
       background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0));
@@ -170,80 +201,165 @@
       .org-ticker { max-width: 22rem; }
     }
 
-    /* ====== NO SCROLL (both) ====== */
-    html, body { height: 100%; }
-    body { overflow: hidden; }
+    .quick-actions {
+      width: 100%;
+      max-width: 26rem;
+      margin: 12px auto 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
 
-    /* ====== NEW: Quick action buttons ====== */
-    /* ====== Quick action buttons (Mobile good / Desktop bigger) ====== */
-.quick-actions{
-  width: 100%;
-  max-width: 26rem;          /* موبایل جمع‌وجور */
-  margin: 10px auto 0 auto;
-  display: grid;
-  grid-template-columns: 1fr; /* موبایل: ستونی */
-  gap: 10px;
-}
+    .qa-btn {
+      width: 100%;
+      min-width: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(239, 68, 68, 0.35);
+      background: rgba(0,0,0,0.18);
+      color: rgba(248,250,252,0.92);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      transition: transform .2s ease, border-color .2s ease, background-color .2s ease, box-shadow .2s ease;
+      text-decoration: none;
+      text-align: center;
+    }
 
-/* دکمه‌ها */
-.qa-btn{
-  width: 100%;
-  min-width: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 14px 16px;         /* موبایل: همون حس خوب */
-  border-radius: 14px;
-  border: 1px solid rgba(239, 68, 68, 0.35);
-  background: rgba(0,0,0,0.18);
-  color: rgba(248,250,252,0.92);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  transition: transform .2s ease, border-color .2s ease, background-color .2s ease;
-  text-decoration: none;
-  text-align: center;
-}
+    .qa-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(239, 68, 68, 0.7);
+      background: rgba(220,38,38,0.18);
+    }
 
-.qa-btn:hover{
-  transform: translateY(-2px);
-  border-color: rgba(239, 68, 68, 0.7);
-  background: rgba(220,38,38,0.18);
-}
+    .qa-text {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      line-height: 1;
+    }
 
-.qa-text{
-  font-family: 'Rajdhani', sans-serif;
-  font-weight: 800;
-  font-size: 14px;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  white-space: nowrap;        /* ✅ فقط یک خط */
-  line-height: 1;
-}
+    .prize-card {
+      position: relative;
+      width: 100%;
+      max-width: 26rem;
+      margin: 4px auto 0 auto;
+      padding: 18px 18px 16px;
+      border-radius: 18px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      color: #fff;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.06) 0%, rgba(15, 23, 42, 0) 55%),
+        linear-gradient(180deg, rgba(18, 28, 52, 0.98) 0%, rgba(17, 24, 39, 0.98) 100%);
+      border: 1px solid rgba(248, 113, 113, 0.3);
+      animation: prize-soft-glow 2.6s ease-in-out infinite;
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
 
-/* ✅ فقط دسکتاپ: کادرها بزرگ‌تر و سه‌تایی کنار هم */
-@media (min-width: 768px){
-  .quick-actions{
-    max-width: 46rem;                 /* کل ردیف عریض‌تر */
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 14px;
-  }
+    .prize-card::before {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      background: radial-gradient(circle, rgba(239, 68, 68, 0.18) 0%, rgba(239, 68, 68, 0) 65%);
+      z-index: 0;
+      pointer-events: none;
+    }
 
-  .qa-btn{
-    padding: 18px 18px;               /* کادر بزرگ‌تر */
-    border-radius: 16px;
-    min-height: 62px;                 /* ارتفاع ثابت و شیک */
-  }
+    .prize-card:hover {
+      transform: translateY(-3px) scale(1.01);
+      border-color: rgba(252, 165, 165, 0.5);
+    }
 
-  .qa-text{
-    font-size: 15px;                  /* کمی خواناتر */
-    letter-spacing: .06em;
-  }
-}
+    .prize-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .prize-icon {
+      font-size: 30px;
+      line-height: 1;
+      filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.28));
+    }
+
+    .prize-label {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(203, 213, 225, 0.86);
+      line-height: 1.2;
+    }
+
+    .prize-amount {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2rem, 6vw, 3rem);
+      line-height: 1;
+      letter-spacing: -.02em;
+      color: #ff5a5f;
+      text-shadow:
+        0 0 8px rgba(255, 90, 95, 0.22),
+        0 0 22px rgba(220, 38, 38, 0.18);
+    }
+
+    .prize-note {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(226, 232, 240, 0.72);
+      letter-spacing: .04em;
+    }
+
+    @media (min-width: 768px) {
+      .quick-actions {
+        max-width: 46rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .qa-btn {
+        padding: 18px 18px;
+        border-radius: 16px;
+        min-height: 62px;
+      }
+
+      .qa-text {
+        font-size: 15px;
+        letter-spacing: .06em;
+      }
+
+      .prize-card {
+        max-width: 46rem;
+        padding: 24px 20px 20px;
+        border-radius: 20px;
+      }
+
+      .prize-icon {
+        font-size: 34px;
+      }
+
+      .prize-label {
+        font-size: 14px;
+      }
+    }
   </style>
 
-  <style>@view-transition { navigation: auto; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <style>
+    @view-transition { navigation: auto; }
+  </style>
 </head>
 
 <body class="h-full m-0 p-0 overflow-hidden">
@@ -288,17 +404,19 @@
         </p>
       </a>
 
-      <!-- ✅ NEW: Quick action buttons (Contact / Sponsorship / Sponsors) -->
+      <!-- Quick Action Buttons -->
       <div class="animate-slide-up" style="animation-delay:0.55s; opacity:0;">
         <div class="quick-actions" aria-label="Hızlı bağlantılar">
           <a class="qa-btn" href="/contactus.html" target="_blank" rel="noopener noreferrer">
             <span aria-hidden="true">☎️</span>
             <span class="qa-text">İletişim</span>
           </a>
+
           <a class="qa-btn" href="/applytoSponsorluk.html" target="_blank" rel="noopener noreferrer">
             <span aria-hidden="true">🤝</span>
             <span class="qa-text">Sponsorluk Başvurusu</span>
           </a>
+
           <a class="qa-btn" href="/Sponsorlar.html" target="_blank" rel="noopener noreferrer">
             <span aria-hidden="true">🏷️</span>
             <span class="qa-text">Mevcut Sponsorlar</span>
@@ -306,36 +424,30 @@
         </div>
       </div>
 
+      <!-- Prize Button / Card -->
+      <div class="animate-slide-up" style="animation-delay:0.58s; opacity:0;">
+        <a class="prize-card" href="/Odul.html" target="_blank" rel="noopener noreferrer" aria-label="Şampiyonluk Ödülü 1.000.000 TL">
+          <div class="prize-icon" aria-hidden="true">🏆</div>
+          <div class="prize-label">Şampiyonluk Ödülü</div>
+          <div class="prize-amount">1.000.000 TL</div>
+        </a>
+      </div>
+
       <!-- Loading Bar Container -->
       <div class="animate-slide-up" style="animation-delay:0.6s; opacity:0;">
         <div class="relative w-full max-w-md mx-auto">
           <div class="flex justify-between items-center mb-3">
-            <!-- <span class="font-rajdhani text-sm text-gray-400 uppercase tracking-widest">Hazırlık seviyemiz</span>-->
-           <!-- <span id="progress-text" class="font-bebas text-2xl text-red-500">0%</span>-->
+            <!-- <span class="font-rajdhani text-sm text-gray-400 uppercase tracking-widest">Hazırlık seviyemiz</span> -->
+            <!-- <span id="progress-text" class="font-bebas text-2xl text-red-500">0%</span> -->
           </div>
 
-         <!-- <div class="relative h-3 bg-gray-800 rounded-full overflow-hidden border border-gray-700">-->
-
-            <div class="loading-bar absolute top-0 left-0 h-full bg-gradient-to-r from-red-700 via-red-500 to-red-400 rounded-full animate-loading animate-pulse-glow overflow-hidden"></div>
-
-            <!--<div class="absolute inset-0 flex justify-between px-1 items-center pointer-events-none">
-              <div class="w-0.5 h-1.5 bg-gray-600 rounded"></div>
-              <div class="w-0.5 h-1.5 bg-gray-600 rounded"></div>
-              <div class="w-0.5 h-1.5 bg-gray-600 rounded"></div>
-              <div class="w-0.5 h-1.5 bg-gray-600 rounded"></div>
-              <div class="w-0.5 h-1.5 bg-gray-600 rounded"></div>
-            </div>-->
-
-          </div>
-
-          <!-- Official permissions ticker -->
+          
           <div class="org-ticker" aria-label="Resmi izin alınan kurumlar">
             <div id="org-line" class="org-line">
               <span class="org-label">İZİN:</span>
               <span class="org-text" id="org-text">—</span>
             </div>
           </div>
-
         </div>
       </div>
 
@@ -409,7 +521,6 @@
       secondary_color: '#1f2937'
     };
 
-    // Progress counter animation
     let progressValue = 0;
     const progressText = document.getElementById('progress-text');
     const targetProgress = 92;
@@ -422,9 +533,9 @@
         setTimeout(animateProgress, delay);
       }
     }
+
     setTimeout(animateProgress, 800);
 
-    // ====== Title fit: keep ONE LINE, never overflow ======
     function fitTitle() {
       const el = document.getElementById('main-title');
       if (!el) return;
@@ -457,21 +568,33 @@
         recolorables: [
           {
             get: () => config.background_color || defaultConfig.background_color,
-            set: (value) => { config.background_color = value; window.elementSdk.setConfig({ background_color: value }); }
+            set: (value) => {
+              config.background_color = value;
+              window.elementSdk.setConfig({ background_color: value });
+            }
           },
           {
             get: () => config.primary_color || defaultConfig.primary_color,
-            set: (value) => { config.primary_color = value; window.elementSdk.setConfig({ primary_color: value }); }
+            set: (value) => {
+              config.primary_color = value;
+              window.elementSdk.setConfig({ primary_color: value });
+            }
           },
           {
             get: () => config.text_color || defaultConfig.text_color,
-            set: (value) => { config.text_color = value; window.elementSdk.setConfig({ text_color: value }); }
+            set: (value) => {
+              config.text_color = value;
+              window.elementSdk.setConfig({ text_color: value });
+            }
           }
         ],
         borderables: [],
         fontEditable: {
           get: () => config.font_family || defaultConfig.font_family,
-          set: (value) => { config.font_family = value; window.elementSdk.setConfig({ font_family: value }); }
+          set: (value) => {
+            config.font_family = value;
+            window.elementSdk.setConfig({ font_family: value });
+          }
         },
         fontSizeable: undefined
       };
@@ -494,17 +617,17 @@
       });
     }
 
-    // Org ticker rotation (fade-up, one-by-one)
     (function initOrgTicker() {
       const ORGS = [
-        'Türkiye Atletizm Federasyonu',
         'İstanbul Büyükşehir Belediyesi',
         'İstanbul Valiliği',
+        'İstanbul Emniyet Müdürlüğü',
         'T.C. Gençlik ve Spor Bakanlığı (İstanbul)'
       ];
 
       const textEl = document.getElementById('org-text');
       const lineEl = document.getElementById('org-line');
+
       if (!textEl || !lineEl) return;
 
       let idx = 0;
@@ -521,9 +644,7 @@
       setInterval(showNext, 2600);
     })();
 
-    window.addEventListener('resize', () => {
-      fitTitle();
-    }, { passive: true });
+    window.addEventListener('resize', fitTitle, { passive: true });
 
     document.addEventListener('DOMContentLoaded', () => {
       fitTitle();
@@ -540,35 +661,41 @@
   </script>
 
   <script>
-    (function(){
-      function c(){
-        var b=a.contentDocument||a.contentWindow.document;
-        if(b){
-          var d=b.createElement('script');
-          d.innerHTML="window.__CF$cv$params={r:'9c2a255f810b2469',t:'MTc2OTIwMTI0NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
-          b.getElementsByTagName('head')[0].appendChild(d)
+    (function () {
+      function c() {
+        var b = a.contentDocument || a.contentWindow.document;
+        if (b) {
+          var d = b.createElement('script');
+          d.innerHTML = "window.__CF$cv$params={r:'9c2a255f810b2469',t:'MTc2OTIwMTI0NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+          b.getElementsByTagName('head')[0].appendChild(d);
         }
       }
-      if(document.body){
-        var a=document.createElement('iframe');
-        a.height=1;a.width=1;
-        a.style.position='absolute';
-        a.style.top=0;a.style.left=0;
-        a.style.border='none';
-        a.style.visibility='hidden';
+
+      if (document.body) {
+        var a = document.createElement('iframe');
+        a.height = 1;
+        a.width = 1;
+        a.style.position = 'absolute';
+        a.style.top = 0;
+        a.style.left = 0;
+        a.style.border = 'none';
+        a.style.visibility = 'hidden';
         document.body.appendChild(a);
-        if('loading'!==document.readyState)c();
-        else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);
-        else{
-          var e=document.onreadystatechange||function(){};
-          document.onreadystatechange=function(b){
+
+        if ('loading' !== document.readyState) c();
+        else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
+        else {
+          var e = document.onreadystatechange || function () {};
+          document.onreadystatechange = function (b) {
             e(b);
-            'loading'!==document.readyState&&(document.onreadystatechange=e,c())
-          }
+            if ('loading' !== document.readyState) {
+              document.onreadystatechange = e;
+              c();
+            }
+          };
         }
       }
     })();
   </script>
 </body>
 </html>
-
