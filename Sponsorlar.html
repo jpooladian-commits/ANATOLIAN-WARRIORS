@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="tr" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anatolian Warriors - Mevcut Sponsorlar</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body { box-sizing: border-box; }
+    .font-bebas { font-family: 'Bebas Neue', sans-serif; }
+    .font-rajdhani { font-family: 'Rajdhani', sans-serif; }
+
+    .bg-pattern {
+      background-image:
+        radial-gradient(circle at 20% 80%, rgba(220, 38, 38, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.10) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(30, 30, 30, 1) 0%, rgba(10, 10, 10, 1) 100%);
+    }
+
+    .glass {
+      background: rgba(0,0,0,0.28);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .soft-border { border: 1px solid rgba(239, 68, 68, 0.28); }
+
+    .text-gradient {
+      background: linear-gradient(135deg, #ffffff 0%, #fecaca 50%, #dc2626 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 18px rgba(220, 38, 38, 0.45), 0 0 42px rgba(220, 38, 38, 0.20); }
+      50% { box-shadow: 0 0 26px rgba(220, 38, 38, 0.70), 0 0 70px rgba(220, 38, 38, 0.30); }
+    }
+    .glow { animation: glow 2.2s ease-in-out infinite; }
+
+    .logo-tile {
+      transition: transform .18s ease, border-color .18s ease, background-color .18s ease;
+    }
+    .logo-tile:hover {
+      transform: translateY(-3px);
+      border-color: rgba(239, 68, 68, 0.70);
+      background: rgba(220,38,38,0.10);
+    }
+
+    /* subtle grid line */
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(239,68,68,0.65), transparent);
+    }
+  </style>
+</head>
+
+<body class="h-full bg-pattern text-white">
+  <div class="min-h-screen w-full">
+    <div class="max-w-6xl mx-auto px-4 py-10">
+
+      <!-- Header -->
+      <div class="text-center">
+        <a href="/" class="inline-block">
+          <h1 class="font-bebas tracking-[0.18em] text-4xl md:text-6xl text-gradient">
+            ANATOLIAN WARRIORS
+          </h1>
+        </a>
+        <div class="font-rajdhani text-gray-300 mt-2 text-base md:text-lg">
+          Mevcut Sponsorlarımız & Partnerlerimiz
+        </div>
+
+        <div class="mt-5 flex flex-wrap items-center justify-center gap-2">
+          <a href="/Hakkimizda.html" class="px-4 py-2 rounded-xl glass soft-border font-rajdhani font-bold text-sm hover:bg-red-600/10 transition">
+            Hakkımızda
+          </a>
+          <a href="/Sponsorluk.html" class="px-4 py-2 rounded-xl glass soft-border font-rajdhani font-bold text-sm hover:bg-red-600/10 transition">
+            Sponsorluk Başvurusu
+          </a>
+          <a href="/Iletisim.html" class="px-4 py-2 rounded-xl glass soft-border font-rajdhani font-bold text-sm hover:bg-red-600/10 transition">
+            İletişim
+          </a>
+          <a href="/Regis.html" class="px-4 py-2 rounded-xl glass soft-border font-rajdhani font-bold text-sm hover:bg-red-600/10 transition">
+            Kayıt
+          </a>
+        </div>
+      </div>
+
+      <!-- Intro card -->
+      <div class="mt-8 glass soft-border rounded-2xl p-6 md:p-8">
+        <div class="flex flex-col md:flex-row gap-6 md:items-center md:justify-between">
+          <div>
+            <div class="font-rajdhani font-extrabold text-2xl md:text-3xl">
+              Güçlü markalarla birlikte büyüyoruz
+            </div>
+            <p class="font-rajdhani text-gray-300 mt-2 max-w-3xl">
+              Anatolian Warriors, yüksek etkileşimli spor-eğlence formatıyla hem sahada hem dijitalde güçlü görünürlük sağlar.
+              Aşağıda etkinliğimize destek veren sponsor ve partnerlerimizi bulabilirsiniz.
+            </p>
+          </div>
+
+          <a href="/Sponsorluk.html"
+             class="inline-flex items-center justify-center px-6 py-4 rounded-2xl font-bebas text-xl tracking-wider bg-gradient-to-r from-red-700 to-red-500 border-2 border-red-400 hover:border-red-300 hover:scale-[1.02] transition glow">
+            SPONSOR OL
+          </a>
+        </div>
+      </div>
+
+      <!-- Sections -->
+      <div class="mt-8 space-y-10">
+
+        <!-- Title Sponsor -->
+        <section>
+          <div class="flex items-center justify-between mb-3">
+            <h2 class="font-bebas tracking-widest text-2xl md:text-3xl text-red-400">
+              ANA SPONSORLAR
+            </h2>
+            <span class="font-rajdhani text-xs text-gray-400 uppercase tracking-widest">En yüksek görünürlük</span>
+          </div>
+
+          <div class="divider mb-5"></div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- نمونه: لوگو واقعی -->
+            <!--
+            <a href="https://brand.com" target="_blank" rel="noopener noreferrer"
+               class="logo-tile glass soft-border rounded-2xl p-5 flex items-center gap-4">
+              <img src="/assets/sponsors/brand1.png" alt="Brand" class="h-10 w-auto opacity-90" />
+              <div>
+                <div class="font-rajdhani font-extrabold text-lg">BRAND</div>
+                <div class="font-rajdhani text-sm text-gray-400">Title Sponsor</div>
+              </div>
+            </a>
+            -->
+
+            <!-- Placeholder -->
+            <div class="logo-tile glass soft-border rounded-2xl p-6 flex items-center justify-between">
+              <div>
+                <div class="font-rajdhani font-extrabold text-lg">Yakında açıklanacak</div>
+                <div class="font-rajdhani text-sm text-gray-400">Bu alan sizin markanıza ait olabilir</div>
+              </div>
+              <div class="px-3 py-1 rounded-full bg-red-600/15 border border-red-500/25 font-rajdhani text-xs text-red-200">
+                OPEN
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Main Sponsors -->
+        <section>
+          <div class="flex items-center justify-between mb-3">
+            <h2 class="font-bebas tracking-widest text-2xl md:text-3xl text-red-300">
+              RESMİ SPONSORLAR
+            </h2>
+            <span class="font-rajdhani text-xs text-gray-400 uppercase tracking-widest">Güçlü destek</span>
+          </div>
+          <div class="divider mb-5"></div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="logo-tile glass soft-border rounded-2xl p-5">
+              <div class="flex items-center justify-between">
+                <div class="font-rajdhani font-extrabold">Yakında</div>
+                <span class="text-xs font-rajdhani text-gray-400">OPEN</span>
+              </div>
+              <div class="mt-4 h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center font-bebas tracking-widest text-gray-300">
+                LOGO
+              </div>
+            </div>
+
+            <div class="logo-tile glass soft-border rounded-2xl p-5">
+              <div class="flex items-center justify-between">
+                <div class="font-rajdhani font-extrabold">Yakında</div>
+                <span class="text-xs font-rajdhani text-gray-400">OPEN</span>
+              </div>
+              <div class="mt-4 h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center font-bebas tracking-widest text-gray-300">
+                LOGO
+              </div>
+            </div>
+
+            <div class="logo-tile glass soft-border rounded-2xl p-5">
+              <div class="flex items-center justify-between">
+                <div class="font-rajdhani font-extrabold">Yakında</div>
+                <span class="text-xs font-rajdhani text-gray-400">OPEN</span>
+              </div>
+              <div class="mt-4 h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center font-bebas tracking-widest text-gray-300">
+                LOGO
+              </div>
+            </div>
+
+            <div class="logo-tile glass soft-border rounded-2xl p-5">
+              <div class="flex items-center justify-between">
+                <div class="font-rajdhani font-extrabold">Yakında</div>
+                <span class="text-xs font-rajdhani text-gray-400">OPEN</span>
+              </div>
+              <div class="mt-4 h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center font-bebas tracking-widest text-gray-300">
+                LOGO
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Partners -->
+        <section>
+          <div class="flex items-center justify-between mb-3">
+            <h2 class="font-bebas tracking-widest text-2xl md:text-3xl text-red-200">
+              DESTEK PARTNERLER
+            </h2>
+            <span class="font-rajdhani text-xs text-gray-400 uppercase tracking-widest">Medya / hizmet</span>
+          </div>
+          <div class="divider mb-5"></div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+            <!-- Small logo placeholders -->
+            <div class="logo-tile glass soft-border rounded-2xl p-4 h-20 flex items-center justify-center">
+              <span class="font-bebas tracking-widest text-gray-300">LOGO</span>
+            </div>
+            <div class="logo-tile glass soft-border rounded-2xl p-4 h-20 flex items-center justify-center">
+              <span class="font-bebas tracking-widest text-gray-300">LOGO</span>
+            </div>
+            <div class="logo-tile glass soft-border rounded-2xl p-4 h-20 flex items-center justify-center">
+              <span class="font-bebas tracking-widest text-gray-300">LOGO</span>
+            </div>
+            <div class="logo-tile glass soft-border rounded-2xl p-4 h-20 flex items-center justify-center">
+              <span class="font-bebas tracking-widest text-gray-300">LOGO</span>
+            </div>
+            <div class="logo-tile glass soft-border rounded-2xl p-4 h-20 flex items-center justify-center">
+              <span class="font-bebas tracking-widest text-gray-300">LOGO</span>
+            </div>
+            <div class="logo-tile glass soft-border rounded-2xl p-4 h-20 flex items-center justify-center">
+              <span class="font-bebas tracking-widest text-gray-300">LOGO</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA / credibility -->
+        <section class="glass soft-border rounded-2xl p-6 md:p-8">
+          <div class="flex flex-col md:flex-row gap-6 md:items-center md:justify-between">
+            <div>
+              <div class="font-rajdhani font-extrabold text-2xl">
+                Siz de bu hikâyenin parçası olun
+              </div>
+              <div class="font-rajdhani text-gray-300 mt-2">
+                Sponsorluk paketleri, görünürlük alanları ve özel aktivasyon seçenekleri için başvuru formunu doldurun.
+              </div>
+            </div>
+            <a href="/Sponsorluk.html"
+               class="inline-flex items-center justify-center px-6 py-4 rounded-2xl font-bebas text-xl tracking-wider bg-gradient-to-r from-red-700 to-red-500 border-2 border-red-400 hover:border-red-300 hover:scale-[1.02] transition glow">
+              SPONSORLUK BAŞVURUSU
+            </a>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="text-center mt-8 text-gray-500 font-rajdhani text-xs">
+        © 2026 Anatolian Warriors. Tüm hakları saklıdır.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
