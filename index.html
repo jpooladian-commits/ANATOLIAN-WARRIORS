@@ -6,7 +6,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-W6LQTKR9P3');
 </script>
   <meta name="google-site-verification" content="y1dW25xZokS_XC6GpeCSsbPBeTHNA8R1Zcnbfi7YaUM" />
@@ -86,12 +85,10 @@
     #main-title {
       margin: 4px 0;
       line-height: 0.9;
-   /*   white-space: nowrap;        یک خط */
-    /*  display: inline-block;      برای scale */
       transform-origin: center top;
       transform: scale(var(--title-scale, 1));
       will-change: transform;
-      font-size: clamp(56px, 10vw, 105px); /* بزرگ ولی کنترل‌شده */
+      font-size: clamp(56px, 10vw, 105px);
       letter-spacing: 0.08em;
     }
 
@@ -117,14 +114,13 @@
       -webkit-backdrop-filter: blur(6px);
     }
 
-    /* 👇 گرادیانت‌ها خیلی کمتر تا متن نپوشانند */
     .org-ticker::before,
     .org-ticker::after {
       content: "";
       position: absolute;
       left: 0;
       right: 0;
-      height: 6px; /* قبلاً 10px بود و متن را می‌پوشاند */
+      height: 6px;
       pointer-events: none;
       z-index: 1;
       opacity: 0.65;
@@ -146,7 +142,7 @@
       justify-content: center;
       padding: 0 14px;
       text-align: center;
-      z-index: 2; /* بالای گرادیانت‌ها */
+      z-index: 2;
       animation: org-fade-up 2.6s ease-in-out forwards;
       will-change: transform, opacity;
     }
@@ -177,6 +173,73 @@
     /* ====== NO SCROLL (both) ====== */
     html, body { height: 100%; }
     body { overflow: hidden; }
+
+    /* ====== NEW: Quick action buttons ====== */
+    /* ====== Quick action buttons (Mobile good / Desktop bigger) ====== */
+.quick-actions{
+  width: 100%;
+  max-width: 26rem;          /* موبایل جمع‌وجور */
+  margin: 10px auto 0 auto;
+  display: grid;
+  grid-template-columns: 1fr; /* موبایل: ستونی */
+  gap: 10px;
+}
+
+/* دکمه‌ها */
+.qa-btn{
+  width: 100%;
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 16px;         /* موبایل: همون حس خوب */
+  border-radius: 14px;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  background: rgba(0,0,0,0.18);
+  color: rgba(248,250,252,0.92);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: transform .2s ease, border-color .2s ease, background-color .2s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.qa-btn:hover{
+  transform: translateY(-2px);
+  border-color: rgba(239, 68, 68, 0.7);
+  background: rgba(220,38,38,0.18);
+}
+
+.qa-text{
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  white-space: nowrap;        /* ✅ فقط یک خط */
+  line-height: 1;
+}
+
+/* ✅ فقط دسکتاپ: کادرها بزرگ‌تر و سه‌تایی کنار هم */
+@media (min-width: 768px){
+  .quick-actions{
+    max-width: 46rem;                 /* کل ردیف عریض‌تر */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .qa-btn{
+    padding: 18px 18px;               /* کادر بزرگ‌تر */
+    border-radius: 16px;
+    min-height: 62px;                 /* ارتفاع ثابت و شیک */
+  }
+
+  .qa-text{
+    font-size: 15px;                  /* کمی خواناتر */
+    letter-spacing: .06em;
+  }
+}
   </style>
 
   <style>@view-transition { navigation: auto; }</style>
@@ -211,43 +274,58 @@
         <a id="main-title" href="">ANATOLIAN WARRIORS</a>
       </h1>
 
-       <!-- <p id="tagline"
-         class="font-rajdhani text-xl md:text-2xl lg:text-3xl font-semibold text-gray-300 mb-2 animate-slide-up"
-         style="animation-delay:0.4s; opacity:0;">
-        Şimdi Türkiye’deyiz
-      </p>-->
-      
       <p id="tagline"
          class="font-rajdhani text-xl md:text-2xl lg:text-3xl font-semibold text-gray-300 mb-2 animate-slide-up"
          style="animation-delay:0.4s; opacity:0;">
-        Yakında – Resmi İzin Süreci Devam Ediyor
+        Türkiye Atletizm Federasyonu aracılığıyla resmî kayıt başladı.
       </p>
 
       <a href="/Hakkimizda.html" target="_blank" rel="noopener noreferrer" class="inline-block group relative">
         <p id="cta-text"
-           class="font-rajdhani text-lg md:text-xl text-red-400 mb-10 animate-slide-up"
+           class="font-rajdhani text-lg md:text-xl text-red-400 mb-8 animate-slide-up"
            style="animation-delay:0.5s; opacity:0;">
           🏆 YARIŞMA KURALLARI
         </p>
       </a>
 
+      <!-- ✅ NEW: Quick action buttons (Contact / Sponsorship / Sponsors) -->
+      <div class="animate-slide-up" style="animation-delay:0.55s; opacity:0;">
+        <div class="quick-actions" aria-label="Hızlı bağlantılar">
+          <a class="qa-btn" href="/contactus.html" target="_blank" rel="noopener noreferrer">
+            <span aria-hidden="true">☎️</span>
+            <span class="qa-text">İletişim</span>
+          </a>
+          <a class="qa-btn" href="/applytoSponsorluk.html" target="_blank" rel="noopener noreferrer">
+            <span aria-hidden="true">🤝</span>
+            <span class="qa-text">Sponsorluk Başvurusu</span>
+          </a>
+          <a class="qa-btn" href="/Sponsorlar.html" target="_blank" rel="noopener noreferrer">
+            <span aria-hidden="true">🏷️</span>
+            <span class="qa-text">Mevcut Sponsorlar</span>
+          </a>
+        </div>
+      </div>
+
       <!-- Loading Bar Container -->
       <div class="animate-slide-up" style="animation-delay:0.6s; opacity:0;">
         <div class="relative w-full max-w-md mx-auto">
           <div class="flex justify-between items-center mb-3">
-            <span class="font-rajdhani text-sm text-gray-400 uppercase tracking-widest">Hazırlık seviyemiz</span>
-            <span id="progress-text" class="font-bebas text-2xl text-red-500">0%</span>
+            <!-- <span class="font-rajdhani text-sm text-gray-400 uppercase tracking-widest">Hazırlık seviyemiz</span>-->
+           <!-- <span id="progress-text" class="font-bebas text-2xl text-red-500">0%</span>-->
           </div>
 
-          <div class="relative h-3 bg-gray-800 rounded-full overflow-hidden border border-gray-700">
+         <!-- <div class="relative h-3 bg-gray-800 rounded-full overflow-hidden border border-gray-700">-->
+
             <div class="loading-bar absolute top-0 left-0 h-full bg-gradient-to-r from-red-700 via-red-500 to-red-400 rounded-full animate-loading animate-pulse-glow overflow-hidden"></div>
-            <div class="absolute inset-0 flex justify-between px-1 items-center pointer-events-none">
+
+            <!--<div class="absolute inset-0 flex justify-between px-1 items-center pointer-events-none">
               <div class="w-0.5 h-1.5 bg-gray-600 rounded"></div>
               <div class="w-0.5 h-1.5 bg-gray-600 rounded"></div>
               <div class="w-0.5 h-1.5 bg-gray-600 rounded"></div>
               <div class="w-0.5 h-1.5 bg-gray-600 rounded"></div>
               <div class="w-0.5 h-1.5 bg-gray-600 rounded"></div>
-            </div>
+            </div>-->
+
           </div>
 
           <!-- Official permissions ticker -->
@@ -263,10 +341,10 @@
 
       <!-- Registration Button -->
       <div class="mt-10 animate-slide-up" style="animation-delay:0.7s; opacity:0;">
-        <a href="/Regis.html" target="_blank" rel="noopener noreferrer" class="inline-block group relative">
+        <a href="https://kosu.taf.org.tr/yarisma_detay.php?id=59" target="_blank" rel="noopener noreferrer" class="inline-block group relative">
           <div class="absolute inset-0 bg-red-600 rounded-lg blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
           <button class="relative font-bebas text-2xl tracking-wider px-12 py-4 bg-gradient-to-r from-red-700 to-red-500 text-white rounded-lg border-2 border-red-400 transform transition-all duration-300 hover:scale-105 hover:border-red-300 shadow-lg">
-            Katıl ve kendini ispatla!
+            Federasyon üzerinden kayıt ol.
           </button>
         </a>
       </div>
@@ -322,7 +400,7 @@
   <script>
     const defaultConfig = {
       main_title: 'ANATOLIAN WARRIORS',
-      tagline: 'Şimdi Türkiye’deyiz',
+      tagline: 'Türkiye Atletizm Federasyonu aracılığıyla resmî kayıt başladı.',
       cta_text: '🏆 YARIŞMA KURALLARI',
       primary_color: '#dc2626',
       background_color: '#0a0a0a',
@@ -353,12 +431,11 @@
 
       el.style.setProperty('--title-scale', 1);
 
-      // measure against viewport width with padding
-      const maxW = Math.max(320, window.innerWidth - 32); // safe padding
+      const maxW = Math.max(320, window.innerWidth - 32);
       const rect = el.getBoundingClientRect();
 
       if (rect.width > maxW) {
-        const scale = Math.max(0.72, maxW / rect.width); // never too tiny
+        const scale = Math.max(0.72, maxW / rect.width);
         el.style.setProperty('--title-scale', scale.toFixed(3));
       }
     }
@@ -372,7 +449,6 @@
       if (tagline) tagline.textContent = config.tagline || defaultConfig.tagline;
       if (ctaText) ctaText.textContent = config.cta_text || defaultConfig.cta_text;
 
-      // after text changes
       setTimeout(fitTitle, 30);
     }
 
@@ -421,7 +497,7 @@
     // Org ticker rotation (fade-up, one-by-one)
     (function initOrgTicker() {
       const ORGS = [
-        'Türkiye Atletizm Federasyonu',
+        'İstanbul Büyükşehir Belediyesi',
         'İstanbul Valiliği',
         'İstanbul Emniyet Müdürlüğü',
         'T.C. Gençlik ve Spor Bakanlığı (İstanbul)'
@@ -435,9 +511,9 @@
 
       function showNext() {
         lineEl.style.animation = 'none';
-        void lineEl.offsetHeight; // force reflow
+        void lineEl.offsetHeight;
         textEl.textContent = ORGS[idx % ORGS.length];
-        lineEl.style.animation = ''; // use CSS animation
+        lineEl.style.animation = '';
         idx++;
       }
 
@@ -495,5 +571,3 @@
   </script>
 </body>
 </html>
-
-
