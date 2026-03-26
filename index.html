@@ -30,9 +30,6 @@
       margin: 0;
       padding: 0;
     }
-    #main-title {
-  white-space: nowrap;
-   }
 
     .font-bebas { font-family: 'Bebas Neue', sans-serif; }
     .font-rajdhani { font-family: 'Rajdhani', sans-serif; }
@@ -121,8 +118,9 @@
       transform-origin: center top;
       transform: scale(var(--title-scale, 1));
       will-change: transform;
-      font-size: clamp(56px, 10vw, 105px);
+      font-size: clamp(56px, 10vw, 82px);
       letter-spacing: 0.08em;
+      white-space: nowrap;
     }
 
     @keyframes org-fade-up {
@@ -395,7 +393,7 @@
 
     <!-- Main Content -->
     <div class="text-center px-6 max-w-4xl relative z-10 w-full">
-      <h1 class="font-bebas tracking-wider text-gradient animate-slide-up" style="animation-delay:0.2s;font-size: 82px; opacity:0;">
+      <h1 class="font-bebas tracking-wider text-gradient animate-slide-up" style="animation-delay:0.2s; opacity:0;">
         <a id="main-title" href="">ANATOLIAN NINJA WARRIORS</a>
       </h1>
 
