@@ -120,8 +120,17 @@
       will-change: transform;
       font-size: clamp(56px, 10vw, 82px);
       letter-spacing: 0.08em;
-      white-space: nowrap;
     }
+    #main-title {
+  display: inline-block;
+  white-space: normal; /* موبایل: شکستن مجاز */
+}
+
+@media (min-width: 768px) {
+  #main-title {
+    white-space: nowrap; /* دسکتاپ: یک خط */
+  }
+}
 
     @keyframes org-fade-up {
       0%   { opacity: 0; transform: translateY(10px); }
