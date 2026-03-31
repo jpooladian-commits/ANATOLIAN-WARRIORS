@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W6LQTKR9P3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-W6LQTKR9P3');
+  </script>
+
+  <!-- reCAPTCHA v2 -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anatolian Ninja Warriors - REGISTRATION FORM</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body { box-sizing: border-box; }
+
+    .font-bebas { font-family: 'Bebas Neue', sans-serif; }
+    .font-rajdhani { font-family: 'Rajdhani', sans-serif; }
+
+    .text-glow-red { text-shadow: 0 0 30px rgba(220, 38, 38, 0.8), 0 0 60px rgba(220, 38, 38, 0.4); }
+    .text-glow-orange { text-shadow: 0 0 20px rgba(249, 115, 22, 0.6); }
+
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.5); }
+      50% { box-shadow: 0 0 40px rgba(220, 38, 38, 0.8), 0 0 60px rgba(220, 38, 38, 0.4); }
+    }
+    .pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+
+    @keyframes slide-up {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .slide-up { animation: slide-up 0.6s ease-out forwards; }
+
+    @keyframes success-bounce {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    .success-bounce { animation: success-bounce 0.5s ease-in-out; }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #dc2626;
+      box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+    }
+
+    .warrior-silhouette {
+      position: absolute;
+      opacity: 0.05;
+      pointer-events: none;
+    }
+  </style>
+
+  <style>@view-transition { navigation: auto; }</style>
+</head>
+
+<body class="h-full m-0 p-0 bg-black">
+  <div class="h-full w-full overflow-auto">
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-950 via-black to-gray-950 px-6 py-20 overflow-hidden">
+      <!-- Background Effects -->
+      <div class="absolute inset-0">
+        <div class="absolute top-1/4 -left-20 w-96 h-96 bg-red-600 rounded-full blur-3xl opacity-20"></div>
+        <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-orange-600 rounded-full blur-3xl opacity-20"></div>
+      </div>
+
+      <!-- Warrior Silhouette SVG -->
+      <svg class="warrior-silhouette w-full h-full" viewBox="0 0 800 800" fill="none">
+        <g transform="translate(350, 150)">
+          <circle cx="50" cy="50" r="40" fill="currentColor" class="text-red-700" />
+          <rect x="30" y="90" width="40" height="120" fill="currentColor" class="text-red-700" />
+          <rect x="-20" y="100" width="50" height="20" fill="currentColor" class="text-red-700" transform="rotate(-30 5 110)" />
+          <rect x="70" y="100" width="50" height="20" fill="currentColor" class="text-red-700" transform="rotate(30 95 110)" />
+          <rect x="30" y="210" width="18" height="80" fill="currentColor" class="text-red-700" transform="rotate(-20 39 210)" />
+          <rect x="52" y="210" width="18" height="80" fill="currentColor" class="text-red-700" transform="rotate(20 61 210)" />
+        </g>
+      </svg>
+
+      <div class="max-w-5xl mx-auto text-center relative z-10">
+        <a href="/">
+          <div class="inline-block mb-6 px-6 py-3 bg-gradient-to-r from-red-600/20 to-orange-600/20 border-2 border-red-600 rounded-full">
+            <span class="font-bebas text-red-500 text-xl tracking-wider">🏔️ ANATOLIAN Ninja WARRIORS</span>
+          </div>
+        </a>
+
+        <h1 id="hero-title" class="font-bebas text-6xl md:text-8xl lg:text-9xl text-white mb-6 text-glow-red leading-none">REGISTRATION FORM</h1>
+        <p id="hero-subtitle" class="font-rajdhani text-2xl md:text-3xl text-orange-500 font-bold mb-8 text-glow-orange">💥 Are You Ready to Compete Against Yourself?</p>
+        <p id="hero-description" class="font-rajdhani text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
+          This is not just a competition. This is a <strong class="text-white">challenge where you test your limits</strong>. If you trust your strength, speed, and determination, register now and secure your place!
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-red-600/30 rounded-xl p-6 pulse-glow">
+            <div class="text-4xl mb-2">🏆</div>
+            <div class="font-rajdhani text-sm text-gray-400 mb-1">CHAMPIONSHIP PRIZE</div>
+            <div id="prize-amount" class="font-bebas text-4xl text-red-500 text-glow-red">5,000,000 TL</div>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-orange-600/30 rounded-xl p-6">
+            <div class="text-4xl mb-2">💳</div>
+            <div class="font-rajdhani text-sm text-gray-400 mb-1">PARTICIPATION FEE </div>
+            <div id="entry-fee" class="font-bebas text-4xl text-orange-500">Free</div>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-red-600/30 rounded-xl p-6">
+            <div class="text-4xl mb-2">📅</div>
+            <div class="font-rajdhani text-sm text-gray-400 mb-1">START DATE</div>
+            <div id="competition-date" class="font-bebas text-4xl text-red-500">July 1</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Format Section -->
+    <section class="py-16 px-6 bg-gray-950">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="font-bebas text-5xl text-center text-white mb-12">🧱 COMPETITION FORMAT</h2>
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+          <div class="bg-gradient-to-br from-red-900/20 to-gray-900 border border-red-600/30 rounded-xl p-6">
+            <div class="text-3xl mb-3">⏱️</div>
+            <h3 class="font-rajdhani text-xl text-white font-bold mb-2">Time-Based</h3>
+            <p class="font-rajdhani text-gray-400">Complete the course flawlessly and in the shortest time possible</p>
+          </div>
+          <div class="bg-gradient-to-br from-orange-900/20 to-gray-900 border border-orange-600/30 rounded-xl p-6">
+            <div class="text-3xl mb-3">🎯</div>
+            <h3 class="font-rajdhani text-xl text-white font-bold mb-2">Multi-Stage</h3>
+            <p class="font-rajdhani text-gray-400">Consists of multiple stages and obstacle courses</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section class="py-20 px-6 bg-black">
+      <div class="max-w-3xl mx-auto">
+
+        <div class="text-center mb-12">
+          <h2 id="form-title" class="font-bebas text-6xl text-white mb-4 text-glow-red">📝 REGISTRATION FORM</h2>
+          <p class="font-rajdhani text-lg text-gray-400">⚠️ Please enter your information completely and accurately</p>
+        </div>
+
+        <!-- Success Message -->
+        <div id="success-message" class="hidden bg-gradient-to-r from-green-900/50 to-green-800/50 border-2 border-green-500 rounded-2xl p-8 mb-8 text-center success-bounce">
+          <div class="text-6xl mb-4">🎉</div>
+          <h3 class="font-bebas text-4xl text-green-400 mb-3">APPLICATION RECEIVED!</h3>
+          <p class="font-bebas text-2xl text-white">WELCOME TO THE ANATOLIAN NINJA WARRIORS FAMILY! 💪</p>
+          <p id="success-message-text" class="font-rajdhani text-xl text-gray-300 mb-2">
+            🚨 We have sent you a Email regarding your registration. If you do not receive it within a few minutes, please make sure to contact us via the WhatsApp button below.
+          </p>
+        </div>
+
+        <!-- Form -->
+        <form id="registration-form" class="space-y-8">
+
+          <!-- Personal Information -->
+          <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-red-600/30 rounded-2xl p-8">
+            <h3 class="font-bebas text-3xl text-red-500 mb-6">🔹 PERSONAL INFORMATION</h3>
+
+            <div class="space-y-4">
+              <div>
+                <label class="block font-rajdhani text-white font-semibold mb-2" for="full-name">Full Name *</label>
+                <input type="text" id="full-name" required class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block font-rajdhani text-white font-semibold mb-2" for="birth-date">Date of Birth *</label>
+                  <input type="date" id="birth-date" required class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
+                </div>
+                <div>
+                  <label class="block font-rajdhani text-white font-semibold mb-2" for="gender">Gender *</label>
+                  <select id="gender" required class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
+                    <option value="">Select</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Prefer not to say">Prefer not to say</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-rajdhani text-white font-semibold mb-2" for="phone">Phone Number *</label>
+                <input type="tel" id="phone" required placeholder="+90 5XX XXX XX XX" class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
+              </div>
+
+              <div>
+                <label class="block font-rajdhani text-white font-semibold mb-2" for="email">Email Address *</label>
+                <input type="email" id="email" required class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
+              </div>
+
+              <div>
+                <label class="block font-rajdhani text-white font-semibold mb-2" for="city">City / Country *</label>
+                <input type="text" id="city" required placeholder="Example: Istanbul, Türkiye" class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
+              </div>
+            </div>
+          </div>
+
+          <!-- Physical Information -->
+          <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-orange-600/30 rounded-2xl p-8">
+            <h3 class="font-bebas text-3xl text-orange-500 mb-6">🔹 PHYSICAL INFORMATION</h3>
+
+            <div class="space-y-4">
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block font-rajdhani text-white font-semibold mb-2" for="height">Height (cm) *</label>
+                  <input type="number" id="height" required min="100" max="250" class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
+                </div>
+                <div>
+                  <label class="block font-rajdhani text-white font-semibold mb-2" for="weight">Weight (kg) *</label>
+                  <input type="number" id="weight" required min="30" max="200" class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-rajdhani text-white font-semibold mb-2" for="previous-experience">Have you participated in similar competitions before? *</label>
+                <select id="previous-experience" required class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
+                  <option value="">Select</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block font-rajdhani text-white font-semibold mb-2" for="sports-background">Do you have a sports background? (Short description)</label>
+                <textarea id="sports-background" rows="3" placeholder="Example: 5 years of CrossFit, 3 years of gymnastics..." class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Emergency Contact -->
+          <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-red-600/30 rounded-2xl p-8">
+            <h3 class="font-bebas text-3xl text-red-500 mb-6">🔹 EMERGENCY CONTACT</h3>
+
+            <div class="space-y-4">
+              <div>
+                <label class="block font-rajdhani text-white font-semibold mb-2" for="emergency-name">Emergency Contact Name *</label>
+                <input type="text" id="emergency-name" required class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
+              </div>
+
+              <div>
+                <label class="block font-rajdhani text-white font-semibold mb-2" for="emergency-phone">Emergency Phone Number *</label>
+                <input type="tel" id="emergency-phone" required placeholder="+90 5XX XXX XX XX" class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
+              </div>
+            </div>
+          </div>
+
+          <!-- Consent Checkboxes -->
+          <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-yellow-600/30 rounded-2xl p-8">
+            <h3 class="font-bebas text-3xl text-yellow-500 mb-6">⚠️ CONSENT CHECKBOXES</h3>
+
+            <div class="space-y-4">
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="checkbox" id="accept-age" required class="mt-1 w-5 h-5 accent-red-600">
+                <span class="font-rajdhani text-gray-300 group-hover:text-white transition-colors">I declare that I am over 15 years old *</span>
+              </label>
+
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="checkbox" id="accept-health" required class="mt-1 w-5 h-5 accent-red-600">
+                <span class="font-rajdhani text-gray-300 group-hover:text-white transition-colors">I confirm that my health condition is suitable for participating in this competition *</span>
+              </label>
+
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="checkbox" id="accept-risks" required class="mt-1 w-5 h-5 accent-red-600">
+                <span class="font-rajdhani text-gray-300 group-hover:text-white transition-colors">I acknowledge that the competition involves physical risks and accept responsibility *</span>
+              </label>
+
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="checkbox" id="accept-media" required class="mt-1 w-5 h-5 accent-red-600">
+                <span class="font-rajdhani text-gray-300 group-hover:text-white transition-colors">I consent to the use of my photos and videos taken during the organization *</span>
+              </label>
+
+              <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="checkbox" id="accept-rules" required class="mt-1 w-5 h-5 accent-red-600">
+                <span class="font-rajdhani text-gray-300 group-hover:text-white transition-colors">
+                  I have read and accept the <a style="color: green;" href="/kvkk.html" target="_blank" rel="noopener noreferrer">KVKK</a> and the <a style="color: green;" href="/Hakkimizda.html" target="_blank" rel="noopener noreferrer">Rules</a> *
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Payment Note -->
+          <div class="bg-gradient-to-r from-blue-900/30 to-transparent border-l-4 border-blue-500 p-6 rounded-lg">
+            <p class="font-rajdhani text-sm text-blue-400 mb-2">💳 PAYMENT INFORMATION</p>
+            <p class="font-rajdhani text-gray-300">
+              <strong class="text-white">Free</strong>
+            </p>
+          </div>
+
+          <!-- Important Note -->
+          <div class="bg-gradient-to-r from-yellow-900/30 to-transparent border-l-4 border-yellow-500 p-6 rounded-lg">
+            <p class="font-rajdhani text-sm text-yellow-400 mb-2">🚨 IMPORTANT NOTE</p>
+            <p class="font-rajdhani text-gray-300">
+              Filling out the application does not mean guaranteed participation in the competition. The organization reserves the right to conduct a preliminary evaluation.
+            </p>
+          </div>
+
+          <!-- reCAPTCHA -->
+          <div class="flex justify-center">
+            <div class="g-recaptcha" data-sitekey="6LePHHQsAAAAALArB8TS_0IVL2WeaYT67alYaMN5"></div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" id="submit-btn"
+            class="w-full bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white font-bebas text-3xl py-6 rounded-xl transition-all duration-300 transform hover:scale-105 pulse-glow">
+            <span id="submit-button-text">🔥 APPLY NOW - BECOME A WARRIOR!</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- WhatsApp Contact -->
+    <section class="py-12 px-6 bg-gray-950">
+      <div class="max-w-2xl mx-auto text-center">
+        <p class="font-rajdhani text-lg text-gray-400 mb-4">If you have any questions</p>
+        <a href="https://wa.me/15482617439" target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white font-rajdhani font-bold text-lg px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+          </svg>
+          <span>Contact Us on WhatsApp</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 bg-black border-t border-gray-800">
+      <div class="max-w-6xl mx-auto text-center">
+        <p class="font-rajdhani text-sm text-gray-500">© 2026 <a href="/">Anatolian Ninja Warriors</a>. All rights reserved.</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Cloudflare snippet -->
+  <script>
+  (function(){
+    function c(){
+      var b=a.contentDocument||a.contentWindow.document;
+      if(b){
+        var d=b.createElement('script');
+        d.innerHTML="window.__CF$cv$params={r:'9c5451d451792468',t:'MTc2OTY0MzQ2Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+        b.getElementsByTagName('head')[0].appendChild(d);
+      }
+    }
+    if(document.body){
+      var a=document.createElement('iframe');
+      a.height=1; a.width=1;
+      a.style.position='absolute';
+      a.style.top=0; a.style.left=0;
+      a.style.border='none';
+      a.style.visibility='hidden';
+      document.body.appendChild(a);
+      if('loading'!==document.readyState) c();
+      else if(window.addEventListener) document.addEventListener('DOMContentLoaded',c);
+      else {
+        var e=document.onreadystatechange||function(){};
+        document.onreadystatechange=function(b){
+          e(b);
+          'loading'!==document.readyState&&(document.onreadystatechange=e,c());
+        }
+      }
+    }
+  })();
+  </script>
+
+  <!-- Form submit script -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxqU2T-yV9uW5lzCJRuu1P7mxwnKWJK3ro6qEfz5_lDOeL1fGbcjDMAGSZ4C-vLuRYSVg/exec";
+
+    const form = document.getElementById("registration-form");
+    const submitBtn = document.getElementById("submit-btn");
+    const submitText = document.getElementById("submit-button-text");
+    const successBox = document.getElementById("success-message");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      submitBtn.disabled = true;
+      submitText.innerText = "📤 SENDING...";
+
+      if (!window.grecaptcha || typeof grecaptcha.getResponse !== "function") {
+        alert("❗ reCAPTCHA could not be loaded. Please refresh the page.");
+        submitBtn.disabled = false;
+        submitText.innerText = "🔥 APPLY NOW - BECOME A WARRIOR!";
+        return;
+      }
+
+      const recaptchaToken = grecaptcha.getResponse();
+      if (!recaptchaToken) {
+        alert("❗ Please verify that you are not a robot.");
+        submitBtn.disabled = false;
+        submitText.innerText = "🔥 APPLY NOW - BECOME A WARRIOR!";
+        return;
+      }
+
+      const data = {
+        full_name: document.getElementById("full-name").value,
+        birth_date: document.getElementById("birth-date").value,
+        gender: document.getElementById("gender").value,
+        phone: document.getElementById("phone").value,
+        email: document.getElementById("email").value,
+        city: document.getElementById("city").value,
+        height: document.getElementById("height").value,
+        weight: document.getElementById("weight").value,
+        previous_experience: document.getElementById("previous-experience").value,
+        sports_background: document.getElementById("sports-background").value || "",
+        emergency_contact_name: document.getElementById("emergency-name").value,
+        emergency_contact_phone: document.getElementById("emergency-phone").value,
+        accept_age: document.getElementById("accept-age").checked,
+        accept_health: document.getElementById("accept-health").checked,
+        accept_risks: document.getElementById("accept-risks").checked,
+        accept_media: document.getElementById("accept-media").checked,
+        accept_rules: document.getElementById("accept-rules").checked,
+        recaptcha_token: recaptchaToken
+      };
+
+      try {
+        const res = await fetch(SCRIPT_URL, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(data),
+          redirect: "follow"
+        });
+
+        const text = await res.text();
+        let result;
+        try { result = JSON.parse(text); }
+        catch {
+          console.error("NOT JSON:", text);
+          throw new Error("Invalid response received from the server.");
+        }
+
+        console.log("SERVER RESULT:", result);
+
+        if (result.success) {
+          form.classList.add("hidden");
+          successBox.classList.remove("hidden");
+          successBox.scrollIntoView({ behavior: "smooth" });
+          try { grecaptcha.reset(); } catch(e) {}
+          return;
+        }
+
+        if (result.duplicate) {
+          alert("❗ A registration has already been made with this phone number.");
+          try { grecaptcha.reset(); } catch(e) {}
+          submitBtn.disabled = false;
+          submitText.innerText = "🔥 APPLY NOW - BECOME A WARRIOR!";
+          return;
+        }
+
+        if (result.error === "reCAPTCHA verification failed.") {
+          alert("❗ reCAPTCHA verification failed. Please try again.");
+          try { grecaptcha.reset(); } catch(e) {}
+          submitBtn.disabled = false;
+          submitText.innerText = "🔥 APPLY NOW - BECOME A WARRIOR!";
+          return;
+        }
+
+        throw new Error(result.error || "Unknown error");
+
+      } catch (err) {
+        console.error("FETCH ERROR:", err);
+        alert("❌ An error occurred while submitting the form: " + (err.message || err));
+        try { grecaptcha.reset(); } catch(e) {}
+        submitBtn.disabled = false;
+        submitText.innerText = "🔥 APPLY NOW - BECOME A WARRIOR!";
+      }
+    });
+  });
+  </script>
+
+</body>
+</html>
