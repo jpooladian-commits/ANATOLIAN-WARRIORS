@@ -1,0 +1,857 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact US - ANATOLIAN NINJA WARRIORS</title>
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="ANATOLIAN NINJA WARRIORS – STRONG TÜRKİYE contact page. Istanbul sports organization, Türkiye endurance race, OCR Türkiye, obstacle course race Türkiye."
+    />
+    <meta
+      name="keywords"
+      content="Istanbul sports organization, Türkiye endurance race, OCR Türkiye, obstacle course race Türkiye, obstacle course race, endurance, sports event"
+    />
+
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script src="/_sdk/element_sdk.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              warrior: {
+                red: "#C41E3A",
+                dark: "#1A1A1A",
+                gold: "#D4AF37",
+                gray: "#2D2D2D",
+                light: "#F5F5F5",
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      .font-heading {
+        font-family: "Bebas Neue", sans-serif;
+      }
+      .font-body {
+        font-family: "Open Sans", sans-serif;
+      }
+      .section-card {
+        background: linear-gradient(
+          135deg,
+          rgba(45, 45, 45, 0.95) 0%,
+          rgba(26, 26, 26, 0.98) 100%
+        );
+        border-left: 4px solid #c41e3a;
+      }
+      .highlight-box {
+        background: linear-gradient(90deg, rgba(196, 30, 58, 0.15) 0%, transparent 100%);
+        border-left: 3px solid #d4af37;
+      }
+      .btn-primary {
+        background: linear-gradient(90deg, rgba(196, 30, 58, 1) 0%, rgba(212, 175, 55, 0.95) 100%);
+      }
+      .btn-primary:hover {
+        filter: brightness(1.05);
+        transform: translateY(-1px);
+      }
+      .input-surface {
+        background: rgba(26, 26, 26, 0.65);
+        border: 1px solid rgba(45, 45, 45, 1);
+      }
+      .input-surface:focus {
+        outline: none;
+        border-color: rgba(196, 30, 58, 0.8);
+        box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.15);
+      }
+
+      /* Honeypot: hidden from humans, visible to simple bots */
+      .hp-field {
+        position: absolute !important;
+        left: -10000px !important;
+        top: auto !important;
+        width: 1px !important;
+        height: 1px !important;
+        overflow: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+    </style>
+
+    <style>
+      body {
+        box-sizing: border-box;
+      }
+    </style>
+
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  </head>
+
+  <body class="h-full font-body bg-warrior-dark text-warrior-light overflow-auto">
+    <div
+      id="app-wrapper"
+      class="w-full min-h-full bg-gradient-to-br from-warrior-dark via-warrior-gray to-warrior-dark"
+    >
+      <!-- Hero Header -->
+      <header class="relative bg-gradient-to-r from-warrior-dark via-warrior-red to-warrior-dark py-12 px-6">
+        <div class="absolute inset-0 opacity-10">
+          <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+              <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#D4AF37" stroke-width="0.5" />
+            </pattern>
+            <rect width="100" height="100" fill="url(#grid)" />
+          </svg>
+        </div>
+
+        <div class="max-w-5xl mx-auto relative z-10">
+          <!-- Logo Area -->
+          <div class="flex items-center justify-center mb-6">
+            <div class="flex items-center gap-4">
+              <div
+                class="w-16 h-16 rounded-full bg-warrior-red flex items-center justify-center border-2 border-warrior-gold"
+              >
+                <svg class="w-10 h-10 text-warrior-gold" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2L4 7v10c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V7l-8-5zm0 2.18l6 3.75v8.7c0 4.14-2.86 8.03-6 9.3-3.14-1.27-6-5.16-6-9.3v-8.7l6-3.75z"
+                  />
+                  <path d="M12 6l-4 2.5v5c0 2.8 1.9 5.4 4 6.2 2.1-.8 4-3.4 4-6.2v-5L12 6z" />
+                </svg>
+              </div>
+              <div>
+                <h1 id="brand-name" class="font-heading text-3xl md:text-4xl text-white tracking-wider">
+                  <a href="/">ANATOLIAN NINJA WARRIORS</a>
+                </h1>
+                <p class="text-warrior-gold text-sm tracking-widest">STRONG TÜRKİYE</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Page Title -->
+          <div class="text-center">
+            <h2 id="page-title" class="font-heading text-4xl md:text-5xl text-white mb-2 tracking-wide">
+              CONTACT
+            </h2>
+            <p id="page-subtitle" class="text-warrior-gold text-lg tracking-widest">Get in Touch with Us</p>
+            <p id="hero-text" class="text-gray-200 max-w-2xl mx-auto mt-4 leading-relaxed">
+              You can contact us for your questions, collaborations, and participation details.
+            </p>
+            <div class="mt-5 flex justify-center">
+              <span
+                class="inline-flex items-center gap-2 bg-warrior-red/30 border border-warrior-red px-4 py-1 rounded-full text-sm"
+              >
+                <span class="w-2 h-2 rounded-full bg-warrior-gold"></span>
+                <span>Professional • Trustworthy • Organized</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="max-w-5xl mx-auto px-4 md:px-6 py-10">
+        <!-- Contact Information + Social -->
+        <section class="mb-10">
+          <div class="section-card rounded-lg p-6 md:p-8">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-warrior-gold/20 flex items-center justify-center">
+                <svg class="w-6 h-6 text-warrior-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v6" />
+                </svg>
+              </div>
+
+              <div class="flex-1">
+                <h3 class="font-heading text-2xl text-warrior-gold mb-4">CONTACT INFORMATION</h3>
+
+                <div class="grid md:grid-cols-2 gap-4">
+                  <!-- Email -->
+                  <div class="highlight-box rounded-lg p-4">
+                    <div class="flex items-start gap-3">
+                      <div class="flex-shrink-0 w-10 h-10 bg-warrior-red/20 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-warrior-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                          />
+                        </svg>
+                      </div>
+                      <div>
+                        <p class="text-warrior-gold text-sm">E-mail</p>
+                        <p id="contact-email" class="text-white font-semibold">founder@anatolianwarriors.com.tr</p>
+                        <p class="text-gray-400 text-xs mt-1">E-mail is recommended for the fastest response.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Phone -->
+                  <div class="highlight-box rounded-lg p-4">
+                    <div class="flex items-start gap-3">
+                      <div class="flex-shrink-0 w-10 h-10 bg-warrior-red/20 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-warrior-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                          />
+                        </svg>
+                      </div>
+                      <div>
+                        <p class="text-warrior-gold text-sm">Phone</p>
+                        <p id="contact-phone" class="text-white font-semibold">+90 (552) 705 11 89</p>
+                        <p class="text-gray-400 text-xs mt-1">Weekdays 10:00–18:00</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Address -->
+                  <div class="highlight-box rounded-lg p-4">
+                    <div class="flex items-start gap-3">
+                      <div class="flex-shrink-0 w-10 h-10 bg-warrior-red/20 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-warrior-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                          />
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <p class="text-warrior-gold text-sm">Address</p>
+                        <p id="contact-address" class="text-white font-semibold">Istanbul, Türkiye</p>
+                        <p class="text-gray-400 text-xs mt-1">FENERBAHÇE MAH. İĞRİP SK. NO: 13 İÇ KAPI NO: 1 KADIKÖY</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Social -->
+                  <div class="highlight-box rounded-lg p-4">
+                    <div class="flex items-start gap-3">
+                      <div class="flex-shrink-0 w-10 h-10 bg-warrior-red/20 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-warrior-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m-9 9a9 9 0 019-9"
+                          />
+                        </svg>
+                      </div>
+                      <div class="flex-1">
+                        <p class="text-warrior-gold text-sm">Social Media</p>
+                        <div class="mt-2 flex flex-wrap gap-3">
+                          <a
+                            id="instagram-link"
+                            href="https://www.instagram.com/anatolianninjawarriors?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-warrior-red/40 bg-warrior-dark/40 hover:border-warrior-gold/60 transition-colors"
+                          >
+                            <span class="w-2 h-2 rounded-full bg-warrior-red"></span>
+                            <span class="text-white font-semibold">Instagram</span>
+                            <span class="text-gray-400 text-sm">(@anatolianwarriors)</span>
+                          </a>
+
+                          <a
+                            id="youtube-link"
+                            href="https://www.youtube.com/channel/UCIr1-NJeZUK73yXA0s6RzLw"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-warrior-gray bg-warrior-dark/30 hover:border-warrior-gold/60 transition-colors"
+                          >
+                            <span class="w-2 h-2 rounded-full bg-warrior-gold"></span>
+                            <span class="text-white font-semibold">YouTube</span>
+                          </a>
+
+                          <a
+                            id="TikTok-link"
+                            href="http://tiktok.com/@anatolianninjawarriors"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-warrior-gray bg-warrior-dark/30 hover:border-warrior-gold/60 transition-colors"
+                          >
+                            <span class="w-2 h-2 rounded-full bg-warrior-gold"></span>
+                            <span class="text-white font-semibold">TikTok</span>
+                          </a>
+                        </div>
+                        <p class="text-gray-400 text-xs mt-2">Follow Instagram for the latest announcements and event updates.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-5 bg-warrior-dark/40 border border-warrior-gray rounded-lg p-4">
+                  <p class="text-gray-300">
+                    <span class="text-warrior-gold font-semibold">Note:</span> You can write to us for all your questions regarding Anatolian Ninja Warriors.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="mb-10">
+          <div class="section-card rounded-lg p-6 md:p-8">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-warrior-red/20 flex items-center justify-center">
+                <svg class="w-6 h-6 text-warrior-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 10h.01M12 10h.01M16 10h.01M9 16h6M4 6h16M4 6v12a2 2 0 002 2h12a2 2 0 002-2V6"
+                  />
+                </svg>
+              </div>
+
+              <div class="flex-1">
+                <h3 class="font-heading text-2xl text-warrior-gold mb-4">CONTACT FORM</h3>
+
+                <form id="contact-form" class="space-y-4">
+                  <!-- Honeypot (anti-spam) -->
+                  <div class="hp-field" aria-hidden="true">
+                    <label for="website">Website</label>
+                    <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+                  </div>
+
+                  <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label class="block text-sm text-gray-300 mb-2" for="fullName">Full Name</label>
+                      <input
+                        id="fullName"
+                        name="fullName"
+                        type="text"
+                        required
+                        placeholder="Your full name"
+                        class="w-full rounded-lg px-4 py-3 text-white input-surface"
+                      />
+                    </div>
+
+                    <div>
+                      <label class="block text-sm text-gray-300 mb-2" for="email">E-mail</label>
+                      <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        required
+                        placeholder="example@mail.com"
+                        class="w-full rounded-lg px-4 py-3 text-white input-surface"
+                      />
+                    </div>
+
+                    <div>
+                      <label class="block text-sm text-gray-300 mb-2" for="phone">Phone</label>
+                      <input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        placeholder="+90 552 705 11 89"
+                        class="w-full rounded-lg px-4 py-3 text-white input-surface"
+                      />
+                    </div>
+
+                    <div>
+                      <label class="block text-sm text-gray-300 mb-2" for="subject">Subject</label>
+                      <input
+                        id="subject"
+                        name="subject"
+                        type="text"
+                        required
+                        placeholder="Example: Registration, course, partnership, sponsorship"
+                        class="w-full rounded-lg px-4 py-3 text-white input-surface"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label class="block text-sm text-gray-300 mb-2" for="message">Message</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows="5"
+                      required
+                      placeholder="Write your message..."
+                      class="w-full rounded-lg px-4 py-3 text-white input-surface"
+                    ></textarea>
+                  </div>
+
+                  <div class="bg-warrior-dark/40 border border-warrior-gray rounded-lg p-4">
+                    <label class="flex items-start gap-3 cursor-pointer">
+                      <input
+                        id="kvkkConsent"
+                        name="kvkkConsent"
+                        type="checkbox"
+                        required
+                        class="mt-1 w-5 h-5 accent-[color:var(--accent-color,#C41E3A)]"
+                      />
+                      <span class="text-gray-300 text-sm leading-relaxed">
+                        I give
+                        <span class="text-white font-semibold">explicit consent</span>
+                        to the processing of my personal data for communication processes within the scope of KVKK.
+                        <span class="text-gray-500">(Please review the KVKK/Privacy Policy page for details.)</span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+                    <button
+                      type="submit"
+                      class="btn-primary text-warrior-dark font-semibold px-6 py-3 rounded-lg shadow-lg transition-transform"
+                    >
+                      Send
+                    </button>
+
+                    <p class="text-gray-400 text-xs">
+                      * When you press the send button, WhatsApp opens and your message is prepared. Please press “Send” on WhatsApp.
+                    </p>
+                  </div>
+
+                  <div id="form-alert" class="hidden"></div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sponsorship & Partnerships -->
+        <section class="mb-10">
+          <div class="section-card rounded-lg p-6 md:p-8">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-warrior-gold/20 flex items-center justify-center">
+                <svg class="w-6 h-6 text-warrior-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+
+              <div class="flex-1">
+                <h3 class="font-heading text-2xl text-warrior-gold mb-3">SPONSORSHIP &amp; PARTNERSHIPS</h3>
+                <p class="text-gray-300 leading-relaxed">
+                  We are open to strategic partnerships with brands and institutions that amplify the power of sport. You can contact our team for event sponsorships, corporate participation packages, and on-site activations.
+                </p>
+                <p class="text-gray-300 leading-relaxed mt-3">
+                  <span class="text-white font-semibold">Corporate collaborations</span> and
+                  <span class="text-white font-semibold">federation partnerships</span> are welcomed.
+                </p>
+
+                <!-- Optional Official Partners -->
+                <div class="mt-6 bg-warrior-dark/40 border border-warrior-gray rounded-lg p-5">
+                  <div class="flex items-center justify-between flex-wrap gap-3">
+                    <h4 class="text-white font-semibold">Official Partners</h4>
+                  </div>
+
+                  <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <div class="h-20 rounded-lg border border-warrior-gray bg-warrior-dark/30 flex items-center justify-center">
+                      <span class="text-gray-500 text-sm">Logo 1</span>
+                    </div>
+                    <div class="h-20 rounded-lg border border-warrior-gray bg-warrior-dark/30 flex items-center justify-center">
+                      <span class="text-gray-500 text-sm">Logo 2</span>
+                    </div>
+                    <div class="h-20 rounded-lg border border-warrior-gray bg-warrior-dark/30 flex items-center justify-center">
+                      <span class="text-gray-500 text-sm">Logo 3</span>
+                    </div>
+                    <div class="h-20 rounded-lg border border-warrior-gray bg-warrior-dark/30 flex items-center justify-center">
+                      <span class="text-gray-500 text-sm">Logo 4</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-5 bg-gradient-to-r from-warrior-red/20 to-transparent border border-warrior-red/40 rounded-lg p-4">
+                  <p class="text-gray-200">
+                    For the sponsorship deck, visibility areas, and package details:
+                    <span class="text-white font-semibold" id="sponsor-email">founder@anatolianwarriors.com.tr</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- International Participants -->
+        <section class="mb-10">
+          <div class="bg-gradient-to-r from-warrior-red/20 via-warrior-dark to-warrior-red/20 rounded-xl p-6 md:p-8 border border-warrior-red/40">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-warrior-gold/20 flex items-center justify-center">
+                <svg class="w-6 h-6 text-warrior-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"
+                  />
+                </svg>
+              </div>
+
+              <div>
+                <h3 class="font-heading text-2xl text-warrior-gold mb-3">INTERNATIONAL PARTICIPANTS</h3>
+                <p class="text-gray-200 leading-relaxed">
+                  For international athletes and partners, please contact us via e-mail.
+                  <span class="text-white font-semibold" id="intl-email">founder@anatolianwarriors.com.tr</span>
+                </p>
+                <p class="text-gray-400 text-sm mt-2">
+                  We can support registration guidance, logistics information, and partnership requests.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Map (optional placeholder) -->
+        <section class="mb-10">
+          <div class="section-card rounded-lg p-6 md:p-8">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-warrior-red/20 flex items-center justify-center">
+                <svg class="w-6 h-6 text-warrior-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.553-.832L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 19.382V8.618a1 1 0 00-.553-.894L15 5m0 12V5m0 0L9 7"
+                  />
+                </svg>
+              </div>
+
+              <div class="flex-1">
+                <h3 class="font-heading text-2xl text-warrior-gold mb-3">MAP</h3>
+                <p class="text-gray-300 mb-4">Event venue and meeting point details are shared through announcements.</p>
+
+                <div class="rounded-xl border border-warrior-gray bg-warrior-dark/30 overflow-hidden">
+                  <div class="h-64 flex items-center justify-center">
+                    <div class="text-center px-6">
+                      <p class="text-gray-400">Map Placeholder</p>
+                      <p class="text-gray-500 text-sm mt-1">You can add a Google Maps iframe here.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Footer Reminder / Trust Statement -->
+        <section class="mb-2">
+          <div class="bg-warrior-dark/60 border border-warrior-gray rounded-xl p-6">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-warrior-gold/20 flex items-center justify-center">
+                <svg class="w-5 h-5 text-warrior-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 11c0 3.866-3.582 7-8 7V5c4.418 0 8 3.134 8 7zm0 0c0 3.866 3.582 7 8 7V5c-4.418 0-8 3.134-8 7z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-white font-semibold">Trust &amp; Professionalism</h4>
+                <p class="text-gray-300 mt-1 leading-relaxed">
+                  ANATOLIAN NINJA WARRIORS – STRONG TÜRKİYE is a sports organization that focuses on participant experience and manages safety, organization, and communication processes with professional standards.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="bg-warrior-dark border-t border-warrior-gray py-8 px-6">
+        <div class="max-w-5xl mx-auto">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-warrior-red flex items-center justify-center border border-warrior-gold">
+                <svg class="w-6 h-6 text-warrior-gold" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2L4 7v10c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V7l-8-5z" />
+                </svg>
+              </div>
+              <div>
+                <p class="font-heading text-lg text-white tracking-wider">ANATOLIAN NINJA WARRIORS</p>
+              </div>
+            </div>
+
+            <div class="text-center md:text-right">
+              <p class="text-gray-400 text-sm">© <span id="year"></span> ANATOLIAN NINJA WARRIORS. All rights reserved.</p>
+              <p class="text-gray-500 text-xs mt-1">Requests made through communication channels may be recorded.</p>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-6 border-t border-warrior-gray/50 flex flex-wrap justify-center gap-4 text-sm">
+            <a
+              href="/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-400 hover:text-warrior-gold transition-colors"
+              >Home</a
+            >
+            <span class="text-warrior-gray">|</span>
+            <a
+              href="/Hakkimizda.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-400 hover:text-warrior-gold transition-colors"
+              >About Us</a
+            >
+            <span class="text-warrior-gray">|</span>
+            <a
+              href="https://kosu.taf.org.tr/yarisma_detay.php?id=59"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-400 hover:text-warrior-gold transition-colors"
+              >Registration</a
+            >
+            <span class="text-warrior-gray">|</span>
+            <a
+              href="/kvkk.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-400 hover:text-warrior-gold transition-colors"
+              >KVKK</a
+            >
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // Default configuration (Element SDK)
+      const defaultConfig = {
+        page_title: "CONTACT US",
+        page_subtitle: "Get in Touch with Us",
+        hero_text: "You can contact us for your questions, collaborations, and participation details.",
+        organization_name: "ANATOLIAN NINJA WARRIORS – STRONG TÜRKİYE",
+        contact_email: "founder@anatolianwarriors.com.tr",
+        sponsor_email: "founder@anatolianwarriors.com.tr",
+        contact_phone: "+90 (552) 705 11 89",
+        contact_address: "Istanbul, Türkiye",
+        instagram_url: "https://www.instagram.com/anatolianninjawarriors/",
+        youtube_url: "https://www.youtube.com/channel/UCIr1-NJeZUK73yXA0s6RzLw",
+        linkedin_url: "https://www.linkedin.com/",
+        background_color: "#1A1A1A",
+        accent_color: "#C41E3A",
+        text_color: "#F5F5F5",
+        highlight_color: "#D4AF37",
+        secondary_surface: "#2D2D2D",
+        font_family: "Open Sans",
+        font_size: 16,
+      };
+
+      if (window.elementSdk) {
+        window.elementSdk.init({
+          defaultConfig,
+          onConfigChange: async (config) => {
+            const pageTitleEl = document.getElementById("page-title");
+            const pageSubtitleEl = document.getElementById("page-subtitle");
+            const heroTextEl = document.getElementById("hero-text");
+
+            if (pageTitleEl) pageTitleEl.textContent = config.page_title || defaultConfig.page_title;
+            if (pageSubtitleEl) pageSubtitleEl.textContent = config.page_subtitle || defaultConfig.page_subtitle;
+            if (heroTextEl) heroTextEl.textContent = config.hero_text || defaultConfig.hero_text;
+
+            const contactEmailEl = document.getElementById("contact-email");
+            const contactPhoneEl = document.getElementById("contact-phone");
+            const contactAddressEl = document.getElementById("contact-address");
+            const sponsorEmailEl = document.getElementById("sponsor-email");
+            const intlEmailEl = document.getElementById("intl-email");
+
+            const email = config.contact_email || defaultConfig.contact_email;
+            if (contactEmailEl) contactEmailEl.textContent = email;
+            if (intlEmailEl) intlEmailEl.textContent = email;
+
+            if (contactPhoneEl) contactPhoneEl.textContent = config.contact_phone || defaultConfig.contact_phone;
+            if (contactAddressEl) contactAddressEl.textContent = config.contact_address || defaultConfig.contact_address;
+            if (sponsorEmailEl) sponsorEmailEl.textContent = config.sponsor_email || defaultConfig.sponsor_email;
+
+            const ig = document.getElementById("instagram-link");
+            const yt = document.getElementById("youtube-link");
+            const li = document.getElementById("linkedin-link");
+
+            if (ig) ig.href = config.instagram_url || defaultConfig.instagram_url;
+            if (yt) yt.href = config.youtube_url || defaultConfig.youtube_url;
+            if (li) li.href = config.linkedin_url || defaultConfig.linkedin_url;
+
+            const bgColor = config.background_color || defaultConfig.background_color;
+            const accentColor = config.accent_color || defaultConfig.accent_color;
+            const textColor = config.text_color || defaultConfig.text_color;
+            const highlightColor = config.highlight_color || defaultConfig.highlight_color;
+            const secondarySurface = config.secondary_surface || defaultConfig.secondary_surface;
+
+            document.documentElement.style.setProperty("--bg-color", bgColor);
+            document.documentElement.style.setProperty("--accent-color", accentColor);
+            document.documentElement.style.setProperty("--text-color", textColor);
+            document.documentElement.style.setProperty("--highlight-color", highlightColor);
+            document.documentElement.style.setProperty("--secondary-surface", secondarySurface);
+
+            const fontFamily = config.font_family || defaultConfig.font_family;
+            const fontSize = config.font_size || defaultConfig.font_size;
+
+            document.body.style.fontFamily = `${fontFamily}, 'Open Sans', sans-serif`;
+            document.body.style.fontSize = `${fontSize}px`;
+          },
+          mapToCapabilities: (config) => ({
+            recolorables: [
+              {
+                get: () => config.background_color || defaultConfig.background_color,
+                set: (value) => {
+                  config.background_color = value;
+                  window.elementSdk.setConfig({ background_color: value });
+                },
+              },
+              {
+                get: () => config.secondary_surface || defaultConfig.secondary_surface,
+                set: (value) => {
+                  config.secondary_surface = value;
+                  window.elementSdk.setConfig({ secondary_surface: value });
+                },
+              },
+              {
+                get: () => config.text_color || defaultConfig.text_color,
+                set: (value) => {
+                  config.text_color = value;
+                  window.elementSdk.setConfig({ text_color: value });
+                },
+              },
+              {
+                get: () => config.accent_color || defaultConfig.accent_color,
+                set: (value) => {
+                  config.accent_color = value;
+                  window.elementSdk.setConfig({ accent_color: value });
+                },
+              },
+              {
+                get: () => config.highlight_color || defaultConfig.highlight_color,
+                set: (value) => {
+                  config.highlight_color = value;
+                  window.elementSdk.setConfig({ highlight_color: value });
+                },
+              },
+            ],
+            borderables: [],
+            fontEditable: {
+              get: () => config.font_family || defaultConfig.font_family,
+              set: (value) => {
+                config.font_family = value;
+                window.elementSdk.setConfig({ font_family: value });
+              },
+            },
+            fontSizeable: {
+              get: () => config.font_size || defaultConfig.font_size,
+              set: (value) => {
+                config.font_size = value;
+                window.elementSdk.setConfig({ font_size: value });
+              },
+            },
+          }),
+          mapToEditPanelValues: (config) =>
+            new Map([
+              ["page_title", config.page_title || defaultConfig.page_title],
+              ["page_subtitle", config.page_subtitle || defaultConfig.page_subtitle],
+              ["hero_text", config.hero_text || defaultConfig.hero_text],
+              ["organization_name", config.organization_name || defaultConfig.organization_name],
+              ["contact_email", config.contact_email || defaultConfig.contact_email],
+            ]),
+        });
+      }
+
+      // WhatsApp Submit + Honeypot
+      const form = document.getElementById("contact-form");
+      const alertBox = document.getElementById("form-alert");
+
+      const WHATSAPP_NUMBER = "905551875798"; // no +, no spaces
+
+      function showAlert(type, text) {
+        if (!alertBox) return;
+        alertBox.classList.remove("hidden");
+
+        if (type === "success") {
+          alertBox.className =
+            "mt-3 rounded-lg border border-green-500/40 bg-green-900/20 text-green-200 px-4 py-3";
+        } else {
+          alertBox.className =
+            "mt-3 rounded-lg border border-red-500/40 bg-red-900/20 text-red-200 px-4 py-3";
+        }
+        alertBox.textContent = text;
+      }
+
+      if (form) {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          const fullName = document.getElementById("fullName").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const phone = document.getElementById("phone").value.trim();
+          const subject = document.getElementById("subject").value.trim();
+          const message = document.getElementById("message").value.trim();
+          const consent = document.getElementById("kvkkConsent");
+          const honeypot = document.getElementById("website");
+
+          if (honeypot && honeypot.value.trim() !== "") {
+            form.reset();
+            showAlert("success", "Your message has been received. Our team will contact you as soon as possible.");
+            return;
+          }
+
+          if (!consent.checked) {
+            showAlert("error", "Please check the KVKK consent box.");
+            return;
+          }
+
+          if (!fullName || !email || !subject || !message) {
+            showAlert("error", "Please fill in the required fields.");
+            return;
+          }
+
+          const whatsappMessage = `
+📩 *New Contact Form*
+
+👤 Full Name: ${fullName}
+📧 E-mail: ${email}
+📞 Phone: ${phone || "-"}
+📝 Subject: ${subject}
+
+💬 Message:
+${message}
+          `.trim();
+
+          const encodedMessage = encodeURIComponent(whatsappMessage);
+          const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+
+          window.open(whatsappURL, "_blank");
+
+          showAlert("success", "WhatsApp is opening... Please send the message.");
+
+          form.reset();
+        });
+      }
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
