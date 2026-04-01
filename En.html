@@ -21,14 +21,17 @@
 
   <style>
     html, body {
-      height: 100%;
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      background: #0a0a0a;
     }
 
     body {
       box-sizing: border-box;
-      overflow: hidden;
-      margin: 0;
-      padding: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
 
     .font-bebas { font-family: 'Bebas Neue', sans-serif; }
@@ -41,15 +44,6 @@
       50% {
         box-shadow: 0 0 30px rgba(220, 38, 38, 0.8), 0 0 60px rgba(220, 38, 38, 0.5);
       }
-    }
-
-    @keyframes loading-progress {
-      0% { width: 0%; }
-      20% { width: 25%; }
-      40% { width: 45%; }
-      60% { width: 65%; }
-      80% { width: 85%; }
-      100% { width: 92%; }
     }
 
     @keyframes shimmer {
@@ -82,21 +76,25 @@
       }
     }
 
+    @keyframes org-fade-up {
+      0%   { opacity: 0; transform: translateY(10px); }
+      18%  { opacity: .88; transform: translateY(0px); }
+      72%  { opacity: .88; transform: translateY(-6px); }
+      100% { opacity: 0; transform: translateY(-18px); }
+    }
+
+    @keyframes countdown-glow {
+      0%, 100% {
+        box-shadow: 0 0 0 1px rgba(248, 113, 113, 0.18) inset, 0 0 24px rgba(220, 38, 38, 0.18);
+      }
+      50% {
+        box-shadow: 0 0 0 1px rgba(248, 113, 113, 0.28) inset, 0 0 40px rgba(239, 68, 68, 0.26);
+      }
+    }
+
     .animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
-    .animate-loading { animation: loading-progress 4s ease-out forwards; }
     .animate-float { animation: float 3s ease-in-out infinite; }
     .animate-slide-up { animation: slide-up 0.8s ease-out forwards; }
-
-    .loading-bar::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 50%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-      animation: shimmer 1.5s infinite;
-    }
 
     .text-gradient {
       background: linear-gradient(135deg, #ffffff 0%, #fecaca 50%, #dc2626 100%);
@@ -121,22 +119,13 @@
       font-size: clamp(56px, 10vw, 82px);
       letter-spacing: 0.08em;
       text-decoration: none;
+      white-space: normal;
     }
-    #main-title {
-  white-space: normal; /* موبایل: شکستن مجاز */
-}
 
-@media (min-width: 768px) {
-  #main-title {
-    white-space: nowrap; /* دسکتاپ: یک خط */
-  }
-}
-
-    @keyframes org-fade-up {
-      0%   { opacity: 0; transform: translateY(10px); }
-      18%  { opacity: .88; transform: translateY(0px); }
-      72%  { opacity: .88; transform: translateY(-6px); }
-      100% { opacity: 0; transform: translateY(-18px); }
+    @media (min-width: 768px) {
+      #main-title {
+        white-space: nowrap;
+      }
     }
 
     .org-ticker {
@@ -325,6 +314,232 @@
         0 0 22px rgba(220, 38, 38, 0.18);
     }
 
+    .prize-note {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(226, 232, 240, 0.72);
+      letter-spacing: .04em;
+    }
+
+    .countdown-wrap {
+      width: 100%;
+      max-width: 56rem;
+      margin: 22px auto 0 auto;
+      padding: 18px;
+      border-radius: 24px;
+      border: 1px solid rgba(248, 113, 113, 0.18);
+      background: linear-gradient(180deg, rgba(14, 14, 14, 0.75) 0%, rgba(20, 20, 20, 0.55) 100%);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      animation: countdown-glow 3.2s ease-in-out infinite;
+    }
+
+    .countdown-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: rgba(252, 165, 165, .9);
+      margin-bottom: 12px;
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .count-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 18px;
+      padding: 16px 10px;
+    }
+
+    .count-num {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      line-height: 1;
+      color: #fff;
+    }
+
+    .count-label {
+      margin-top: 8px;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(226, 232, 240, 0.72);
+    }
+
+    .countdown-sub {
+      margin-top: 14px;
+      font-family: 'Rajdhani', sans-serif;
+      color: rgba(226, 232, 240, 0.78);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: .04em;
+    }
+
+    .info-section {
+      position: relative;
+      background:
+        radial-gradient(circle at top left, rgba(220, 38, 38, 0.08) 0%, transparent 35%),
+        radial-gradient(circle at bottom right, rgba(220, 38, 38, 0.06) 0%, transparent 35%),
+        linear-gradient(180deg, #090909 0%, #101010 100%);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .section-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.015) 100%);
+      border: 1px solid rgba(255,255,255,0.06);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+    }
+
+    .section-kicker {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: #f87171;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.1rem, 4vw, 3.3rem);
+      letter-spacing: .06em;
+      color: #fff;
+      line-height: 1;
+      margin-top: 8px;
+    }
+
+    .section-text {
+      font-family: 'Rajdhani', sans-serif;
+      color: rgba(226, 232, 240, 0.86);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-top: 14px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .feature-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 18px;
+      padding: 16px 18px;
+      font-family: 'Rajdhani', sans-serif;
+      color: #f8fafc;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .timeline-card {
+      border-radius: 22px;
+      padding: 20px;
+      background: linear-gradient(180deg, rgba(127, 29, 29, 0.22) 0%, rgba(17, 24, 39, 0.55) 100%);
+      border: 1px solid rgba(248, 113, 113, 0.16);
+      text-align: center;
+    }
+
+    .timeline-step {
+      font-family: 'Bebas Neue', sans-serif;
+      color: #fca5a5;
+      font-size: 1.2rem;
+      letter-spacing: .12em;
+      margin-bottom: 8px;
+    }
+
+    .timeline-name {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .bullet-list {
+      margin-top: 18px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .bullet-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-family: 'Rajdhani', sans-serif;
+      color: rgba(226,232,240,0.88);
+      font-size: 1rem;
+      line-height: 1.7;
+      font-weight: 600;
+    }
+
+    .bullet-icon {
+      color: #f87171;
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+
+    .mini-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .mini-stat {
+      border-radius: 22px;
+      padding: 22px 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.035) 0%, rgba(255,255,255,0.015) 100%);
+      border: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+    }
+
+    .mini-stat-number {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.3rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+    }
+
+    .mini-stat-label {
+      margin-top: 8px;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.95rem;
+      color: rgba(226,232,240,0.72);
+      font-weight: 700;
+      letter-spacing: .04em;
+    }
+
+    .custom-footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
     @media (min-width: 768px) {
       .quick-actions {
         max-width: 46rem;
@@ -357,6 +572,41 @@
         font-size: 14px;
       }
     }
+
+    @media (max-width: 1024px) {
+      .timeline-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .mini-stat-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .countdown-grid,
+      .feature-grid,
+      .timeline-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .section-card {
+        padding: 22px 18px;
+        border-radius: 20px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .countdown-grid,
+      .feature-grid,
+      .timeline-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .count-card {
+        padding: 14px;
+      }
+    }
   </style>
 
   <style>
@@ -364,15 +614,16 @@
   </style>
 </head>
 
-<body class="h-full m-0 p-0 overflow-hidden">
+<body class="bg-pattern text-white">
   <!-- Language Switch -->
-  <a href="/" > <div class="absolute top-6 right-6 z-50">
-    <button onclick="toggleLang()" class="font-rajdhani px-4 py-2 text-sm bg-black/40 border border-red-500/40 rounded-lg text-white hover:bg-red-600/30 transition">
+  <a href="/" class="fixed top-6 right-6 z-50">
+    <button class="font-rajdhani px-4 py-2 text-sm bg-black/40 border border-red-500/40 rounded-lg text-white hover:bg-red-600/30 transition">
       TR / EN
     </button>
-  </div> </a>
-  <div. id="app-wrapper" class="h-screen w-full bg-pattern flex flex-col items-center justify-center relative overflow-hidden">
+  </a>
 
+  <!-- HERO -->
+  <section id="app-wrapper" class="min-h-screen w-full flex flex-col items-center justify-center relative overflow-hidden px-4 py-16 md:py-20">
     <div class="absolute top-10 left-10 opacity-20">
       <svg class="w-16 h-16 text-red-600 animate-float" style="animation-delay: 0s;" viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
@@ -391,16 +642,17 @@
       </svg>
     </div>
 
-    <div class="text-center px-6 max-w-4xl relative z-10 w-full">
+    <div class="text-center px-2 md:px-6 max-w-5xl relative z-10 w-full">
       <h1 class="font-bebas tracking-wider text-gradient animate-slide-up" style="animation-delay:0.2s; opacity:0;">
-        <a id="main-title" href="/">ANATOLIAN NINJA WARRIORS</a>
+        <a id="main-title" href="/" class="text-inherit no-underline">ANATOLIAN NINJA WARRIORS</a>
       </h1>
 
       <div class="animate-slide-up" style="animation-delay:0.58s; opacity:0;">
-        <a class="prize-card" href="/ENRegistration.html" target="_blank" rel="noopener noreferrer" aria-label="Championship Prize 5,000,000 ₺">
+        <a class="prize-card" href="/ENRegistration.html" aria-label="Championship Prize 5,000,000 TL">
           <div class="prize-icon" aria-hidden="true">🏆</div>
           <div class="prize-label">Championship Prize</div>
-          <div class="prize-amount">5,000,000 ₺</div>
+          <div class="prize-amount">5,000,000 TL</div>
+          <div class="prize-note">International obstacle competition in Istanbul</div>
         </a>
       </div>
 
@@ -411,6 +663,33 @@
               <span class="org-label">APPROVAL:</span>
               <span class="org-text" id="org-text">—</span>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="animate-slide-up" style="animation-delay:0.66s; opacity:0;">
+        <div class="countdown-wrap">
+          <div class="countdown-title">Countdown to Competition Day</div>
+          <div class="countdown-grid">
+            <div class="count-card">
+              <div id="days" class="count-num">00</div>
+              <div class="count-label">Days</div>
+            </div>
+            <div class="count-card">
+              <div id="hours" class="count-num">00</div>
+              <div class="count-label">Hours</div>
+            </div>
+            <div class="count-card">
+              <div id="minutes" class="count-num">00</div>
+              <div class="count-label">Minutes</div>
+            </div>
+            <div class="count-card">
+              <div id="seconds" class="count-num">00</div>
+              <div class="count-label">Seconds</div>
+            </div>
+          </div>
+          <div class="countdown-sub">
+            Official competition day: <strong>1 July 2026</strong>
           </div>
         </div>
       </div>
@@ -483,11 +762,176 @@
     </div>
 
     <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent"></div>
-  </div>
+  </section>
 
+
+
+  <section class="info-section py-20 px-4 md:px-8">
+    <div class="max-w-7xl mx-auto space-y-8">
+      <div class="section-card">
+        <div class="section-kicker">Official Overview</div>
+        <h2 class="section-title">Anatolian Ninja Warriors</h2>
+        <p class="section-text">
+          Anatolian Ninja Warriors is an international obstacle course competition inspired by the globally recognized Ninja Warrior format, designed to showcase strength, agility, endurance, and mental resilience at the highest level.
+        </p>
+        <p class="section-text">
+          The event is organized in Istanbul in cooperation with the Turkish Athletics Federation and under the coordination of the Ministry of Youth and Sports of Türkiye, ensuring a structured, fair, and officially recognized competition environment.
+        </p>
+      </div>
+
+      <div class="section-card">
+        <div class="section-kicker">Competition Concept</div>
+        <h3 class="section-title">A high-level obstacle challenge</h3>
+        <p class="section-text">
+          Anatolian Ninja Warriors brings together athletes from different countries to compete on large-scale, professionally designed obstacle courses. The competition tests:
+        </p>
+
+        <div class="feature-grid">
+          <div class="feature-item">⚡ Explosive strength</div>
+          <div class="feature-item">🧭 Balance and coordination</div>
+          <div class="feature-item">🏃 Speed and endurance</div>
+          <div class="feature-item">🧠 Problem-solving under pressure</div>
+        </div>
+
+        <p class="section-text">
+          Each obstacle is engineered to challenge both physical and mental limits, creating a dynamic and competitive experience similar to top international obstacle competitions.
+        </p>
+      </div>
+
+      <div class="section-card">
+        <div class="section-kicker">Competition Format</div>
+        <h3 class="section-title">Multi-stage elimination system</h3>
+
+        <div class="timeline-grid">
+          <div class="timeline-card">
+            <div class="timeline-step">Stage 1</div>
+            <div class="timeline-name">Qualification Rounds</div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-step">Stage 2</div>
+            <div class="timeline-name">Elimination Stages</div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-step">Stage 3</div>
+            <div class="timeline-name">Semi-Finals</div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-step">Stage 4</div>
+            <div class="timeline-name">Grand Final</div>
+          </div>
+        </div>
+
+        <p class="section-text">
+          Athletes are progressively selected based on their performance, completion time, and obstacle success rate. Only the top-performing competitors advance to the final stage.
+        </p>
+        <p class="section-text">
+          The final round determines the official ranking and champions of Anatolian Ninja Warriors.
+        </p>
+      </div>
+
+      <div class="section-card">
+        <div class="section-kicker">Participation & Eligibility</div>
+        <h3 class="section-title">Open to national and international athletes</h3>
+
+        <div class="bullet-list">
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Open to both national and international athletes</span></div>
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Participants must have a background in sports such as Parkour, Gymnastics, Calisthenics, Obstacle Course Racing (OCR), or Track & Field</span></div>
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Athletes are expected to demonstrate a high level of physical readiness and competitive experience</span></div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-kicker">Prize Structure</div>
+        <h3 class="section-title">Elite rewards for elite performance</h3>
+
+        <div class="mini-stat-grid">
+          <div class="mini-stat">
+            <div class="mini-stat-number">5,000,000 TL</div>
+            <div class="mini-stat-label">Main Prize</div>
+          </div>
+          <div class="mini-stat">
+            <div class="mini-stat-number">1,000,000 TL</div>
+            <div class="mini-stat-label">Special Performance Award</div>
+          </div>
+          <div class="mini-stat">
+            <div class="mini-stat-number">+ Extra Rewards</div>
+            <div class="mini-stat-label">Supported by official sponsors</div>
+          </div>
+        </div>
+
+        <p class="section-text">
+          Additional rewards may also be granted to finalists through official sponsors and event partners.
+        </p>
+      </div>
+
+      <div class="section-card">
+        <div class="section-kicker">Athlete Support</div>
+        <h3 class="section-title">Support for selected professional athletes</h3>
+
+        <div class="bullet-list">
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Travel and accommodation may be covered for selected professional athletes</span></div>
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Sponsored athletes may represent official partner brands during the competition</span></div>
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Independent athletes are also welcome and may compete with personal sponsors</span></div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-kicker">Media & Exposure</div>
+        <h3 class="section-title">Built for reach, visibility and impact</h3>
+
+        <div class="feature-grid">
+          <div class="feature-item">📺 Television broadcast potential</div>
+          <div class="feature-item">📲 Strong digital media presence</div>
+          <div class="feature-item">🌍 International audience reach</div>
+          <div class="feature-item">🚀 Athlete promotion through official channels</div>
+        </div>
+
+        <p class="section-text">
+          Selected athletes will be featured across promotional campaigns, providing strong international visibility and audience engagement.
+        </p>
+      </div>
+
+      <div class="section-card">
+        <div class="section-kicker">Official Registration</div>
+        <h3 class="section-title">Registration through the federation platform</h3>
+        <p class="section-text">
+          All participants must complete their registration through the official platform of the Turkish Athletics Federation.
+        </p>
+      </div>
+
+      <div class="section-card">
+        <div class="section-kicker">Vision</div>
+        <h3 class="section-title">A new era of sports entertainment in Türkiye</h3>
+
+        <div class="bullet-list">
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Professional organization</span></div>
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Transparent and fair competition principles</span></div>
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Global athlete participation</span></div>
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Strong media integration</span></div>
+        </div>
+
+        <p class="section-text">
+          Anatolian Ninja Warriors aims to become one of the leading international obstacle competitions by combining elite-level production, official coordination, and global ambition.
+        </p>
+        <p class="section-text">
+          The project represents a new era of competitive sports entertainment in Türkiye, connecting local strength with international vision.
+        </p>
+      </div>
+    </div>
+  </section>
+ <footer class="custom-footer py-6 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="font-rajdhani text-sm text-gray-400 tracking-wide">
+        © 2026 Anatolian Ninja Warriors. All rights reserved.
+      </div>
+      <div class="font-rajdhani text-sm text-gray-500 tracking-wide text-center md:text-right">
+        Official competition overview • International obstacle course series
+      </div>
+    </div>
+  </footer>
   <script>
     const defaultConfig = {
-      main_title: 'ANATOLIAN WARRIORS',
+      main_title: 'ANATOLIAN NINJA WARRIORS',
       primary_color: '#dc2626',
       background_color: '#0a0a0a',
       text_color: '#d1d5db',
@@ -569,17 +1013,19 @@
 
     (function initOrgTicker() {
       const ORGS = [
-        'Turkey Federation of Modern Pentathlon',
-        'Republic of Türkiye Ministry of Youth and Sports (Istanbul)',
-        'Istanbul Metropolitan Municipality',
-        'Istanbul Governorate'
+        'Turkish Athletics Federation',
+        'Ministry of Youth and Sports of Türkiye',
+        'Official coordination in Istanbul',
+        'International obstacle competition'
       ];
 
       const textEl = document.getElementById('org-text');
       const lineEl = document.getElementById('org-line');
+
       if (!textEl || !lineEl) return;
 
       let idx = 0;
+
       function showNext() {
         lineEl.style.animation = 'none';
         void lineEl.offsetHeight;
@@ -592,12 +1038,45 @@
       setInterval(showNext, 2600);
     })();
 
+    function updateCountdown() {
+      const targetDate = new Date('2026-07-01T00:00:00');
+      const now = new Date();
+      const diff = targetDate - now;
+
+      const daysEl = document.getElementById('days');
+      const hoursEl = document.getElementById('hours');
+      const minutesEl = document.getElementById('minutes');
+      const secondsEl = document.getElementById('seconds');
+
+      if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+
+      if (diff <= 0) {
+        daysEl.textContent = '00';
+        hoursEl.textContent = '00';
+        minutesEl.textContent = '00';
+        secondsEl.textContent = '00';
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      daysEl.textContent = String(days).padStart(2, '0');
+      hoursEl.textContent = String(hours).padStart(2, '0');
+      minutesEl.textContent = String(minutes).padStart(2, '0');
+      secondsEl.textContent = String(seconds).padStart(2, '0');
+    }
+
     window.addEventListener('resize', fitTitle, { passive: true });
 
     document.addEventListener('DOMContentLoaded', () => {
       fitTitle();
       setTimeout(fitTitle, 250);
       setTimeout(fitTitle, 800);
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
     });
 
     if (document.fonts && document.fonts.ready) {
@@ -605,17 +1084,6 @@
         fitTitle();
         setTimeout(fitTitle, 150);
       });
-    }
-  </script>
-
-  <script>
-    function toggleLang() {
-      const current = window.location.pathname;
-      if (current.includes("/en")) {
-        window.location.href = "/"; // Turkish version
-      } else {
-        window.location.href = "/en"; // English version
-      }
     }
   </script>
 </body>
