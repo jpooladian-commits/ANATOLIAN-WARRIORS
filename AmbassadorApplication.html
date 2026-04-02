@@ -1,0 +1,1047 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anatolian Ninja Warriors – Ambassador Application</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Google reCAPTCHA v3 -->
+  <script src="https://www.google.com/recaptcha/api.js?render=YOUR_RECAPTCHA_SITE_KEY"></script>
+
+  <style>
+    html, body {
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      background: #0a0a0a;
+    }
+
+    body {
+      overflow-x: hidden;
+      color: white;
+      box-sizing: border-box;
+      background-image:
+        radial-gradient(circle at 20% 80%, rgba(220, 38, 38, 0.14) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(30, 30, 30, 1) 0%, rgba(10, 10, 10, 1) 100%);
+    }
+
+    .font-bebas { font-family: 'Bebas Neue', sans-serif; }
+    .font-rajdhani { font-family: 'Rajdhani', sans-serif; }
+
+    .text-gradient {
+      background: linear-gradient(135deg, #ffffff 0%, #ffd4d4 35%, #f87171 75%, #dc2626 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .glass-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.015) 100%);
+      border: 1px solid rgba(255,255,255,0.06);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+      border-radius: 24px;
+    }
+
+    .section-kicker {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: #f87171;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.2rem, 4vw, 4.2rem);
+      letter-spacing: .06em;
+      color: #fff;
+      line-height: 1;
+      margin-top: 8px;
+    }
+
+    .section-text {
+      font-family: 'Rajdhani', sans-serif;
+      color: rgba(226, 232, 240, 0.86);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      margin-top: 14px;
+    }
+
+    .hero-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      border: 1px solid rgba(248, 113, 113, 0.16);
+      box-shadow:
+        0 0 0 1px rgba(248, 113, 113, 0.08) inset,
+        0 0 40px rgba(220, 38, 38, 0.16);
+      min-height: 360px;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
+        url('/images/ambassador-form-hero.jpg') center/cover no-repeat;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 64px 24px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.28);
+      border: 1px solid rgba(248,113,113,0.22);
+      color: rgba(254, 226, 226, 0.95);
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.22);
+    }
+
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 8vw, 6.2rem);
+      letter-spacing: .08em;
+      line-height: 0.92;
+      margin-top: 16px;
+      color: #fff;
+      text-shadow: 0 3px 10px rgba(0,0,0,0.78);
+    }
+
+    .hero-brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2.8rem);
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.96);
+      margin-top: 14px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    }
+
+    .hero-sub {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: clamp(1rem, 2.2vw, 1.35rem);
+      color: rgba(241,245,249,0.92);
+      font-weight: 700;
+      margin-top: 14px;
+      line-height: 1.8;
+      max-width: 840px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .form-section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: .05em;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .form-section-sub {
+      font-family: 'Rajdhani', sans-serif;
+      color: rgba(226,232,240,0.78);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .field-full {
+      grid-column: 1 / -1;
+    }
+
+    label.field-label {
+      display: block;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 800;
+      font-size: 0.98rem;
+      letter-spacing: .03em;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .field-note {
+      display: block;
+      margin-top: 6px;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.9rem;
+      color: rgba(226,232,240,0.58);
+      line-height: 1.6;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="date"],
+    input[type="url"],
+    input[type="tel"],
+    textarea,
+    select {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.28);
+      color: white;
+      border-radius: 16px;
+      padding: 14px 16px;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+      box-sizing: border-box;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(226,232,240,0.42);
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: rgba(248,113,113,0.45);
+      box-shadow: 0 0 0 3px rgba(220,38,38,0.14);
+      background: rgba(0,0,0,0.36);
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .check-grid {
+      display: grid;
+      gap: 12px;
+      margin-top: 6px;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 14px;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.02);
+      font-family: 'Rajdhani', sans-serif;
+      color: rgba(241,245,249,0.92);
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .option-item input[type="checkbox"] {
+      width: auto;
+      margin-top: 2px;
+      accent-color: #dc2626;
+      transform: scale(1.1);
+    }
+
+    .upload-box {
+      border: 1px dashed rgba(248,113,113,0.32);
+      background: rgba(220,38,38,0.04);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .upload-box input[type="file"] {
+      width: 100%;
+      font-family: 'Rajdhani', sans-serif;
+      color: rgba(241,245,249,0.86);
+      background: transparent;
+      border: none;
+      padding: 0;
+    }
+
+    .submit-wrap {
+      text-align: center;
+      padding: 28px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(127, 29, 29, 0.18) 0%, rgba(17, 24, 39, 0.45) 100%);
+      border: 1px solid rgba(248, 113, 113, 0.16);
+    }
+
+    .submit-btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 16px 28px;
+      border-radius: 16px;
+      background: linear-gradient(90deg, rgba(185,28,28,1) 0%, rgba(239,68,68,1) 100%);
+      color: white;
+      border: 1px solid rgba(252,165,165,0.26);
+      text-decoration: none;
+      box-shadow: 0 14px 30px rgba(220,38,38,0.22);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, opacity .2s ease;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(220,38,38,0.30);
+      border-color: rgba(254,202,202,0.42);
+    }
+
+    .submit-btn:disabled {
+      opacity: .65;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .alert-box {
+      padding: 16px 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(248,113,113,0.18);
+      background: rgba(127,29,29,0.10);
+      color: rgba(254,226,226,0.94);
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      line-height: 1.8;
+    }
+
+    .success-box,
+    .error-box,
+    .loading-box {
+      display: none;
+      margin-top: 22px;
+      padding: 22px;
+      border-radius: 20px;
+    }
+
+    .success-box.show,
+    .error-box.show,
+    .loading-box.show {
+      display: block;
+    }
+
+    .success-box {
+      border: 1px solid rgba(74, 222, 128, 0.22);
+      background: rgba(34,197,94,0.08);
+    }
+
+    .error-box {
+      border: 1px solid rgba(248,113,113,0.22);
+      background: rgba(220,38,38,0.08);
+    }
+
+    .loading-box {
+      border: 1px solid rgba(96,165,250,0.22);
+      background: rgba(59,130,246,0.08);
+    }
+
+    .footer-style {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .hp-field {
+      position: absolute !important;
+      left: -9999px !important;
+      width: 1px !important;
+      height: 1px !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+
+    @media (max-width: 860px) {
+      .field-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="px-4 md:px-8 pt-6 pb-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="hero-wrap">
+        <div class="hero-content">
+          <div class="hero-badge">Elite • International • VIP Experience</div>
+          <h1 class="hero-title text-gradient">Apply for the Ambassador Program</h1>
+          <div class="hero-brand">ANATOLIAN NINJA WARRIORS</div>
+          <p class="hero-sub">
+            Welcome to the official Ambassador Program of Anatolian Ninja Warriors.
+            This program is designed for elite athletes who want more than just competing — those who seek
+            <strong>international exposure, unique experiences, and global recognition</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 md:px-8 pb-16">
+    <div class="max-w-5xl mx-auto">
+      <form class="glass-card p-6 md:p-10 space-y-10" id="ambassadorForm" novalidate>
+        <div>
+          <div class="section-kicker">Official Application</div>
+          <h2 class="section-title">Ambassador Application Form</h2>
+          <p class="section-text">
+            Selected ambassadors will not only compete, but also become part of a <strong>VIP Athlete Experience in Türkiye</strong>.
+          </p>
+          <div class="alert-box mt-5">
+            ⚠️ Important: Ambassador spots are limited and applications will be carefully reviewed by our team.
+          </div>
+        </div>
+
+        <div>
+          <div class="form-section-title">Before You Apply</div>
+          <p class="form-section-sub">
+            Please complete the form carefully and provide accurate information.
+            Submitting this form does <strong>not guarantee selection</strong>. All applications are subject to evaluation.
+          </p>
+        </div>
+
+        <input type="text" name="website_hp" id="website_hp" class="hp-field" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="submitSeconds" id="submitSeconds">
+        <input type="hidden" name="recaptchaToken" id="recaptchaToken">
+
+        <div>
+          <div class="form-section-title">1. Personal Information</div>
+          <div class="field-grid">
+            <div>
+              <label class="field-label">Full Name</label>
+              <input type="text" name="full_name" placeholder="Enter your full name" required>
+            </div>
+
+            <div>
+              <label class="field-label">Preferred Name (for media/public use)</label>
+              <input type="text" name="preferred_name" placeholder="Enter preferred name">
+            </div>
+
+            <div>
+              <label class="field-label">Date of Birth</label>
+              <input type="date" name="date_of_birth" required>
+            </div>
+
+            <div>
+              <label class="field-label">Age</label>
+              <input type="number" name="age" min="1" placeholder="Enter your age" required>
+            </div>
+
+            <div>
+              <label class="field-label">Gender</label>
+              <select name="gender" required>
+                <option value="">Select gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Prefer not to say</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="field-label">Nationality</label>
+              <input type="text" name="nationality" placeholder="Enter your nationality" required>
+            </div>
+
+            <div>
+              <label class="field-label">Country of Residence</label>
+              <input type="text" name="country_residence" placeholder="Enter your country" required>
+            </div>
+
+            <div>
+              <label class="field-label">City of Residence</label>
+              <input type="text" name="city_residence" placeholder="Enter your city" required>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="form-section-title">2. Contact Information</div>
+          <div class="field-grid">
+            <div>
+              <label class="field-label">Email Address</label>
+              <input type="email" name="email" placeholder="Enter your email address" required>
+            </div>
+
+            <div>
+              <label class="field-label">WhatsApp Number (with country code)</label>
+              <input type="tel" name="whatsapp" placeholder="+90..." required>
+            </div>
+
+            <div>
+              <label class="field-label">Instagram Profile Link</label>
+              <input type="url" name="instagram" placeholder="https://instagram.com/yourprofile" required>
+            </div>
+
+            <div>
+              <label class="field-label">Other Social Media / Website (optional)</label>
+              <input type="url" name="website" placeholder="https://yourwebsite.com">
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="form-section-title">3. Athletic Background</div>
+          <div class="field-grid">
+            <div>
+              <label class="field-label">Primary Sport Discipline</label>
+              <select name="discipline" required>
+                <option value="">Select discipline</option>
+                <option>Ninja</option>
+                <option>OCR (Obstacle Course Racing)</option>
+                <option>Parkour</option>
+                <option>Gymnastics</option>
+                <option>Calisthenics</option>
+                <option>Climbing</option>
+                <option>Cross Training</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="field-label">If "Other", please specify</label>
+              <input type="text" name="discipline_other" placeholder="Specify discipline">
+            </div>
+
+            <div>
+              <label class="field-label">Years of Athletic Experience</label>
+              <input type="number" name="experience_years" min="0" placeholder="Enter years of experience" required>
+            </div>
+
+            <div>
+              <label class="field-label">Current Level</label>
+              <select name="current_level" required>
+                <option value="">Select current level</option>
+                <option>Professional</option>
+                <option>Semi-professional</option>
+                <option>Competitive athlete</option>
+                <option>Content creator with high-level performance</option>
+              </select>
+            </div>
+
+            <div class="field-full">
+              <label class="field-label">Key Achievements / Competition Results</label>
+              <textarea name="achievements" placeholder="Write your most important achievements"></textarea>
+            </div>
+
+            <div>
+              <label class="field-label">Have you participated in international competitions?</label>
+              <select name="international_competitions" required>
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </div>
+
+            <div class="field-full">
+              <label class="field-label">If yes, please list them</label>
+              <textarea name="international_competitions_list" placeholder="List international competitions"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="form-section-title">4. Ambassador Evaluation</div>
+          <div class="field-grid">
+            <div class="field-full">
+              <label class="field-label">Why do you want to become an Ambassador for Anatolian Ninja Warriors?</label>
+              <textarea name="why_ambassador" placeholder="Tell us why you want to join"></textarea>
+            </div>
+
+            <div class="field-full">
+              <label class="field-label">Why do you believe you are a strong candidate?</label>
+              <textarea name="strong_candidate" placeholder="Tell us why you are a strong fit"></textarea>
+            </div>
+
+            <div class="field-full">
+              <label class="field-label">How can you help promote this competition in your country or audience?</label>
+              <textarea name="promotion_plan" placeholder="Describe how you can help promote the competition"></textarea>
+            </div>
+
+            <div>
+              <label class="field-label">Do you have experience working with brands or sponsors?</label>
+              <select name="brand_experience" required>
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </div>
+
+            <div class="field-full">
+              <label class="field-label">If yes, please explain</label>
+              <textarea name="brand_experience_details" placeholder="Explain your brand or sponsor experience"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="form-section-title">5. Social Presence & Content</div>
+          <div class="field-grid">
+            <div>
+              <label class="field-label">Approximate number of Instagram followers</label>
+              <input type="number" name="followers" min="0" placeholder="Enter follower count">
+            </div>
+
+            <div>
+              <label class="field-label">Are you able to create high-quality video content?</label>
+              <select name="video_quality" required>
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>Partially</option>
+                <option>No</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="field-label">Are you willing to publish content about the competition as an ambassador?</label>
+              <select name="publish_content" required>
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>Depends on agreement</option>
+                <option>No</option>
+              </select>
+            </div>
+
+            <div class="field-full">
+              <label class="field-label">What type of content do you usually create?</label>
+              <div class="check-grid">
+                <label class="option-item"><input type="checkbox" name="content_type" value="Reels"> <span>Reels</span></label>
+                <label class="option-item"><input type="checkbox" name="content_type" value="Stories"> <span>Stories</span></label>
+                <label class="option-item"><input type="checkbox" name="content_type" value="Training videos"> <span>Training videos</span></label>
+                <label class="option-item"><input type="checkbox" name="content_type" value="Motivational content"> <span>Motivational content</span></label>
+                <label class="option-item"><input type="checkbox" name="content_type" value="Competition content"> <span>Competition content</span></label>
+                <label class="option-item"><input type="checkbox" name="content_type" value="Lifestyle content"> <span>Lifestyle content</span></label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="form-section-title">6. Travel & Participation</div>
+          <div class="field-grid">
+            <div>
+              <label class="field-label">Do you have a valid passport?</label>
+              <select name="passport" required>
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+                <option>In progress</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="field-label">Are you available for international travel during the event period?</label>
+              <select name="travel_available" required>
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>Probably</option>
+                <option>No</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="field-label">Are you willing to participate in media activities and official programs?</label>
+              <select name="media_participation" required>
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="field-label">Do you agree to follow the rules and guidelines of Anatolian Ninja Warriors?</label>
+              <select name="rules_agreement" required>
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="form-section-title">7. Required Materials</div>
+          <div class="field-grid">
+            <div>
+              <label class="field-label">Upload a professional photo</label>
+              <div class="upload-box">
+                <input type="file" id="photo" name="photo" accept="image/*">
+                <span class="field-note">Recommended: JPG/PNG, max 10 MB</span>
+              </div>
+            </div>
+
+            <div>
+              <label class="field-label">Upload a training video</label>
+              <div class="upload-box">
+                <input type="file" id="training_video" name="training_video" accept="video/*">
+                <span class="field-note">Recommended: MP4/MOV, max 25 MB</span>
+              </div>
+            </div>
+
+            <div>
+              <label class="field-label">Upload a short introduction video</label>
+              <div class="upload-box">
+                <input type="file" id="intro_video" name="intro_video" accept="video/*">
+                <span class="field-note">Recommended: MP4/MOV, max 25 MB</span>
+              </div>
+            </div>
+
+            <div>
+              <label class="field-label">Additional links (YouTube / Drive / Instagram / etc.)</label>
+              <textarea name="additional_links" placeholder="Paste any useful links"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="form-section-title">8. Preferred Support & Experience</div>
+          <div class="field-grid">
+            <div class="field-full">
+              <label class="field-label">Which type of support is most valuable to you?</label>
+              <div class="check-grid">
+                <label class="option-item"><input type="checkbox" name="support_type" value="Airport VIP transfer"> <span>Airport VIP transfer</span></label>
+                <label class="option-item"><input type="checkbox" name="support_type" value="Hotel accommodation"> <span>Hotel accommodation</span></label>
+                <label class="option-item"><input type="checkbox" name="support_type" value="Türkiye cultural & city experience"> <span>Türkiye cultural & city experience</span></label>
+                <label class="option-item"><input type="checkbox" name="support_type" value="Professional media exposure"> <span>Professional media exposure</span></label>
+                <label class="option-item"><input type="checkbox" name="support_type" value="Personal brand growth"> <span>Personal brand growth</span></label>
+                <label class="option-item"><input type="checkbox" name="support_type" value="Sponsor connections"> <span>Sponsor connections</span></label>
+                <label class="option-item"><input type="checkbox" name="support_type" value="Competition priority scheduling"> <span>Competition priority scheduling</span></label>
+              </div>
+            </div>
+
+            <div class="field-full">
+              <label class="field-label">Which experience excites you the most?</label>
+              <div class="check-grid">
+                <label class="option-item"><input type="checkbox" name="experience_type" value="Istanbul VIP Experience"> <span>Istanbul VIP Experience</span></label>
+                <label class="option-item"><input type="checkbox" name="experience_type" value="Cultural Tour in Türkiye"> <span>Cultural Tour in Türkiye</span></label>
+                <label class="option-item"><input type="checkbox" name="experience_type" value="Premium Athlete Hosting"> <span>Premium Athlete Hosting</span></label>
+                <label class="option-item"><input type="checkbox" name="experience_type" value="Global Media Exposure"> <span>Global Media Exposure</span></label>
+                <label class="option-item"><input type="checkbox" name="experience_type" value="Sponsored Athlete Experience"> <span>Sponsored Athlete Experience</span></label>
+              </div>
+            </div>
+
+            <div class="field-full">
+              <label class="field-label">Do you have any suggestions to improve the Ambassador Program?</label>
+              <textarea name="suggestions" placeholder="Share your ideas"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="form-section-title">9. Agreement & Consent</div>
+          <div class="check-grid mt-5">
+            <label class="option-item">
+              <input type="checkbox" name="confirm_accuracy" required>
+              <span>I confirm that the information provided is accurate.</span>
+            </label>
+
+            <label class="option-item">
+              <input type="checkbox" name="promo_usage" required>
+              <span>I agree that my submitted content (photos/videos) may be used by Anatolian Ninja Warriors for promotional purposes.</span>
+            </label>
+
+            <label class="option-item">
+              <input type="checkbox" name="selection_understanding" required>
+              <span>I understand that submitting this form does not guarantee selection and that final decisions are made by the organizing team.</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="submit-wrap">
+          <div class="section-kicker">Submit Section</div>
+          <h3 class="section-title">Ready to represent your country?</h3>
+          <p class="section-text max-w-3xl mx-auto">
+            Become part of an international movement and experience Türkiye like never before.
+          </p>
+
+          <button type="submit" class="submit-btn mt-6" id="submitBtn">
+            👉 Submit Ambassador Application
+          </button>
+
+          <div id="loadingMessage" class="loading-box">
+            <div class="font-bebas text-4xl tracking-[0.08em] text-white">Submitting...</div>
+            <p class="section-text mt-3 mb-0">
+              Please wait while we upload your application.
+            </p>
+          </div>
+
+          <div id="successMessage" class="success-box">
+            <div class="font-bebas text-4xl tracking-[0.08em] text-white">Thank You!</div>
+            <p class="section-text mt-3 mb-0">
+              Your application has been successfully submitted.
+            </p>
+            <p class="section-text mt-2 mb-0">
+              If you are shortlisted, our team will contact you via email or WhatsApp.
+            </p>
+            <p class="section-text mt-2 mb-0">
+              Due to limited ambassador slots, selection is highly competitive.
+            </p>
+          </div>
+
+          <div id="errorMessage" class="error-box">
+            <div class="font-bebas text-4xl tracking-[0.08em] text-white">Submission Failed</div>
+            <p class="section-text mt-3 mb-0" id="errorText">
+              Something went wrong. Please try again.
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer-style py-6 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="font-rajdhani text-sm text-gray-400 tracking-wide">
+        © 2026 Anatolian Ninja Warriors. All rights reserved.
+      </div>
+      <div class="font-rajdhani text-sm text-gray-500 tracking-wide text-center md:text-right">
+        Ambassador Application Form • Elite international athlete experience
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzMZTgXToRv4l7geeDSfPa5CQBx7iOHFW3nTYPSBMDRdr3IM8BNxepbIO3aF78NkbJ0/exec";
+    const RECAPTCHA_SITE_KEY = "YOUR_RECAPTCHA_SITE_KEY";
+
+    const form = document.getElementById("ambassadorForm");
+    const successMessage = document.getElementById("successMessage");
+    const errorMessage = document.getElementById("errorMessage");
+    const errorText = document.getElementById("errorText");
+    const loadingMessage = document.getElementById("loadingMessage");
+    const submitBtn = document.getElementById("submitBtn");
+    const submitSecondsField = document.getElementById("submitSeconds");
+    const recaptchaTokenField = document.getElementById("recaptchaToken");
+
+    const pageLoadTime = Date.now();
+
+    const FILE_LIMITS = {
+      photo: 10 * 1024 * 1024,
+      training_video: 25 * 1024 * 1024,
+      intro_video: 25 * 1024 * 1024
+    };
+
+    function showLoading(state) {
+      if (state) {
+        loadingMessage.classList.add("show");
+        submitBtn.disabled = true;
+      } else {
+        loadingMessage.classList.remove("show");
+        submitBtn.disabled = false;
+      }
+    }
+
+    function showSuccess() {
+      errorMessage.classList.remove("show");
+      successMessage.classList.add("show");
+      successMessage.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    function showError(message) {
+      successMessage.classList.remove("show");
+      errorText.textContent = message || "Something went wrong. Please try again.";
+      errorMessage.classList.add("show");
+      errorMessage.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    function validateFiles() {
+      const photo = document.getElementById("photo").files[0];
+      const trainingVideo = document.getElementById("training_video").files[0];
+      const introVideo = document.getElementById("intro_video").files[0];
+
+      if (photo && photo.size > FILE_LIMITS.photo) {
+        throw new Error("Professional photo file is too large. Max 10 MB.");
+      }
+      if (trainingVideo && trainingVideo.size > FILE_LIMITS.training_video) {
+        throw new Error("Training video file is too large. Max 25 MB.");
+      }
+      if (introVideo && introVideo.size > FILE_LIMITS.intro_video) {
+        throw new Error("Introduction video file is too large. Max 25 MB.");
+      }
+    }
+
+    function fileToBase64(file) {
+      return new Promise((resolve, reject) => {
+        if (!file) {
+          resolve(null);
+          return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = () => {
+          const result = reader.result || "";
+          const base64 = String(result).split(",")[1] || "";
+          resolve({
+            name: file.name,
+            mimeType: file.type || "application/octet-stream",
+            base64: base64
+          });
+        };
+        reader.onerror = () => reject(new Error("File reading failed."));
+        reader.readAsDataURL(file);
+      });
+    }
+
+    function getMultiValues(name) {
+      return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(el => el.value);
+    }
+
+    async function getRecaptchaToken() {
+      if (!window.grecaptcha) {
+        throw new Error("reCAPTCHA could not be loaded.");
+      }
+
+      return new Promise((resolve, reject) => {
+        grecaptcha.ready(async () => {
+          try {
+            const token = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: "ambassador_submit" });
+            resolve(token);
+          } catch (err) {
+            reject(new Error("reCAPTCHA token could not be generated."));
+          }
+        });
+      });
+    }
+
+    async function buildPayload() {
+      validateFiles();
+
+      const photoFile = document.getElementById("photo").files[0];
+      const trainingVideoFile = document.getElementById("training_video").files[0];
+      const introVideoFile = document.getElementById("intro_video").files[0];
+
+      const [photo, trainingVideo, introVideo] = await Promise.all([
+        fileToBase64(photoFile),
+        fileToBase64(trainingVideoFile),
+        fileToBase64(introVideoFile)
+      ]);
+
+      const recaptchaToken = await getRecaptchaToken();
+      recaptchaTokenField.value = recaptchaToken;
+      submitSecondsField.value = Math.floor((Date.now() - pageLoadTime) / 1000);
+
+      const fd = new FormData(form);
+
+      return {
+        full_name: fd.get("full_name") || "",
+        preferred_name: fd.get("preferred_name") || "",
+        date_of_birth: fd.get("date_of_birth") || "",
+        age: fd.get("age") || "",
+        gender: fd.get("gender") || "",
+        nationality: fd.get("nationality") || "",
+        country_residence: fd.get("country_residence") || "",
+        city_residence: fd.get("city_residence") || "",
+        email: fd.get("email") || "",
+        whatsapp: fd.get("whatsapp") || "",
+        instagram: fd.get("instagram") || "",
+        website: fd.get("website") || "",
+        discipline: fd.get("discipline") || "",
+        discipline_other: fd.get("discipline_other") || "",
+        experience_years: fd.get("experience_years") || "",
+        current_level: fd.get("current_level") || "",
+        achievements: fd.get("achievements") || "",
+        international_competitions: fd.get("international_competitions") || "",
+        international_competitions_list: fd.get("international_competitions_list") || "",
+        why_ambassador: fd.get("why_ambassador") || "",
+        strong_candidate: fd.get("strong_candidate") || "",
+        promotion_plan: fd.get("promotion_plan") || "",
+        brand_experience: fd.get("brand_experience") || "",
+        brand_experience_details: fd.get("brand_experience_details") || "",
+        followers: fd.get("followers") || "",
+        video_quality: fd.get("video_quality") || "",
+        publish_content: fd.get("publish_content") || "",
+        content_type: getMultiValues("content_type"),
+        passport: fd.get("passport") || "",
+        travel_available: fd.get("travel_available") || "",
+        media_participation: fd.get("media_participation") || "",
+        rules_agreement: fd.get("rules_agreement") || "",
+        additional_links: fd.get("additional_links") || "",
+        support_type: getMultiValues("support_type"),
+        experience_type: getMultiValues("experience_type"),
+        suggestions: fd.get("suggestions") || "",
+        confirm_accuracy: fd.get("confirm_accuracy") ? true : false,
+        promo_usage: fd.get("promo_usage") ? true : false,
+        selection_understanding: fd.get("selection_understanding") ? true : false,
+        website_hp: fd.get("website_hp") || "",
+        submitSeconds: Number(submitSecondsField.value || 0),
+        recaptchaToken: recaptchaTokenField.value || "",
+        files: {
+          photo: photo,
+          trainingVideo: trainingVideo,
+          introVideo: introVideo
+        }
+      };
+    }
+
+    async function submitApplication(payload) {
+      const response = await fetch(WEB_APP_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const text = await response.text();
+
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch (e) {
+        throw new Error("Invalid response from server.");
+      }
+
+      return data;
+    }
+
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault();
+      errorMessage.classList.remove("show");
+      successMessage.classList.remove("show");
+
+      if (!form.reportValidity()) {
+        showError("Please complete all required fields.");
+        return;
+      }
+
+      try {
+        showLoading(true);
+
+        const payload = await buildPayload();
+        const result = await submitApplication(payload);
+
+        showLoading(false);
+
+        if (result && result.success) {
+          form.reset();
+          showSuccess();
+        } else {
+          const serverMessage = result?.message || "Submission failed.";
+          showError(serverMessage);
+        }
+      } catch (err) {
+        showLoading(false);
+        showError(err.message || "Something went wrong. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>
