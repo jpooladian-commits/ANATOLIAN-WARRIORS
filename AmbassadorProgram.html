@@ -1,0 +1,1047 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W6LQTKR9P3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-W6LQTKR9P3');
+  </script>
+
+  <meta name="google-site-verification" content="y1dW25xZokS_XC6GpeCSsbPBeTHNA8R1Zcnbfi7YaUM" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anatolian Ninja Warriors – Ambassador Program</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+
+  <style>
+    html, body {
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      background: #0a0a0a;
+    }
+
+    body {
+      box-sizing: border-box;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    .font-bebas { font-family: 'Bebas Neue', sans-serif; }
+    .font-rajdhani { font-family: 'Rajdhani', sans-serif; }
+
+    .bg-pattern {
+      background-image:
+        radial-gradient(circle at 20% 80%, rgba(220, 38, 38, 0.14) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(30, 30, 30, 1) 0%, rgba(10, 10, 10, 1) 100%);
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, #ffffff 0%, #ffd4d4 35%, #f87171 75%, #dc2626 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .glass-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.015) 100%);
+      border: 1px solid rgba(255,255,255,0.06);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+      border-radius: 24px;
+    }
+
+    .glass-soft {
+      background: rgba(0,0,0,0.22);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 20px;
+    }
+
+    .section-kicker {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: #f87171;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      letter-spacing: .06em;
+      color: #fff;
+      line-height: 1;
+      margin-top: 8px;
+    }
+
+    .section-text {
+      font-family: 'Rajdhani', sans-serif;
+      color: rgba(226, 232, 240, 0.86);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      margin-top: 14px;
+    }
+
+    .hero-media-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      border: 1px solid rgba(248, 113, 113, 0.16);
+      box-shadow:
+        0 0 0 1px rgba(248, 113, 113, 0.08) inset,
+        0 0 40px rgba(220, 38, 38, 0.16);
+      min-height: min(74vh, 780px);
+      background: #090909;
+    }
+
+    .hero-layer {
+      position: absolute;
+      inset: 0;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      pointer-events: none;
+    }
+
+    /* لایه استانبول */
+    .hero-istanbul {
+      background-image: url('/images/istanbul-bg.jpg');
+      filter: saturate(0.9) brightness(0.55);
+      transform: scale(1.03);
+    }
+
+    /* لایه ورزشکار / نینجا */
+    .hero-ninja {
+      background-image: url('/images/ninja-athlete.png');
+      background-position: center bottom;
+      background-size: contain;
+      mix-blend-mode: screen;
+      opacity: 0.88;
+      filter: contrast(1.05) brightness(0.82);
+    }
+
+    /* لایه رنگ و کنترل خوانایی */
+    .hero-overlay-dark {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.58) 0%, rgba(0,0,0,0.34) 24%, rgba(0,0,0,0.48) 56%, rgba(0,0,0,0.82) 100%),
+        radial-gradient(circle at center, rgba(220,38,38,0.12) 0%, rgba(0,0,0,0) 48%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .hero-content {
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.28);
+      border: 1px solid rgba(248,113,113,0.22);
+      color: rgba(254, 226, 226, 0.95);
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.22);
+    }
+
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 8vw, 6.6rem);
+      letter-spacing: .07em;
+      line-height: 0.9;
+      margin-top: 16px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #fff;
+      text-shadow:
+        0 3px 10px rgba(0,0,0,0.78),
+        0 0 22px rgba(0,0,0,0.35);
+    }
+
+    .hero-brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 3rem);
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.96);
+      margin-top: 16px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    }
+
+    .hero-sub {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: clamp(1.05rem, 2.4vw, 1.55rem);
+      color: rgba(241,245,249,0.96);
+      font-weight: 800;
+      letter-spacing: .03em;
+      margin-top: 10px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.75);
+    }
+
+    .hero-desc {
+      font-family: 'Rajdhani', sans-serif;
+      color: rgba(241,245,249,0.90);
+      font-size: 1.08rem;
+      line-height: 1.85;
+      max-width: 860px;
+      margin: 18px auto 0 auto;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.78);
+    }
+
+    .cta-primary {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 15px 24px;
+      border-radius: 16px;
+      background: linear-gradient(90deg, rgba(185,28,28,1) 0%, rgba(239,68,68,1) 100%);
+      color: white;
+      border: 1px solid rgba(252,165,165,0.26);
+      text-decoration: none;
+      box-shadow: 0 14px 30px rgba(220,38,38,0.22);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .cta-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(220,38,38,0.30);
+      border-color: rgba(254,202,202,0.42);
+    }
+
+    .cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 15px 24px;
+      border-radius: 16px;
+      background: rgba(0,0,0,0.28);
+      color: rgba(248,250,252,0.94);
+      border: 1px solid rgba(255,255,255,0.10);
+      text-decoration: none;
+      transition: transform .22s ease, border-color .22s ease, background .22s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.22);
+    }
+
+    .cta-secondary:hover {
+      transform: translateY(-2px);
+      background: rgba(220,38,38,0.16);
+      border-color: rgba(248,113,113,0.28);
+    }
+
+    .stats-grid,
+    .benefits-grid,
+    .levels-grid,
+    .fit-grid,
+    .apply-grid,
+    .proof-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .stats-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .benefits-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .levels-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .fit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .apply-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .proof-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .mini-card {
+      padding: 18px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.035) 0%, rgba(255,255,255,0.015) 100%);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .mini-label {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(248,113,113,.9);
+    }
+
+    .mini-title {
+      margin-top: 8px;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: white;
+    }
+
+    .mini-text {
+      margin-top: 10px;
+      font-family: 'Rajdhani', sans-serif;
+      color: rgba(226,232,240,0.78);
+      line-height: 1.75;
+      font-size: 1rem;
+    }
+
+    .number-card {
+      text-align: center;
+      padding: 22px 18px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.015) 100%);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .number-big {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      line-height: 1.05;
+      color: #fff;
+    }
+
+    .number-sub {
+      margin-top: 8px;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: .92rem;
+      font-weight: 700;
+      color: rgba(226,232,240,0.72);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .benefit-card {
+      padding: 22px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(127, 29, 29, 0.18) 0%, rgba(17, 24, 39, 0.45) 100%);
+      border: 1px solid rgba(248, 113, 113, 0.16);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .benefit-card::before {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      background: radial-gradient(circle, rgba(239,68,68,0.16) 0%, rgba(239,68,68,0) 65%);
+      pointer-events: none;
+    }
+
+    .benefit-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .benefit-icon {
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .benefit-title {
+      margin-top: 12px;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .benefit-list {
+      margin-top: 12px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .benefit-list-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-family: 'Rajdhani', sans-serif;
+      color: rgba(226,232,240,0.82);
+      font-size: 1rem;
+      line-height: 1.75;
+      font-weight: 600;
+    }
+
+    .level-card {
+      padding: 24px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.06);
+      background: linear-gradient(180deg, rgba(255,255,255,0.035) 0%, rgba(255,255,255,0.015) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .level-card.featured {
+      border-color: rgba(248,113,113,0.28);
+      box-shadow: 0 0 0 1px rgba(248,113,113,0.10) inset, 0 0 36px rgba(220,38,38,0.14);
+    }
+
+    .level-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(220,38,38,0.16);
+      border: 1px solid rgba(248,113,113,0.22);
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(254,226,226,.96);
+    }
+
+    .level-name {
+      margin-top: 16px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: .06em;
+      color: white;
+    }
+
+    .level-copy {
+      margin-top: 8px;
+      font-family: 'Rajdhani', sans-serif;
+      color: rgba(226,232,240,0.78);
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .level-list {
+      margin-top: 16px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .level-list-item {
+      font-family: 'Rajdhani', sans-serif;
+      color: rgba(241,245,249,0.90);
+      line-height: 1.7;
+      font-weight: 700;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .sticky-apply {
+      position: fixed;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      z-index: 60;
+      border-radius: 20px;
+      background: rgba(8,8,8,0.82);
+      border: 1px solid rgba(248,113,113,0.18);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 14px 40px rgba(0,0,0,0.4);
+      padding: 12px;
+    }
+
+    .sticky-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .sticky-title {
+      font-family: 'Rajdhani', sans-serif;
+      color: rgba(248,250,252,0.92);
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: .04em;
+    }
+
+    .sticky-note {
+      font-family: 'Rajdhani', sans-serif;
+      color: rgba(252,165,165,0.90);
+      font-weight: 700;
+      font-size: .92rem;
+      margin-top: 4px;
+    }
+
+    .footer-space {
+      height: 110px;
+    }
+
+    .flag-accent {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .custom-footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    @media (max-width: 1100px) {
+      .stats-grid,
+      .proof-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .benefits-grid,
+      .levels-grid,
+      .apply-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 780px) {
+      .hero-overlay { padding: 1.2rem; }
+      .hero-title {
+        font-size: clamp(2.4rem, 12vw, 4.6rem);
+        line-height: 0.92;
+      }
+      .hero-brand {
+        font-size: clamp(1.25rem, 5vw, 2rem);
+        letter-spacing: 0.12em;
+      }
+      .sticky-wrap {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .stats-grid,
+      .benefits-grid,
+      .levels-grid,
+      .fit-grid,
+      .apply-grid,
+      .proof-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-pattern text-white">
+
+  <!-- <a href="/TRAmbassadors.html" class="fixed top-6 right-6 z-50">
+    <button class="font-rajdhani px-4 py-2 text-sm bg-black/40 border border-red-500/40 rounded-lg text-white hover:bg-red-600/30 transition">
+      TR / EN
+    </button>
+  </a> -->
+
+
+  <section class="px-4 md:px-8 pt-6 pb-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="hero-media-wrap">
+        <div class="hero-layer hero-istanbul"></div>
+        <div class="hero-layer hero-ninja"></div>
+        <div class="hero-overlay-dark"></div>
+
+        <div class="hero-overlay">
+          <div class="hero-content">
+            <div class="hero-badge">Elite • International • VIP Experience</div>
+
+            <h1 class="hero-title text-gradient">
+              Become an Official Ambassador
+            </h1>
+
+            <div class="hero-brand">
+              ANATOLIAN NINJA WARRIORS
+            </div>
+
+            <div class="hero-sub">
+              Compete. Travel. Experience Türkiye. Become Global.
+            </div>
+
+            <p class="hero-desc">
+              Join an international community of elite athletes and represent Anatolian Ninja Warriors on a global stage — while experiencing Türkiye like never before.
+            </p>
+
+           <!-- <div class="mt-7 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a href="#apply" class="cta-primary">👉 Apply Now</a>
+              <a href="#levels" class="cta-secondary">👉 Become an Ambassador</a>
+            </div> -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 md:px-8 py-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="glass-card p-6 md:p-8">
+        <div class="section-kicker">What Is This Program?</div>
+        <h2 class="section-title">This is NOT just a competition.</h2>
+        <p class="section-text">
+          This is your gateway to an international experience.
+        </p>
+        <p class="section-text">
+          The Anatolian Ninja Warriors Ambassador Program is designed for professional athletes who want more than just competing — they want visibility, growth, and unforgettable experiences.
+        </p>
+
+        <div class="stats-grid mt-8">
+          <div class="number-card">
+            <div class="number-big">Elite</div>
+            <div class="number-sub">Athlete Positioning</div>
+          </div>
+          <div class="number-card">
+            <div class="number-big">VIP</div>
+            <div class="number-sub">Travel Experience</div>
+          </div>
+          <div class="number-card">
+            <div class="number-big">Global</div>
+            <div class="number-sub">Exposure Potential</div>
+          </div>
+          <div class="number-card">
+            <div class="number-big">Limited</div>
+            <div class="number-sub">Ambassador Spots</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 md:px-8 py-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="glass-card p-6 md:p-8">
+        <div class="section-kicker">Core Experience</div>
+        <h2 class="section-title">Elite Athlete Experience in Türkiye</h2>
+        <p class="section-text">
+          As an official ambassador, you will be part of a unique journey combining sport, travel, and culture.
+        </p>
+
+        <div class="benefits-grid mt-8">
+          <div class="benefit-card">
+            <div class="benefit-icon">🇹🇷</div>
+            <div class="benefit-title">What makes this special?</div>
+            <div class="benefit-list">
+              <div class="benefit-list-item"><span>•</span><span>Discover Istanbul through a VIP city experience</span></div>
+              <div class="benefit-list-item"><span>•</span><span>Visit iconic and exclusive locations</span></div>
+              <div class="benefit-list-item"><span>•</span><span>Experience Turkish culture, lifestyle, and cuisine</span></div>
+              <div class="benefit-list-item"><span>•</span><span>Create powerful content in world-class settings</span></div>
+            </div>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">🔥</div>
+            <div class="benefit-title">More than a trip</div>
+            <p class="mini-text mt-3">This is more than a trip.</p>
+            <p class="mini-text">This is a story you will share with the world.</p>
+            <div class="mt-5 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 font-rajdhani text-sm font-bold tracking-[0.12em] uppercase text-red-200">
+              Exclusive • International • Story-Driven
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 md:px-8 py-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="glass-card p-6 md:p-8">
+        <div class="section-kicker">What You Get</div>
+        <h2 class="section-title">VIP benefits built for serious athletes</h2>
+
+        <div class="benefits-grid mt-8">
+          <div class="benefit-card">
+            <div class="benefit-icon">✈️</div>
+            <div class="benefit-title">VIP Travel Experience</div>
+            <div class="benefit-list">
+              <div class="benefit-list-item"><span>•</span><span>Airport meet & greet</span></div>
+              <div class="benefit-list-item"><span>•</span><span>Private transfers</span></div>
+              <div class="benefit-list-item"><span>•</span><span>Full support during your stay</span></div>
+            </div>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">🏨</div>
+            <div class="benefit-title">Premium Accommodation</div>
+            <div class="benefit-list">
+              <div class="benefit-list-item"><span>•</span><span>Stay in selected hotels</span></div>
+              <div class="benefit-list-item"><span>•</span><span>Access to training & recovery facilities</span></div>
+              <div class="benefit-list-item"><span>•</span><span>Athlete-focused comfort</span></div>
+            </div>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">🎥</div>
+            <div class="benefit-title">Global Exposure</div>
+            <div class="benefit-list">
+              <div class="benefit-list-item"><span>•</span><span>Featured on official pages</span></div>
+              <div class="benefit-list-item"><span>•</span><span>Professional content production</span></div>
+              <div class="benefit-list-item"><span>•</span><span>International visibility</span></div>
+              <div class="benefit-list-item"><span>•</span><span>Personal brand growth</span></div>
+            </div>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">🏆</div>
+            <div class="benefit-title">Competitive Advantage</div>
+            <div class="benefit-list">
+              <div class="benefit-list-item"><span>•</span><span>Priority scheduling</span></div>
+              <div class="benefit-list-item"><span>•</span><span>Structured competition experience</span></div>
+              <div class="benefit-list-item"><span>•</span><span>Opportunity to stand out globally</span></div>
+            </div>
+          </div>
+
+          <div class="benefit-card md:col-span-2">
+            <div class="benefit-icon">🤝</div>
+            <div class="benefit-title">Career Opportunities</div>
+            <div class="benefit-list">
+              <div class="benefit-list-item"><span>•</span><span>Connect with sponsors</span></div>
+              <div class="benefit-list-item"><span>•</span><span>Future collaborations</span></div>
+              <div class="benefit-list-item"><span>•</span><span>Become a recognized face of the sport</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="levels" class="px-4 md:px-8 py-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="glass-card p-6 md:p-8">
+        <div class="section-kicker">Ambassador Levels</div>
+        <h2 class="section-title">Exclusive tiers for different athlete profiles</h2>
+
+        <div class="levels-grid mt-8">
+          <div class="level-card featured">
+            <div class="level-badge">🥇 Elite Ambassador</div>
+            <div class="level-name">Elite Ambassador</div>
+            <div class="level-copy">For high-value athletes selected for the full premium experience.</div>
+            <div class="level-list">
+              <div class="level-list-item"><span>•</span><span>Full travel support (flight + hotel)</span></div>
+              <div class="level-list-item"><span>•</span><span>Full Türkiye Experience</span></div>
+              <div class="level-list-item"><span>•</span><span>Featured in major campaigns</span></div>
+            </div>
+          </div>
+
+          <div class="level-card">
+            <div class="level-badge">🥈 Official Ambassador</div>
+            <div class="level-name">Official Ambassador</div>
+            <div class="level-copy">For strong athletes with official platform visibility and selected support.</div>
+            <div class="level-list">
+              <div class="level-list-item"><span>•</span><span>Accommodation + selected benefits</span></div>
+              <div class="level-list-item"><span>•</span><span>Featured on official platforms</span></div>
+            </div>
+          </div>
+
+          <div class="level-card">
+            <div class="level-badge">🥉 Content Ambassador</div>
+            <div class="level-name">Content Ambassador</div>
+            <div class="level-copy">For athletes with strong media potential and growth potential.</div>
+            <div class="level-list">
+              <div class="level-list-item"><span>•</span><span>Focus on exposure and content</span></div>
+              <div class="level-list-item"><span>•</span><span>Opportunity to grow into higher tiers</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 md:px-8 py-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="glass-card p-6 md:p-8">
+        <div class="section-kicker">Who We Are Looking For</div>
+        <h2 class="section-title">Athletes with performance + presence</h2>
+
+        <div class="fit-grid mt-8">
+          <div class="mini-card">
+            <div class="mini-label">Sport Background</div>
+            <div class="mini-title">Relevant Disciplines</div>
+            <div class="mini-text">
+              Ninja / OCR / Parkour / Gymnastics / Calisthenics
+            </div>
+          </div>
+
+          <div class="mini-card">
+            <div class="mini-label">Performance</div>
+            <div class="mini-title">Strong Physical Ability</div>
+            <div class="mini-text">
+              We are selecting athletes who can truly perform at a high level.
+            </div>
+          </div>
+
+          <div class="mini-card">
+            <div class="mini-label">Visibility</div>
+            <div class="mini-title">Active on Social Media</div>
+            <div class="mini-text">
+              Your story and your content matter as much as your athletic identity.
+            </div>
+          </div>
+
+          <div class="mini-card">
+            <div class="mini-label">Growth Mindset</div>
+            <div class="mini-title">International Ambition</div>
+            <div class="mini-text">
+              We want athletes who are ready to grow beyond local recognition.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="apply" class="px-4 md:px-8 py-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="glass-card p-6 md:p-8">
+        <div class="section-kicker">What You Need to Apply</div>
+        <h2 class="section-title">Simple application. Serious selection.</h2>
+
+        <div class="apply-grid mt-8">
+          <div class="mini-card text-center">
+            <div class="text-3xl">📸</div>
+            <div class="mini-title">1 Professional Photo</div>
+          </div>
+          <div class="mini-card text-center">
+            <div class="text-3xl">🎬</div>
+            <div class="mini-title">1 Training Video</div>
+          </div>
+          <div class="mini-card text-center">
+            <div class="text-3xl">🎤</div>
+            <div class="mini-title">1 Short Introduction Video</div>
+          </div>
+          <div class="mini-card text-center">
+            <div class="text-3xl">📝</div>
+            <div class="mini-title">Basic Information</div>
+            <div class="mini-text mt-2">Age, Experience</div>
+          </div>
+        </div>
+
+        <div class="mt-8 glass-soft p-5">
+          <div class="font-rajdhani text-lg font-extrabold tracking-[0.08em] uppercase text-white">
+            Why join?
+          </div>
+          <p class="section-text mt-3">Because this is different.</p>
+          <p class="section-text">Most competitions give you a prize. We give you:</p>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+            <div class="number-card"><div class="number-big">✔</div><div class="number-sub">Experience</div></div>
+            <div class="number-card"><div class="number-big">✔</div><div class="number-sub">Exposure</div></div>
+            <div class="number-card"><div class="number-big">✔</div><div class="number-sub">Network</div></div>
+            <div class="number-card"><div class="number-big">✔</div><div class="number-sub">Opportunity</div></div>
+          </div>
+
+          <div class="mt-6 font-rajdhani text-xl font-extrabold text-red-200 tracking-[0.06em] uppercase">
+            This is your international stage.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 md:px-8 py-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="glass-card p-6 md:p-8">
+        <div class="section-kicker">Social Proof</div>
+        <h2 class="section-title">Built for international credibility</h2>
+
+        <div class="proof-grid mt-8">
+          <div class="mini-card">
+            <div class="mini-label">Selected Athletes</div>
+            <div class="mini-title">Multiple Countries</div>
+            <div class="mini-text">A global athlete atmosphere creates stronger visibility and stronger stories.</div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-label">Participation</div>
+            <div class="mini-title">International Reach</div>
+            <div class="mini-text">This program is designed to feel bigger than a local event.</div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-label">Structure</div>
+            <div class="mini-title">Official Cooperation</div>
+            <div class="mini-text">The program is presented with official competition positioning and premium branding.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 md:px-8 py-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="glass-card p-6 md:p-10 text-center">
+        <div class="section-kicker">Final Call</div>
+        <h2 class="section-title">Ready to represent your country?</h2>
+        <p class="section-text max-w-3xl mx-auto">
+          Join Anatolian Ninja Warriors and become part of something bigger.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+          <a href="https://forms.gle/your-ambassador-form" class="cta-primary">👉 Apply Now</a>
+          <a href="https://forms.gle/your-ambassador-form" class="cta-secondary">👉 Limited Ambassador Spots Available</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 md:px-8 py-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="glass-card p-6 md:p-8">
+        <div class="section-kicker">Urgency</div>
+        <h2 class="section-title">Limited. Exclusive. Competitive.</h2>
+
+        <div class="stats-grid mt-8">
+          <div class="number-card">
+            <div class="number-big">⚡</div>
+            <div class="number-sub">Limited spots available</div>
+          </div>
+          <div class="number-card">
+            <div class="number-big">⚡</div>
+            <div class="number-sub">Selection is competitive</div>
+          </div>
+          <div class="number-card">
+            <div class="number-big">⚡</div>
+            <div class="number-sub">Early applicants get priority</div>
+          </div>
+          <div class="number-card">
+            <div class="number-big">VIP</div>
+            <div class="number-sub">Best benefits go first</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 md:px-8 pt-6 pb-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="flag-accent">
+        <div class="w-10 h-1 bg-red-600 rounded"></div>
+        <svg class="w-6 h-6 text-red-600" viewBox="0 0 24 24" fill="currentColor">
+          <circle cx="9" cy="12" r="6" />
+          <path d="M14 12a4 4 0 1 1 0-0.001" fill="#1a1a1a" />
+          <polygon points="16,12 19,10 17,12 19,14" fill="currentColor" />
+        </svg>
+        <div class="w-10 h-1 bg-red-600 rounded"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="custom-footer py-6 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="font-rajdhani text-sm text-gray-400 tracking-wide">
+        © 2026 Anatolian Ninja Warriors. All rights reserved.
+      </div>
+      <div class="font-rajdhani text-sm text-gray-500 tracking-wide text-center md:text-right">
+        Ambassador Program • Elite international athlete experience
+      </div>
+    </div>
+  </footer>
+
+  <div class="footer-space"></div>
+
+  <div class="sticky-apply">
+    <div class="sticky-wrap max-w-7xl mx-auto">
+      <div>
+        <div class="sticky-title">Become an Official Ambassador</div>
+        <div class="sticky-note">Limited spots • Early applicants get priority benefits</div>
+      </div>
+      <a href="https://forms.gle/your-ambassador-form" class="cta-primary whitespace-nowrap">
+        👉 Apply Now
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const defaultConfig = {
+      main_title: 'ANATOLIAN NINJA WARRIORS',
+      primary_color: '#dc2626',
+      background_color: '#0a0a0a',
+      text_color: '#d1d5db',
+      accent_color: '#fecaca',
+      secondary_color: '#1f2937'
+    };
+
+    async function onConfigChange(config) {
+      const root = document.documentElement;
+      if (!config) return;
+      if (config.primary_color) root.style.setProperty('--primary-color', config.primary_color);
+      if (config.background_color) root.style.setProperty('--background-color', config.background_color);
+      if (config.text_color) root.style.setProperty('--text-color', config.text_color);
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              config.background_color = value;
+              window.elementSdk.setConfig({ background_color: value });
+            }
+          },
+          {
+            get: () => config.primary_color || defaultConfig.primary_color,
+            set: (value) => {
+              config.primary_color = value;
+              window.elementSdk.setConfig({ primary_color: value });
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              config.text_color = value;
+              window.elementSdk.setConfig({ text_color: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => {
+            config.font_family = value;
+            window.elementSdk.setConfig({ font_family: value });
+          }
+        },
+        fontSizeable: undefined
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ['main_title', config.main_title || defaultConfig.main_title]
+      ]);
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+  </script>
+</body>
+</html>
