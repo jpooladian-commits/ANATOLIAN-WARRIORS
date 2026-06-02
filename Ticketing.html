@@ -130,7 +130,7 @@
 
     const i18n = {
       tr: {
-        buy_tickets: 'BİLET AL', select_tickets: 'BİLETİNİ SEÇ', ticket_desc: 'Etkinlik gününü seç, miktarı belirle ve hemen satın al.',
+        buy_tickets: 'BİLET AL', select_tickets: 'BİLETİNİ SEÇ', ticket_desc: 'Etkinlik gününü seç, miktarı belirle dairy ve hemen satın al.',
         price_first: '1. Kişi: 2.800 ₺', price_next: 'Sonraki Kişiler: 2.000 ₺', order_summary: 'Sipariş Özeti', quantity: 'Adet', selected_day: 'Seçili Gün', total: 'Toplam',
         proceed_checkout: 'ÖDEMEYE GEÇ', checkout: 'Ödeme Bilgileri', first_name: 'Ad', last_name: 'Soyad', phone: 'Telefon', country: 'Ülke', proceed_payment: 'GÜVENLİ ÖDEME SAYFASINA GİT',
         subtitle: 'Uluslararası Güç & Dövüş Sporları Şampiyonası', processing: 'Yönlendiriliyor...', loading_days: 'Güncel doluluk oranları kontrol ediliyor...',
@@ -222,7 +222,7 @@
     document.getElementById('close-checkout').onclick = () => document.getElementById('checkout-modal').classList.add('hidden');
     document.getElementById('lang-toggle').onclick = () => { lang = lang === 'tr' ? 'en' : 'tr'; applyLang(); };
 
-    // ارسال فرم اطلاعات و هدایت فیزیکی به درگاه رسمی ایزیکو
+    // ارسال فرم اطلاعات با متد text/plain جهت دور زدن محدودیت CORS Preflight در گوگل اپس اسکریپت
     document.getElementById('checkout-form').onsubmit = function(e) {
       e.preventDefault();
       const btn = document.getElementById('pay-submit-btn');
@@ -242,21 +242,37 @@
 
       fetch(APPS_SCRIPT_URL, {
         method: "POST",
+        mode: "no-cors", // غیرفعال کردن CORS برای تحویل صددرصدی داده‌ها به doPost
+        headers: {
+          "Content-Type": "text/plain" 
+        },
         body: JSON.stringify(payload)
       })
-      .then(res => res.json())
-      .then(response => {
-        if (response.status === "success" && response.paymentUrl) {
-          // هدایت مستقیم و رسمی کاربر به صفحه پرداخت iyzico
-          window.location.href = response.paymentUrl;
-        } else if (response.status === "sold_out") {
-          alert(i18n[lang].sold_out_msg);
-          location.reload();
-        } else {
-          alert("Iyzico Error: " + response.message);
-          btn.disabled = false;
-          btn.textContent = i18n[lang].proceed_payment;
-        }
+      .then(() => {
+        // به دلیل استفاده از no-cors مرورگر پاسخ نهایی را در جاوااسکریپت پنهان می‌کند.
+        // برای دریافت خروجی تمیز و هدایت به درگاه بدون بن‌بست، گام دوم فراخوانی امن را اجرا می‌کنیم:
+        const queryParams = `?action=initiate_payment&day=${encodeURIComponent(payload.day)}&qty=${payload.qty}&firstName=${encodeURIComponent(payload.firstName)}&lastName=${encodeURIComponent(payload.lastName)}&email=${encodeURIComponent(payload.email)}&phone=${encodeURIComponent(payload.phone)}`;
+        
+        fetch(APPS_SCRIPT_URL + queryParams)
+          .then(res => res.json())
+          .then(response => {
+            if (response.status === "success" && response.paymentUrl) {
+              window.location.href = response.paymentUrl;
+            } else if (response.status === "sold_out") {
+              alert(i18n[lang].sold_out_msg);
+              location.reload();
+            } else {
+              alert("Iyzico Error: " + response.message);
+              btn.disabled = false;
+              btn.textContent = i18n[lang].proceed_payment;
+            }
+          })
+          .catch(err => {
+            console.error(err);
+            alert("Ödeme sayfası yüklenirken bir hata oluştu.");
+            btn.disabled = false;
+            btn.textContent = i18n[lang].proceed_payment;
+          });
       })
       .catch(err => {
         console.error(err);
