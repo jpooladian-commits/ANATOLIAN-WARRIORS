@@ -126,6 +126,7 @@
   </div>
 
   <script>
+    // آدرس وب‌اپ گوگل اپ اسکریپت خود را پس از دیپلوی اینجا قرار دهید
     const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwjJec3CvqhZEI_VzOn2YeWRPwiL-Ro9kKrIG4OEwPZvqV_beuEhOoTo0F-JeJKATe71A/exec";
 
     const i18n = {
@@ -222,7 +223,6 @@
     document.getElementById('close-checkout').onclick = () => document.getElementById('checkout-modal').classList.add('hidden');
     document.getElementById('lang-toggle').onclick = () => { lang = lang === 'tr' ? 'en' : 'tr'; applyLang(); };
 
-    // ارسال فرم اطلاعات و هدایت فیزیکی به درگاه رسمی ایزیکو
     document.getElementById('checkout-form').onsubmit = function(e) {
       e.preventDefault();
       const btn = document.getElementById('pay-submit-btn');
@@ -247,7 +247,6 @@
       .then(res => res.json())
       .then(response => {
         if (response.status === "success" && response.paymentUrl) {
-          // هدایت مستقیم و رسمی کاربر به صفحه پرداخت iyzico
           window.location.href = response.paymentUrl;
         } else if (response.status === "sold_out") {
           alert(i18n[lang].sold_out_msg);
