@@ -12,7 +12,7 @@
   <meta name="google-site-verification" content="y1dW25xZokS_XC6GpeCSsbPBeTHNA8R1Zcnbfi7YaUM" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anatolian Ninja Warriors - International Ninja-style Obstacle Competition</title>
+  <title>Anatolian Ninja Warriors - Uluslararası Ninja Tarzı Engel Yarışması</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -384,6 +384,45 @@
       letter-spacing: .04em;
     }
 
+    /* ---- REAL TICKET STUB STYLE ---- */
+    .ticket-stub {
+      position: relative;
+      background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+      border: 2px solid #fbbf24;
+      border-radius: 12px;
+    }
+
+    /* Oymalı Kenar Delikleri (Sol & Sağ) */
+    .ticket-stub::before, .ticket-stub::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 16px;
+      height: 16px;
+      background: #0a0a0a; /* Arka plan rengi ile eşleşerek delik süsü verir */
+      border-radius: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+    .ticket-stub::before {
+      left: -9px;
+      border-right: 2px solid #fbbf24;
+    }
+    .ticket-stub::after {
+      right: -9px;
+      border-left: 2px solid #fbbf24;
+    }
+
+    /* Bilet Perfora (Yırtma) Çizgisi */
+    .ticket-perforation {
+      border-right: 2px dashed rgba(255, 255, 255, 0.4);
+      padding-right: 14px;
+      margin-right: 6px;
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
     .info-section {
       position: relative;
       background:
@@ -527,7 +566,7 @@
       margin-top: 8px;
       font-family: 'Rajdhani', sans-serif;
       font-size: 0.95rem;
-      color: rgba(226,232,240,0.72);
+      color: rgba(226, 232, 240, 0.72);
       font-weight: 700;
       letter-spacing: .04em;
     }
@@ -615,10 +654,10 @@
 
 <body class="bg-pattern text-white">
   <!-- Language Switch -->
-  <a href="/En.html">
+  <a href="/">
     <div class="fixed top-6 right-6 z-50">
       <button class="font-rajdhani px-4 py-2 text-sm bg-black/40 border border-red-500/40 rounded-lg text-white hover:bg-red-600/30 transition">
-        TR / EN
+        EN / TR
       </button>
     </div>
   </a>
@@ -646,7 +685,7 @@
 
     <div class="text-center px-2 md:px-6 max-w-5xl relative z-10 w-full">
       <h1 class="font-bebas tracking-wider text-gradient animate-slide-up" style="animation-delay:0.2s; opacity:0;">
-        <a id="main-title" href="/En.html">ANATOLIAN WARRIORS</a>
+        <a id="main-title" href="/">ANATOLIAN WARRIORS</a>
       </h1>
 
       <!-- Prize Card -->
@@ -654,15 +693,15 @@
         <a class="prize-card" href="/Regis.html" aria-label="Şampiyonluk Ödülü 5.000.000 TL">
           <div class="prize-icon" aria-hidden="true">🏆</div>
           <div class="prize-label">Şampiyonluk Ödülü</div>
-          <div class="prize-amount">5.000.000 TL</div>
-          <div class="prize-note">İstanbul’da uluslararası engel parkuru yarışması</div>
+          <div class="prize-amount">1.000.000 TRY (₺)</div>
+          <div class="prize-note">İstanbul'da uluslararası engel parkuru yarışması</div>
         </a>
       </div>
 
       <!-- Official Ticker -->
       <div class="animate-slide-up" style="animation-delay:0.6s; opacity:0;">
         <div class="relative w-full max-w-md mx-auto">
-          <div class="org-ticker" aria-label="Resmi izin alınan kurumlar">
+          <div class="org-ticker" aria-label="Resmi İzin Veren Kurumlar">
             <div id="org-line" class="org-line">
               <span class="org-label">İZİN:</span>
               <span class="org-text" id="org-text">—</span>
@@ -674,7 +713,7 @@
       <!-- Countdown -->
       <div class="animate-slide-up" style="animation-delay:0.66s; opacity:0;">
         <div class="countdown-wrap">
-          <div class="countdown-title">Yarışma Gününe Geri Sayım</div>
+          <div class="countdown-title">Yarışma Gününe Kalan Süre</div>
           <div class="countdown-grid">
             <div class="count-card">
               <div id="days" class="count-num">00</div>
@@ -694,7 +733,7 @@
             </div>
           </div>
           <div class="countdown-sub">
-            Resmi yarışma günü: <strong> 2026</strong>
+            Resmi yarışma günü: <strong>24 Ağustos 2026</strong>
           </div>
         </div>
       </div>
@@ -704,17 +743,24 @@
         <a href="/Regis.html" class="inline-block group relative">
           <div class="absolute inset-0 bg-red-600 rounded-lg blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
           <button class="relative font-bebas text-2xl tracking-wider px-12 py-4 bg-gradient-to-r from-red-700 to-red-500 text-white rounded-lg border-2 border-red-400 transform transition-all duration-300 hover:scale-105 hover:border-red-300 shadow-lg">
-            Sporcu Olarak Kayıt Ol
+            Sporcu Olarak Kayıt Ol (Ücretsiz)
           </button>
         </a>
       </div>
 
-      <!-- Ticket Purchase Button -->
-      <div class="mt-4 animate-slide-up" style="animation-delay:0.75s; opacity:0;">
+      <!-- Ticket Purchase Button (REAL TICKET STYLE) -->
+      <div class="mt-5 animate-slide-up" style="animation-delay:0.75s; opacity:0;">
         <a href="/Ticketing.html" class="inline-block group relative">
-          <div class="absolute inset-0 bg-amber-600 rounded-lg blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
-          <button class="relative font-bebas text-2xl tracking-wider px-12 py-4 bg-gradient-to-r from-amber-600 to-amber-500 text-white rounded-lg border-2 border-amber-400 transform transition-all duration-300 hover:scale-105 hover:border-amber-300 shadow-lg flex items-center justify-center gap-2">
-            <span>🎫</span> İzleyici Bileti Satın Al
+          <!-- Bilet arkası parlama efekti -->
+          <div class="absolute inset-0 bg-amber-600 rounded-xl blur-lg opacity-40 group-hover:opacity-60 transition-opacity duration-300"></div>
+          
+          <button class="ticket-stub relative font-bebas text-2xl tracking-wider px-10 py-4 text-white transform transition-all duration-300 hover:scale-105 shadow-xl flex items-center justify-center gap-2">
+            <!-- Bilet Sol Koçan Bölümü -->
+            <div class="ticket-perforation">
+              <span class="text-3xl filter drop-shadow">🎫</span>
+            </div>
+            <!-- Bilet Ana Metin Bölümü -->
+            <span class="pl-2 tracking-wide ">İzleyici Bileti Satın Al</span>
           </button>
         </a>
       </div>
@@ -755,7 +801,7 @@
              class="group transform transition-all duration-300 hover:scale-110" aria-label="Instagram">
             <div class="w-14 h-14 rounded-full bg-gray-800 border-2 border-gray-700 flex items-center justify-center group-hover:border-red-600 group-hover:bg-red-600 transition-all duration-300">
               <svg class="w-7 h-7 text-gray-400 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204 0.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
               </svg>
             </div>
           </a>
@@ -787,7 +833,7 @@
     <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent"></div>
   </section>
 
-  <!-- NEW OVERVIEW CONTENT ADDED AFTER FOOTER -->
+  <!-- OVERVIEW CONTENT -->
   <section class="info-section py-20 px-4 md:px-8">
     <div class="max-w-7xl mx-auto space-y-8">
       <!-- Intro -->
@@ -795,10 +841,10 @@
         <div class="section-kicker">Resmi Genel Bakış</div>
         <h2 class="section-title">Anatolian Warriors</h2>
         <p class="section-text">
-          Anatolian Warriors, dünya çapında tanınan Ninja Warrior formatından ilham alan; güç, çeviklik, dayanıklılık ve zihinsel direnci en üst seviyede sergilemek üzere tasarlanmış uluslararası bir engel parkuru yarışmasıdır.
+          Anatolian Warriors, gücü, çevikliği, dayanıklılığı ve zihinsel direnci en üst düzeyde sergilemek için tasarlanmış, dünya çapında tanınan Ninja Warrior formatından ilham alan uluslararası bir engel parkuru yarışmasıdır.
         </p>
         <p class="section-text">
-          Etkinlik, Türkiye Modern Pentatlon Federasyonu iş birliğiyle ve T.C. Gençlik ve Spor Bakanlığı koordinasyonunda İstanbul’da düzenlenmektedir. Bu yapı, organize, adil ve resmi olarak tanınan bir yarışma ortamı sunar.
+          Etkinlik, Türkiye Modern Pentatlon Federasyonu iş birliğiyle ve T.C. Gençlik ve Spor Bakanlığı koordinasyonunda İstanbul'da düzenlenmektedir. Bu resmi yapı; organize, adil ve uluslararası standartlarda tanınan bir rekabet ortamı sağlamaktadır.
         </p>
       </div>
 
@@ -807,145 +853,145 @@
         <div class="section-kicker">Yarışma Konsepti</div>
         <h3 class="section-title">Üst düzey bir engel parkuru mücadelesi</h3>
         <p class="section-text">
-          Anatolian Warriors, farklı ülkelerden sporcuları büyük ölçekli ve profesyonelce tasarlanmış engel parkurlarında buluşturur. Yarışma şu alanları test eder:
+          Anatolian Warriors, farklı ülkelerden gelen sporcuları büyük ölçekli ve profesyonelce inşa edilmiş özel parkurlarda buluşturuyor. Yarışma şu temel unsurları test eder:
         </p>
 
         <div class="feature-grid">
-          <div class="feature-item">⚡ Patlayıcı güç</div>
-          <div class="feature-item">🧭 Denge og koordinasyon</div>
-          <div class="feature-item">🏃 Hız ve dayanıklılık</div>
-          <div class="feature-item">🧠 Baskı altında problem çözme</div>
+          <div class="feature-item">⚡ Patlayıcı Güç</div>
+          <div class="feature-item">🧭 Denge ve Koordinasyon</div>
+          <div class="feature-item">🏃 Hız ve Kondisyon</div>
+          <div class="feature-item">🧠 Baskı Altında Problem Çözme</div>
         </div>
 
         <p class="section-text">
-          Her engel, hem fiziksel hem de zihinsel sınırları zorlayacak şekilde tasarlanmıştır. Bu da, dünyanın önde gelen uluslararası engel parkuru yarışmalarına benzer dinamik ve rekabetçi bir deneyim oluşturur.
+          Her bir engel, fiziksel ve zihinsel sınırları en uç noktaya kadar zorlamak üzere mühendislikle tasarlanmış olup, dünyanın en prestijli ekstrem spor etkinlikleriyle yarışacak düzeyde dinamik bir deneyim sunar.
         </p>
       </div>
 
       <!-- Format -->
       <div class="section-card">
-        <div class="section-kicker">Yarışma Formatı</div>
+        <div class="section-kicker">Turnuva Formatı</div>
         <h3 class="section-title">Çok aşamalı eleme sistemi</h3>
 
         <div class="timeline-grid">
           <div class="timeline-card">
-            <div class="timeline-step">Aşama 1</div>
+            <div class="timeline-step">1. Aşama</div>
             <div class="timeline-name">Elemeler</div>
           </div>
           <div class="timeline-card">
-            <div class="timeline-step">Aşama 2</div>
+            <div class="timeline-step">2. Aşama</div>
             <div class="timeline-name">Eleme Turları</div>
           </div>
           <div class="timeline-card">
-            <div class="timeline-step">Aşama 3</div>
+            <div class="timeline-step">3. Aşama</div>
             <div class="timeline-name">Yarı Finaller</div>
           </div>
           <div class="timeline-card">
-            <div class="timeline-step">Aşama 4</div>
+            <div class="timeline-step">4. Aşama</div>
             <div class="timeline-name">Büyük Final</div>
           </div>
         </div>
 
         <p class="section-text">
-          Sporcular; performansları, parkuru tamamlama süreleri ve engellerdeki başarı oranlarına göre kademeli olarak seçilir. Yalnızca en iyi performansı gösteren yarışmacılar final aşamasına yükselir.
+          Sporcular; performans metrikleri, parkuru tamamlama süreleri ve engel başarı oranlarına göre kademeli olarak elenir. Yalnızca en yüksek performansı gösteren atletler bir sonraki aşamaya geçmeye hak kazanır.
         </p>
         <p class="section-text">
-          Final turu, Anatolian Warriors’ın resmi sıralamasını ve şampiyonlarını belirler.
+          Büyük final turu, Anatolian Warriors'ın resmi sıralamasını ve şampiyonlarını belirleyecektir.
         </p>
       </div>
 
       <!-- Participation -->
       <div class="section-card">
         <div class="section-kicker">Katılım ve Uygunluk</div>
-        <h3 class="section-title">Ulusal ve uluslararası sporculara açık</h3>
+        <h3 class="section-title">Ulusal ve uluslararası tüm sporculara açık</h3>
 
         <div class="bullet-list">
-          <div class="bullet-item"><span class="bullet-icon">•</span><span>Hem ulusal hem de uluslararası sporcular katılabilir</span></div>
-          <div class="bullet-item"><span class="bullet-icon">•</span><span>Katılımcıların Parkour, Jimnastik, Calisthenics, Obstacle Course Racing (OCR) veya Atletizm gibi branşlarda geçmişe sahip olması beklenir</span></div>
-          <div class="bullet-item"><span class="bullet-icon">•</span><span>Sporcuların yüksek seviyede fiziksel hazırlık ve rekabet deneyimi göstermesi beklenir</span></div>
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Hem yerli hem de yabancı profesyonel sporcular yarışmada mücadele edebilir.</span></div>
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Yarışmacıların Parkur, Cimnastik, Kalistenik (Calisthenics), Engel Parkuru Yarışları (OCR) veya Atletizm gibi branşlarda geçmişe sahip olmaları beklenmektedir.</span></div>
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Adayların yüksek düzeyde fiziksel hazırlık ve yarışma deneyimi sergilemesi zorunludur.</span></div>
         </div>
       </div>
 
       <!-- Prize -->
       <div class="section-card">
         <div class="section-kicker">Ödül Yapısı</div>
-        <h3 class="section-title">Üst düzey performans için üst düzey ödüller</h3>
+        <h3 class="section-title">Zirve performans için büyük ödüller</h3>
 
         <div class="mini-stat-grid">
           <div class="mini-stat">
             <div class="mini-stat-number">5.000.000 TL</div>
-            <div class="mini-stat-label">Ana Ödül</div>
+            <div class="mini-stat-label">Ana Ödül Havuzu</div>
           </div>
           <div class="mini-stat">
             <div class="mini-stat-number">1.000.000 TL</div>
-            <div class="mini-stat-label">Özel Performans Ödülü</div>
+            <div class="mini-stat-label">Performans Bonusları</div>
           </div>
           <div class="mini-stat">
-            <div class="mini-stat-number">+ Ek Ödüller</div>
-            <div class="mini-stat-label">Resmi sponsorlar destekli</div>
+            <div class="mini-stat-number">+ Ekler</div>
+            <div class="mini-stat-label">Resmi Sponsor Destekleri</div>
           </div>
         </div>
 
         <p class="section-text">
-          Finalistlere, resmi sponsorlar ve etkinlik partnerleri aracılığıyla ek ödüller de verilebilir.
+          Dereceye giren finalistlere, resmi sponsorlar ve etkinlik ortakları tarafından ek ödüller ve özel teşvikler de takdim edilebilecektir.
         </p>
       </div>
 
       <!-- Athlete Support -->
       <div class="section-card">
         <div class="section-kicker">Sporcu Desteği</div>
-        <h3 class="section-title">Seçilen profesyonel sporcular için destek</h3>
+        <h3 class="section-title">Seçkin elit yarışmacılar için imkanlar</h3>
 
         <div class="bullet-list">
-          <div class="bullet-item"><span class="bullet-icon">•</span><span>Seçilen profesyonel sporcular için ulaşım ve konaklama giderleri karşılanabilir</span></div>
-          <div class="bullet-item"><span class="bullet-icon">•</span><span>Sponsor destekli sporcular, yarışma sırasında resmi partner markaları temsil edebilir</span></div>
-          <div class="bullet-item"><span class="bullet-icon">•</span><span>Bağımsız sporcular da memnuniyetle kabul edilir ve kişisel sponsorlarıyla yarışabilir</span></div>
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Kriterlere uyan uluslararası elit yarışmacılar için seyahat ve konaklama destekleri sağlanabilir.</span></div>
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Sponsor destekli atletler, etkinlik süresince resmi partner markaları temsil etme hakkına sahiptir.</span></div>
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Bağımsız sporcular da kendi kişisel sponsorluklarıyla yarışmaya katılabilirler.</span></div>
         </div>
       </div>
 
       <!-- Media -->
       <div class="section-card">
         <div class="section-kicker">Medya ve Görünürlük</div>
-        <h3 class="section-title">Erişim, görünürlük ve etki için tasarlandı</h3>
+        <h3 class="section-title">Geniş kitle erişimi ve küresel etki odağı</h3>
 
         <div class="feature-grid">
-          <div class="feature-item">📺 Televizyon yayın potansiyeli</div>
-          <div class="feature-item">📲 Güçlü dijital medya varlığı</div>
-          <div class="feature-item">🌍 Uluslararası izleyici erişimi</div>
-          <div class="feature-item">🚀 Resmi kanallarda sporcu tanıtımı</div>
+          <div class="feature-item">📺 Televizyon Yayın Potansiyeli</div>
+          <div class="feature-item">📲 Güçlü Dijital Medya Kampanyaları</div>
+          <div class="feature-item">🌍 Uluslararası İzleyici Kitlesi</div>
+          <div class="feature-item">🚀 Resmi Kanallarda Sporcu Tanıtımları</div>
         </div>
 
         <p class="section-text">
-          Seçilen sporcular, tanıtım kampanyalarında öne çıkarılarak güçlü bir uluslararası görünürlük ve izleyici etkileşimi elde eder.
+          Öne çıkan başarılı sporcular, uluslararası tanıtım kampanyalarında ve medya içeriklerinde yer alarak küresel ölçekte büyük bir görünürlük elde etme şansı yakalayacaktır.
         </p>
       </div>
 
       <!-- Registration -->
       <div class="section-card">
         <div class="section-kicker">Resmi Kayıt</div>
-        <h3 class="section-title">Federasyon platformu üzerinden kayıt</h3>
+        <h3 class="section-title">Federasyon platformu üzerinden başvuru</h3>
         <p class="section-text">
-          Tüm katılımcıların kayıt işlemlerini Türkiye Modern Pentatlon Federasyonu’nun resmi platformu üzerinden tamamlaması gerekmektedir.
+          Tüm katılımcıların başvuru süreçlerini Türkiye Modern Pentatlon Federasyonu tarafından tahsis edilen resmi otomasyon ve platformlar üzerinden tamamlaması gerekmektedir.
         </p>
       </div>
 
       <!-- Vision -->
       <div class="section-card">
         <div class="section-kicker">Vizyon</div>
-        <h3 class="section-title">Türkiye’de spor eğlencesinde yeni bir dönem</h3>
+        <h3 class="section-title">Türkiye'de spor eğlencesinde yeni bir milat</h3>
 
         <div class="bullet-list">
-          <div class="bullet-item"><span class="bullet-icon">•</span><span>Profesyonel organizasyon</span></div>
-          <div class="bullet-item"><span class="bullet-icon">•</span><span>Şeffaf ve adil yarışma ilkeleri</span></div>
-          <div class="bullet-item"><span class="bullet-icon">•</span><span>Küresel sporcu katılımı</span></div>
-          <div class="bullet-item"><span class="bullet-icon">•</span><span>Güçlü medya entegrasyonu</span></div>
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Profesyonel ve kurumsal organizasyon yapısı</span></div>
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Şeffaf ve adil rekabet standartları</span></div>
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Küresel ölçekte atletik temsil gücü</span></div>
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Gelişmiş medya ve yayın entegrasyonu</span></div>
         </div>
 
         <p class="section-text">
-          Anatolian Warriors; üst düzey prodüksiyon, resmi koordinasyon ve küresel vizyonu bir araya getirerek, önde gelen uluslararası engel parkuru yarışmalarından biri olmayı hedeflemektedir.
+          Anatolian Warriors, üst düzey prodüksiyon değerlerini kurumsal koordinasyonla birleştirerek, dünya genelindeki engel parkuru yarışları (OCR) takviminin vazgeçilmez bir parçası olmayı hedeflemektedir.
         </p>
         <p class="section-text">
-          Bu proje, yerel gücü uluslararası hedeflerle buluşturan; Türkiye’de rekabetçi spor eğlencesinde yeni bir dönemi temsil etmektedir.
+          Bu proje, bölgesel gücümüzü uluslararası vizyonla harmanlayarak Türkiye'deki rekabetçi spor eğlence sektöründe yeni bir dönüm noktasını temsil etmektedir.
         </p>
       </div>
     </div>
@@ -958,7 +1004,7 @@
         © 2026 Anatolian Warriors. Tüm hakları saklıdır.
       </div>
       <div class="font-rajdhani text-sm text-gray-500 tracking-wide text-center md:text-right">
-        Resmi genel bakış • Uluslararası engel parkuru serisi
+        Resmi Genel Bakış • Uluslararası Engel Parkuru Serisi
       </div>
     </div>
   </footer>
@@ -1049,8 +1095,8 @@
       const ORGS = [
         'Türkiye Modern Pentatlon Federasyonu',
         'T.C. Gençlik ve Spor Bakanlığı',
-        'İstanbul’da resmi koordinasyon',
-        'Uluslararası engel parkuru yarışması'
+        'İstanbul\'da Resmi Koordinasyon',
+        'Uluslararası Engel Parkuru Yarışması'
       ];
 
       const textEl = document.getElementById('org-text');
