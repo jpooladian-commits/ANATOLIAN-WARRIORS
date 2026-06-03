@@ -384,6 +384,45 @@
       letter-spacing: .04em;
     }
 
+    /* ---- REAL TICKET STUB STYLE ---- */
+    .ticket-stub {
+      position: relative;
+      background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+      border: 2px solid #fbbf24;
+      border-radius: 12px;
+    }
+
+    /* Scissors-cut side punches (Left & Right) */
+    .ticket-stub::before, .ticket-stub::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 16px;
+      height: 16px;
+      background: #0a0a0a; /* Matches background to look like a hole */
+      border-radius: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+    .ticket-stub::before {
+      left: -9px;
+      border-right: 2px solid #fbbf24;
+    }
+    .ticket-stub::after {
+      right: -9px;
+      border-left: 2px solid #fbbf24;
+    }
+
+    /* Ticket Perforation Tear Line */
+    .ticket-perforation {
+      border-right: 2px dashed rgba(255, 255, 255, 0.4);
+      padding-right: 14px;
+      margin-right: 6px;
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
     .info-section {
       position: relative;
       background:
@@ -527,7 +566,7 @@
       margin-top: 8px;
       font-family: 'Rajdhani', sans-serif;
       font-size: 0.95rem;
-      color: rgba(226,232,240,0.72);
+      color: rgba(226, 232, 240, 0.72);
       font-weight: 700;
       letter-spacing: .04em;
     }
@@ -614,6 +653,7 @@
 </head>
 
 <body class="bg-pattern text-white">
+  <!-- Language Switch -->
   <a href="/">
     <div class="fixed top-6 right-6 z-50">
       <button class="font-rajdhani px-4 py-2 text-sm bg-black/40 border border-red-500/40 rounded-lg text-white hover:bg-red-600/30 transition">
@@ -622,7 +662,9 @@
     </div>
   </a>
 
+  <!-- HERO / CURRENT PAGE CONTENT -->
   <section id="app-wrapper" class="min-h-screen w-full flex flex-col items-center justify-center relative overflow-hidden px-4 py-16 md:py-20">
+    <!-- Decorative Elements -->
     <div class="absolute top-10 left-10 opacity-20">
       <svg class="w-16 h-16 text-red-600 animate-float" style="animation-delay: 0s;" viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
@@ -646,15 +688,17 @@
         <a id="main-title" href="/">ANATOLIAN WARRIORS</a>
       </h1>
 
+      <!-- Prize Card -->
       <div class="animate-slide-up" style="animation-delay:0.58s; opacity:0;">
         <a class="prize-card" href="/Regis.html" aria-label="Championship Prize 5.000.000 TL">
           <div class="prize-icon" aria-hidden="true">🏆</div>
           <div class="prize-label">Championship Prize</div>
-          <div class="prize-amount">5.000.000 TL</div>
+          <div class="prize-amount">1.000.000 TRY (₺)</div>
           <div class="prize-note">International obstacle course competition in Istanbul</div>
         </a>
       </div>
 
+      <!-- Official Ticker -->
       <div class="animate-slide-up" style="animation-delay:0.6s; opacity:0;">
         <div class="relative w-full max-w-md mx-auto">
           <div class="org-ticker" aria-label="Official Permitting Institutions">
@@ -666,6 +710,7 @@
         </div>
       </div>
 
+      <!-- Countdown -->
       <div class="animate-slide-up" style="animation-delay:0.66s; opacity:0;">
         <div class="countdown-wrap">
           <div class="countdown-title">Countdown to Competition Day</div>
@@ -693,6 +738,7 @@
         </div>
       </div>
 
+      <!-- Registration Button -->
       <div class="mt-10 animate-slide-up" style="animation-delay:0.7s; opacity:0;">
         <a href="/Regis.html" class="inline-block group relative">
           <div class="absolute inset-0 bg-red-600 rounded-lg blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
@@ -702,15 +748,24 @@
         </a>
       </div>
 
-      <div class="mt-4 animate-slide-up" style="animation-delay:0.75s; opacity:0;">
+      <!-- Ticket Purchase Button (REAL TICKET STYLE) -->
+      <div class="mt-5 animate-slide-up" style="animation-delay:0.75s; opacity:0;">
         <a href="/Ticketing.html" class="inline-block group relative">
-          <div class="absolute inset-0 bg-amber-600 rounded-lg blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
-          <button class="relative font-bebas text-2xl tracking-wider px-12 py-4 bg-gradient-to-r from-amber-600 to-amber-500 text-white rounded-lg border-2 border-amber-400 transform transition-all duration-300 hover:scale-105 hover:border-amber-300 shadow-lg flex items-center justify-center gap-2">
-            <span>🎫</span> Buy Competition Ticket
+          <!-- Glow effect behind ticket -->
+          <div class="absolute inset-0 bg-amber-600 rounded-xl blur-lg opacity-40 group-hover:opacity-60 transition-opacity duration-300"></div>
+          
+          <button class="ticket-stub relative font-bebas text-2xl tracking-wider px-10 py-4 text-white transform transition-all duration-300 hover:scale-105 shadow-xl flex items-center justify-center gap-2">
+            <!-- Ticket Stub Left Section -->
+            <div class="ticket-perforation">
+              <span class="text-3xl filter drop-shadow">🎫</span>
+            </div>
+            <!-- Ticket Main Text Section -->
+            <span class="pl-2 tracking-wide ">Buy Competition Ticket</span>
           </button>
         </a>
       </div>
 
+      <!-- Quick Action Buttons -->
       <div class="animate-slide-up" style="animation-delay:0.55s; opacity:0;">
         <div class="quick-actions" aria-label="Quick links">
           <a class="qa-btn" href="/contactus.html" rel="noopener noreferrer">
@@ -730,6 +785,7 @@
         </div>
       </div>
 
+      <!-- Social Media Links -->
       <div class="mt-10 animate-slide-up" style="animation-delay:0.8s; opacity:0;">
         <div class="flex items-center justify-center gap-6">
           <a href="https://www.youtube.com/channel/UCIr1-NJeZUK73yXA0s6RzLw" target="_blank" rel="noopener noreferrer"
@@ -761,6 +817,7 @@
         </div>
       </div>
 
+      <!-- Turkish Flag Accent -->
       <div class="mt-8 flex items-center justify-center gap-3 animate-slide-up" style="animation-delay:1s; opacity:0;">
         <div class="w-8 h-1 bg-red-600 rounded"></div>
         <svg class="w-6 h-6 text-red-600" viewBox="0 0 24 24" fill="currentColor">
@@ -772,11 +829,14 @@
       </div>
     </div>
 
+    <!-- Hero Accent Line -->
     <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent"></div>
   </section>
 
+  <!-- OVERVIEW CONTENT -->
   <section class="info-section py-20 px-4 md:px-8">
     <div class="max-w-7xl mx-auto space-y-8">
+      <!-- Intro -->
       <div class="section-card">
         <div class="section-kicker">Official Overview</div>
         <h2 class="section-title">Anatolian Warriors</h2>
@@ -788,6 +848,7 @@
         </p>
       </div>
 
+      <!-- Competition Concept -->
       <div class="section-card">
         <div class="section-kicker">Competition Concept</div>
         <h3 class="section-title">A premier obstacle course challenge</h3>
@@ -807,6 +868,7 @@
         </p>
       </div>
 
+      <!-- Format -->
       <div class="section-card">
         <div class="section-kicker">Tournament Format</div>
         <h3 class="section-title">Multi-stage elimination system</h3>
@@ -838,6 +900,7 @@
         </p>
       </div>
 
+      <!-- Participation -->
       <div class="section-card">
         <div class="section-kicker">Participation & Eligibility</div>
         <h3 class="section-title">Open to national and international athletes</h3>
@@ -849,6 +912,7 @@
         </div>
       </div>
 
+      <!-- Prize -->
       <div class="section-card">
         <div class="section-kicker">Prize Structure</div>
         <h3 class="section-title">High stakes for peak performance</h3>
@@ -873,6 +937,7 @@
         </p>
       </div>
 
+      <!-- Athlete Support -->
       <div class="section-card">
         <div class="section-kicker">Athlete Support</div>
         <h3 class="section-title">Assistance for selected elite competitors</h3>
@@ -884,6 +949,7 @@
         </div>
       </div>
 
+      <!-- Media -->
       <div class="section-card">
         <div class="section-kicker">Media & Exposure</div>
         <h3 class="section-title">Designed for reach, visibility, and impact</h3>
@@ -900,6 +966,7 @@
         </p>
       </div>
 
+      <!-- Registration -->
       <div class="section-card">
         <div class="section-kicker">Official Registration</div>
         <h3 class="section-title">Registration through federation platform</h3>
@@ -908,6 +975,7 @@
         </p>
       </div>
 
+      <!-- Vision -->
       <div class="section-card">
         <div class="section-kicker">Vision</div>
         <h3 class="section-title">A new era of sports entertainment in Turkey</h3>
@@ -929,6 +997,7 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="custom-footer py-6 px-6">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
       <div class="font-rajdhani text-sm text-gray-400 tracking-wide">
