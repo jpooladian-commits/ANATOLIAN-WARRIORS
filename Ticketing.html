@@ -126,23 +126,22 @@
   </div>
 
   <script>
-    // آدرس وب‌اپ گوگل اپ اسکریپت خود را اینجا قرار دهید
-    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxpFgR2iptq-c893SJG2WkyPm1xrsV6GhwOcVXF3FjNBB-bfTXVJTrruuAzRXkznOun/exec";
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwjJec3CvqhZEI_VzOn2YeWRPwiL-Ro9kKrIG4OEwPZvqV_beuEhOoTo0F-JeJKATe71A/exec";
 
     const i18n = {
       tr: {
-        buy_tickets: 'BİLET AL', select_tickets: 'BİLETİNİ SEÇ', ticket_desc: 'Etkinlik gününü seç, miktarı belirle dairy ve hemen satın al.',
+        buy_tickets: 'BİLET AL', select_tickets: 'BİLETİNİ SEÇ', ticket_desc: 'Etkinlik gününü seç, miktarı belirle ve hemen satın al.',
         price_first: '1. Kişi: 2.800 ₺', price_next: 'Sonraki Kişiler: 2.000 ₺', order_summary: 'Sipariş Özeti', quantity: 'Adet', selected_day: 'Seçili Gün', total: 'Toplam',
         proceed_checkout: 'ÖDEMEYE GEÇ', checkout: 'Ödeme Bilgileri', first_name: 'Ad', last_name: 'Soyad', phone: 'Telefon', country: 'Ülke', proceed_payment: 'GÜVENLİ ÖDEME SAYFASINA GİT',
         subtitle: 'Uluslararası Güç & Dövüş Sporları Şampiyonası', processing: 'Yönlendiriliyor...', loading_days: 'Güncel doluluk oranları kontrol ediliyor...',
-        sold_out_msg: 'Seçilen gün için bilet kapasitesi tamamen dolmuştur!', tag_sold_out: 'DOLDU'
+        sold_out_msg: 'Seçilen gün için 6.000 kişilik bilet kapasitesi tamamen dolmuştur!', tag_sold_out: 'DOLDU'
       },
       en: {
         buy_tickets: 'BUY TICKETS', select_tickets: 'SELECT YOUR TICKETS', ticket_desc: 'Choose your event day, select quantity and purchase instantly.',
         price_first: '1st Person: 2,800 ₺', price_next: 'Next Persons: 2,000 ₺ each', order_summary: 'Order Summary', quantity: 'Quantity', selected_day: 'Selected Day', total: 'Total',
         proceed_checkout: 'PROCEED TO CHECKOUT', checkout: 'Checkout Details', first_name: 'First Name', last_name: 'Last Name', phone: 'Phone', country: 'Country', proceed_payment: 'GO TO SECURE PAYMENT PAGE',
         subtitle: 'International Strength & Combat Sports Championship', processing: 'Redirecting...', loading_days: 'Checking current availability...',
-        sold_out_msg: 'The ticket capacity for the selected day has been fully reached!', tag_sold_out: 'SOLD OUT'
+        sold_out_msg: 'The 6,000 ticket capacity for the selected day has been fully reached!', tag_sold_out: 'SOLD OUT'
       }
     };
 
@@ -223,7 +222,7 @@
     document.getElementById('close-checkout').onclick = () => document.getElementById('checkout-modal').classList.add('hidden');
     document.getElementById('lang-toggle').onclick = () => { lang = lang === 'tr' ? 'en' : 'tr'; applyLang(); };
 
-    // یکپارچه‌سازی نهایی فرم برای ارسال تک‌مرحله‌ای و امن (رفع کامل خطای Order Not Found)
+    // ارسال فرم اطلاعات و هدایت فیزیکی به درگاه رسمی ایزیکو
     document.getElementById('checkout-form').onsubmit = function(e) {
       e.preventDefault();
       const btn = document.getElementById('pay-submit-btn');
@@ -241,38 +240,27 @@
         country: document.getElementById('cust-country').value
       };
 
-      // تبدیل داده‌ها به فرمت UrlEncoded استاندارد جهت دریافت پاسخ معتبر و حل مشکل فیلترینگ مرورگر (CORS)
-      const formBody = Object.keys(payload)
-        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(payload[key]))
-        .join('&');
-
       fetch(APPS_SCRIPT_URL, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: formBody
+        body: JSON.stringify(payload)
       })
-      .then(res => {
-        if (!res.ok) throw new Error("Network response error");
-        return res.json();
-      })
+      .then(res => res.json())
       .then(response => {
         if (response.status === "success" && response.paymentUrl) {
-          // انتقال مستقیم و امن کاربر به صفحه رسمی پرداخت ایزیکو
+          // هدایت مستقیم و رسمی کاربر به صفحه پرداخت iyzico
           window.location.href = response.paymentUrl;
         } else if (response.status === "sold_out") {
           alert(i18n[lang].sold_out_msg);
           location.reload();
         } else {
-          alert("Error: " + response.message);
+          alert("Iyzico Error: " + response.message);
           btn.disabled = false;
           btn.textContent = i18n[lang].proceed_payment;
         }
       })
       .catch(err => {
         console.error(err);
-        alert("İşlem gerçekleştirilemedi. Lütfen bağlantınızı kontrol edin.");
+        alert("Bağlantı hatası oluştu.");
         btn.disabled = false;
         btn.textContent = i18n[lang].proceed_payment;
       });
