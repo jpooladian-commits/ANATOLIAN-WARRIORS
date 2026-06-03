@@ -118,7 +118,6 @@
       will-change: transform;
       font-size: clamp(56px, 10vw, 82px);
       letter-spacing: 0.08em;
-      text-decoration: none;
       white-space: normal;
     }
 
@@ -615,14 +614,14 @@
 </head>
 
 <body class="bg-pattern text-white">
-  <!-- Language Switch -->
-  <a href="/" class="fixed top-6 right-6 z-50">
-    <button class="font-rajdhani px-4 py-2 text-sm bg-black/40 border border-red-500/40 rounded-lg text-white hover:bg-red-600/30 transition">
-      TR / EN
-    </button>
+  <a href="/">
+    <div class="fixed top-6 right-6 z-50">
+      <button class="font-rajdhani px-4 py-2 text-sm bg-black/40 border border-red-500/40 rounded-lg text-white hover:bg-red-600/30 transition">
+        EN / TR
+      </button>
+    </div>
   </a>
 
-  <!-- HERO -->
   <section id="app-wrapper" class="min-h-screen w-full flex flex-col items-center justify-center relative overflow-hidden px-4 py-16 md:py-20">
     <div class="absolute top-10 left-10 opacity-20">
       <svg class="w-16 h-16 text-red-600 animate-float" style="animation-delay: 0s;" viewBox="0 0 24 24" fill="currentColor">
@@ -644,23 +643,23 @@
 
     <div class="text-center px-2 md:px-6 max-w-5xl relative z-10 w-full">
       <h1 class="font-bebas tracking-wider text-gradient animate-slide-up" style="animation-delay:0.2s; opacity:0;">
-        <a id="main-title" href="/En.html" class="text-inherit no-underline">ANATOLIAN WARRIORS</a>
+        <a id="main-title" href="/">ANATOLIAN WARRIORS</a>
       </h1>
 
       <div class="animate-slide-up" style="animation-delay:0.58s; opacity:0;">
-        <a class="prize-card" href="/ENRegistration.html" aria-label="Championship Prize 5,000,000 TL">
+        <a class="prize-card" href="/Regis.html" aria-label="Championship Prize 5.000.000 TL">
           <div class="prize-icon" aria-hidden="true">🏆</div>
           <div class="prize-label">Championship Prize</div>
-          <div class="prize-amount">5,000,000 TL</div>
-          <div class="prize-note">International Ninja-style Obstacle Competition</div>
+          <div class="prize-amount">5.000.000 TL</div>
+          <div class="prize-note">International obstacle course competition in Istanbul</div>
         </a>
       </div>
 
       <div class="animate-slide-up" style="animation-delay:0.6s; opacity:0;">
         <div class="relative w-full max-w-md mx-auto">
-          <div class="org-ticker" aria-label="Officially approved institutions">
+          <div class="org-ticker" aria-label="Official Permitting Institutions">
             <div id="org-line" class="org-line">
-              <span class="org-label">APPROVAL:</span>
+              <span class="org-label">PERMIT:</span>
               <span class="org-text" id="org-text">—</span>
             </div>
           </div>
@@ -689,25 +688,34 @@
             </div>
           </div>
           <div class="countdown-sub">
-            Official competition day: <strong>2026</strong>
+            Official competition day: <strong>August 24, 2026</strong>
           </div>
         </div>
       </div>
 
       <div class="mt-10 animate-slide-up" style="animation-delay:0.7s; opacity:0;">
-        <a href="/ENRegistration.html" class="inline-block group relative">
+        <a href="/Regis.html" class="inline-block group relative">
           <div class="absolute inset-0 bg-red-600 rounded-lg blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
           <button class="relative font-bebas text-2xl tracking-wider px-12 py-4 bg-gradient-to-r from-red-700 to-red-500 text-white rounded-lg border-2 border-red-400 transform transition-all duration-300 hover:scale-105 hover:border-red-300 shadow-lg">
-            Register - Free
+            Free Registration as an Athlete
+          </button>
+        </a>
+      </div>
+
+      <div class="mt-4 animate-slide-up" style="animation-delay:0.75s; opacity:0;">
+        <a href="/Tickets.html" class="inline-block group relative">
+          <div class="absolute inset-0 bg-amber-600 rounded-lg blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
+          <button class="relative font-bebas text-2xl tracking-wider px-12 py-4 bg-gradient-to-r from-amber-600 to-amber-500 text-white rounded-lg border-2 border-amber-400 transform transition-all duration-300 hover:scale-105 hover:border-amber-300 shadow-lg flex items-center justify-center gap-2">
+            <span>🎫</span> Buy Competition Ticket
           </button>
         </a>
       </div>
 
       <div class="animate-slide-up" style="animation-delay:0.55s; opacity:0;">
         <div class="quick-actions" aria-label="Quick links">
-          <a class="qa-btn" href="/ENContactus.html" rel="noopener noreferrer">
+          <a class="qa-btn" href="/contactus.html" rel="noopener noreferrer">
             <span aria-hidden="true">☎️</span>
-            <span class="qa-text">Contact</span>
+            <span class="qa-text">Contact Us</span>
           </a>
 
           <a class="qa-btn" href="/applytoSponsorluk.html" rel="noopener noreferrer">
@@ -715,16 +723,17 @@
             <span class="qa-text">Sponsorship Application</span>
           </a>
 
-          <a class="qa-btn" href="/AmbassadorProgram.html" rel="noopener noreferrer">
+          <a class="qa-btn" href="/applytoSponsorluk.html" rel="noopener noreferrer">
             <span aria-hidden="true">🏷️</span>
-            <span class="qa-text">Become Ambassador</span>
-          </a>
+            <span class="qa-text">Current Sponsors</span>
+          </a> 
         </div>
       </div>
 
       <div class="mt-10 animate-slide-up" style="animation-delay:0.8s; opacity:0;">
         <div class="flex items-center justify-center gap-6">
-          <a href="https://www.youtube.com/channel/UCIr1-NJeZUK73yXA0s6RzLw" target="_blank" rel="noopener noreferrer" class="group transform transition-all duration-300 hover:scale-110" aria-label="YouTube">
+          <a href="https://www.youtube.com/channel/UCIr1-NJeZUK73yXA0s6RzLw" target="_blank" rel="noopener noreferrer"
+             class="group transform transition-all duration-300 hover:scale-110" aria-label="YouTube">
             <div class="w-14 h-14 rounded-full bg-gray-800 border-2 border-gray-700 flex items-center justify-center group-hover:border-red-600 group-hover:bg-red-600 transition-all duration-300">
               <svg class="w-7 h-7 text-gray-400 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
@@ -732,15 +741,17 @@
             </div>
           </a>
 
-          <a href="https://www.instagram.com/anatolianwarriors/" target="_blank" rel="noopener noreferrer" class="group transform transition-all duration-300 hover:scale-110" aria-label="Instagram">
+          <a href="https://www.instagram.com/anatolianwarriors/" target="_blank" rel="noopener noreferrer"
+             class="group transform transition-all duration-300 hover:scale-110" aria-label="Instagram">
             <div class="w-14 h-14 rounded-full bg-gray-800 border-2 border-gray-700 flex items-center justify-center group-hover:border-red-600 group-hover:bg-red-600 transition-all duration-300">
               <svg class="w-7 h-7 text-gray-400 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204 0.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
               </svg>
             </div>
           </a>
 
-          <a href="http://tiktok.com/@anatolianwarriors" target="_blank" rel="noopener noreferrer" class="group transform transition-all duration-300 hover:scale-110" aria-label="TikTok">
+          <a href="http://tiktok.com/@anatolianwarriors" target="_blank" rel="noopener noreferrer"
+             class="group transform transition-all duration-300 hover:scale-110" aria-label="TikTok">
             <div class="w-14 h-14 rounded-full bg-gray-800 border-2 border-gray-700 flex items-center justify-center group-hover:border-red-600 group-hover:bg-red-600 transition-all duration-300">
               <svg class="w-7 h-7 text-gray-400 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
@@ -764,52 +775,50 @@
     <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent"></div>
   </section>
 
-
-
   <section class="info-section py-20 px-4 md:px-8">
     <div class="max-w-7xl mx-auto space-y-8">
       <div class="section-card">
         <div class="section-kicker">Official Overview</div>
         <h2 class="section-title">Anatolian Warriors</h2>
         <p class="section-text">
-          Anatolian Warriors is an International Ninja-style Obstacle Competition inspired by the globally recognized Ninja Warrior format, designed to showcase strength, agility, endurance, and mental resilience at the highest level.
+          Anatolian Warriors is an international obstacle course competition inspired by the globally recognized Ninja Warrior format, designed to showcase power, agility, endurance, and mental resilience at the highest level.
         </p>
         <p class="section-text">
-          The event is organized in Istanbul in cooperation with the Turkish Modern Pentathlon Federation and under the coordination of the Ministry of Youth and Sports of Türkiye, ensuring a structured, fair, and officially recognized competition environment.
+          The event is organized in Istanbul in collaboration with the Turkish Modern Pentathlon Federation and under the coordination of the T.R. Ministry of Youth and Sports. This structure ensures an organized, fair, and officially recognized competitive environment.
         </p>
       </div>
 
       <div class="section-card">
         <div class="section-kicker">Competition Concept</div>
-        <h3 class="section-title">A high-level obstacle challenge</h3>
+        <h3 class="section-title">A premier obstacle course challenge</h3>
         <p class="section-text">
-          Anatolian Warriors brings together athletes from different countries to compete on large-scale, professionally designed obstacle courses. The competition tests:
+          Anatolian Warriors brings together athletes from different nations on large-scale, professionally constructed obstacle courses. The competition tests:
         </p>
 
         <div class="feature-grid">
-          <div class="feature-item">⚡ Explosive strength</div>
+          <div class="feature-item">⚡ Explosive power</div>
           <div class="feature-item">🧭 Balance and coordination</div>
-          <div class="feature-item">🏃 Speed and endurance</div>
-          <div class="feature-item">🧠 Problem-solving under pressure</div>
+          <div class="feature-item">🏃 Speed and stamina</div>
+          <div class="feature-item">🧠 Problem solving under pressure</div>
         </div>
 
         <p class="section-text">
-          Each obstacle is engineered to challenge both physical and mental limits, creating a dynamic and competitive experience similar to top international obstacle competitions.
+          Each obstacle is engineered to challenge physical and mental limits, creating a dynamic, highly competitive experience comparable to leading international obstacle course events.
         </p>
       </div>
 
       <div class="section-card">
-        <div class="section-kicker">Competition Format</div>
+        <div class="section-kicker">Tournament Format</div>
         <h3 class="section-title">Multi-stage elimination system</h3>
 
         <div class="timeline-grid">
           <div class="timeline-card">
             <div class="timeline-step">Stage 1</div>
-            <div class="timeline-name">Qualification Rounds</div>
+            <div class="timeline-name">Qualifiers</div>
           </div>
           <div class="timeline-card">
             <div class="timeline-step">Stage 2</div>
-            <div class="timeline-name">Elimination Stages</div>
+            <div class="timeline-name">Elimination Rounds</div>
           </div>
           <div class="timeline-card">
             <div class="timeline-step">Stage 3</div>
@@ -822,10 +831,10 @@
         </div>
 
         <p class="section-text">
-          Athletes are progressively selected based on their performance, completion time, and obstacle success rate. Only the top-performing competitors advance to the final stage.
+          Athletes are selected progressively based on performance metrics, completion times, and obstacle success rates. Only top-performing contenders advance to the final stage.
         </p>
         <p class="section-text">
-          The final round determines the official ranking and champions of Anatolian Warriors.
+          The final round determines the official rankings and champions of the Anatolian Warriors.
         </p>
       </div>
 
@@ -834,101 +843,103 @@
         <h3 class="section-title">Open to national and international athletes</h3>
 
         <div class="bullet-list">
-          <div class="bullet-item"><span class="bullet-icon">•</span><span>Open to both national and international athletes</span></div>
-          <div class="bullet-item"><span class="bullet-icon">•</span><span>Participants must have a background in sports such as Parkour, Gymnastics, Calisthenics, Obstacle Course Racing (OCR), or Track & Field</span></div>
-          <div class="bullet-item"><span class="bullet-icon">•</span><span>Athletes are expected to demonstrate a high level of physical readiness and competitive experience</span></div>
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Both national and international athletes are eligible to compete</span></div>
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Contenders are expected to have a background in disciplines such as Parkour, Gymnastics, Calisthenics, Obstacle Course Racing (OCR), or Track & Field</span></div>
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Athletes must demonstrate a high level of physical preparation and competitive experience</span></div>
         </div>
       </div>
 
       <div class="section-card">
         <div class="section-kicker">Prize Structure</div>
-        <h3 class="section-title">Elite rewards for elite performance</h3>
+        <h3 class="section-title">High stakes for peak performance</h3>
 
         <div class="mini-stat-grid">
           <div class="mini-stat">
-            <div class="mini-stat-number">5,000,000 TL</div>
-            <div class="mini-stat-label">Main Prize</div>
+            <div class="mini-stat-number">5.000.000 TL</div>
+            <div class="mini-stat-label">Main Prize Pool</div>
           </div>
           <div class="mini-stat">
-            <div class="mini-stat-number">1,000,000 TL</div>
-            <div class="mini-stat-label">Special Performance Award</div>
+            <div class="mini-stat-number">1.000.000 TL</div>
+            <div class="mini-stat-label">Performance Bonuses</div>
           </div>
           <div class="mini-stat">
-            <div class="mini-stat-number">+ Extra Rewards</div>
-            <div class="mini-stat-label">Supported by official sponsors</div>
+            <div class="mini-stat-number">+ Extras</div>
+            <div class="mini-stat-label">Official Sponsor Backed</div>
           </div>
         </div>
 
         <p class="section-text">
-          Additional rewards may also be granted to finalists through official sponsors and event partners.
+          Additional rewards and incentives may be granted to top-performing finalists through official sponsors and event partners.
         </p>
       </div>
 
       <div class="section-card">
         <div class="section-kicker">Athlete Support</div>
-        <h3 class="section-title">Support for selected professional athletes</h3>
+        <h3 class="section-title">Assistance for selected elite competitors</h3>
 
         <div class="bullet-list">
-          <div class="bullet-item"><span class="bullet-icon">•</span><span>Travel and accommodation may be covered for selected professional athletes</span></div>
-          <div class="bullet-item"><span class="bullet-icon">•</span><span>Sponsored athletes may represent official partner brands during the competition</span></div>
-          <div class="bullet-item"><span class="bullet-icon">•</span><span>Independent athletes are also welcome and may compete with personal sponsors</span></div>
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Travel and accommodation subsidies may be provided for selected elite international competitors</span></div>
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Sponsor-backed athletes can represent official partner brands during the event</span></div>
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Independent athletes are welcome and may compete with personal sponsorships</span></div>
         </div>
       </div>
 
       <div class="section-card">
         <div class="section-kicker">Media & Exposure</div>
-        <h3 class="section-title">Built for reach, visibility and impact</h3>
+        <h3 class="section-title">Designed for reach, visibility, and impact</h3>
 
         <div class="feature-grid">
           <div class="feature-item">📺 Television broadcast potential</div>
           <div class="feature-item">📲 Strong digital media presence</div>
           <div class="feature-item">🌍 International audience reach</div>
-          <div class="feature-item">🚀 Athlete promotion through official channels</div>
+          <div class="feature-item">🚀 Athlete profiling on official channels</div>
         </div>
 
         <p class="section-text">
-          Selected athletes will be featured across promotional campaigns, providing strong international visibility and audience engagement.
+          Selected athletes will be featured in promotional campaigns, offering significant international visibility and audience engagement.
         </p>
       </div>
 
       <div class="section-card">
         <div class="section-kicker">Official Registration</div>
-        <h3 class="section-title">Registration through the federation platform</h3>
+        <h3 class="section-title">Registration through federation platform</h3>
         <p class="section-text">
-          All participants must complete their registration through the official platform of the Turkish Modern Pentathlon Federation.
+          All participants must complete registration through the official platform provided by the Turkish Modern Pentathlon Federation.
         </p>
       </div>
 
       <div class="section-card">
         <div class="section-kicker">Vision</div>
-        <h3 class="section-title">A new era of sports entertainment in Türkiye</h3>
+        <h3 class="section-title">A new era of sports entertainment in Turkey</h3>
 
         <div class="bullet-list">
           <div class="bullet-item"><span class="bullet-icon">•</span><span>Professional organization</span></div>
-          <div class="bullet-item"><span class="bullet-icon">•</span><span>Transparent and fair competition principles</span></div>
-          <div class="bullet-item"><span class="bullet-icon">•</span><span>Global athlete participation</span></div>
-          <div class="bullet-item"><span class="bullet-icon">•</span><span>Strong media integration</span></div>
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Transparent and fair competition standards</span></div>
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Global athletic representation</span></div>
+          <div class="bullet-item"><span class="bullet-icon">•</span><span>Robust media integration</span></div>
         </div>
 
         <p class="section-text">
-          Anatolian Warriors aims to become one of the leading international obstacle competitions by combining elite-level production, official coordination, and global ambition.
+          Anatolian Warriors combines premium production values, official coordination, and a global outlook, aiming to become a staple of the international obstacle course racing calendar.
         </p>
         <p class="section-text">
-          The project represents a new era of competitive sports entertainment in Türkiye, connecting local strength with international vision.
+          This project represents a new milestone in competitive sports entertainment within Turkey, bridging regional strength with international ambitions.
         </p>
       </div>
     </div>
   </section>
- <footer class="custom-footer py-6 px-6">
+
+  <footer class="custom-footer py-6 px-6">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
       <div class="font-rajdhani text-sm text-gray-400 tracking-wide">
-        © 2026 Anatolian Warriors - International Ninja-style Obstacle Competition. All rights reserved.
+        © 2026 Anatolian Warriors. All rights reserved.
       </div>
       <div class="font-rajdhani text-sm text-gray-500 tracking-wide text-center md:text-right">
-        Official competition overview • International obstacle course series
+        Official Overview • International Obstacle Course Series
       </div>
     </div>
   </footer>
+
   <script>
     const defaultConfig = {
       main_title: 'ANATOLIAN WARRIORS',
@@ -1014,9 +1025,9 @@
     (function initOrgTicker() {
       const ORGS = [
         'Turkish Modern Pentathlon Federation',
-        'Ministry of Youth and Sports of Türkiye',
-        'Official coordination in Istanbul',
-        'International obstacle competition'
+        'T.R. Ministry of Youth and Sports',
+        'Official Coordination in Istanbul',
+        'International Obstacle Course Competition'
       ];
 
       const textEl = document.getElementById('org-text');
@@ -1039,7 +1050,7 @@
     })();
 
     function updateCountdown() {
-      const targetDate = new Date('2026-07-01T00:00:00');
+      const targetDate = new Date('2026-08-24T00:00:00');
       const now = new Date();
       const diff = targetDate - now;
 
