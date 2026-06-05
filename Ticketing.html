@@ -163,12 +163,12 @@
   </div>
 
   <script>
-    // آدرس وب‌اپ گوگل اپ اسکریپت خود را پس از دیپلوی اینجا قرار دهید
+    // لینک وب‌اپ گوگل اپ اسکریپت خود را پس از دیپلوی اینجا قرار دهید
     const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw4LNwqZv9v6KukhFGeQHVfa-LNGoffJT02Gkw6twOhFmzAP5X0m5vDG2P5eHSc9pkbmg/exec";
     
     const i18n = {
       tr: {
-        buy_tickets: 'BİLET AL', select_tickets: 'BİLETİNİ SEÇ', ticket_desc: 'Etkinlik gününü seç, miktarı belirle và hemen satın al.',
+        buy_tickets: 'BİLET AL', select_tickets: 'BİLETİNİ SEÇ', ticket_desc: 'Etkinlik gününü seç, miktarı belirle ve hemen satın al.',
         price_first: '1. Kişi: 2.800 ₺', price_next: 'Sonraki Kişiler: 2.000 ₺', order_summary: 'Sipariş Özeti', quantity: 'Adet', selected_day: 'Seçili Gün', total: 'Toplam',
         proceed_checkout: 'ÖDEMEYE GEÇ', checkout: 'Ödeme Bilgileri', first_name: 'Ad', last_name: 'Soyad', phone: 'Telefon', country: 'Ülke', proceed_payment: 'GÜVENLİ ÖDEME SAYFASINA GİT',
         subtitle: 'Dünyanın en heyecan verici yarışması şimdi İstanbul\'da!', processing: 'Yönlendiriliyor...', loading_days: 'Güncel doluluk oranları kontrol ediliyor...',
@@ -191,7 +191,6 @@
     let quantity = 1;
     let soldOutDays = [];
     
-    // وضعیت کد تخفیف جاری در فرانت‌اند
     let activeDiscount = { code: "", rate: 0 };
 
     function applyLang() {
@@ -263,7 +262,6 @@
       document.getElementById('qty-display').textContent = quantity;
       document.getElementById('sum-day').textContent = `${selectedDay} ${months} 2026`;
       
-      // نمایش سطر تخفیف در صورت فعال بودن
       const discRow = document.getElementById('discount-row');
       const discSum = document.getElementById('sum-discount');
       if (activeDiscount.rate > 0) {
@@ -276,7 +274,6 @@
       document.getElementById('sum-total').textContent = `${calculateTotal().toLocaleString()} ₺`;
     }
 
-    // منطق بررسی زنده کد تخفیف با کلیک بر روی دکمه Uygula
     document.getElementById('discount-apply-btn').onclick = () => {
       const input = document.getElementById('discount-input').value.trim();
       const msgDiv = document.getElementById('discount-msg');
@@ -335,7 +332,7 @@
         email: document.getElementById('cust-email').value,
         phone: document.getElementById('cust-phone').value,
         country: document.getElementById('cust-country').value,
-        discountCode: activeDiscount.code // فرستادن کد تخفیف تایید شده به سمت بک‌اند
+        discountCode: activeDiscount.code
       };
       
       fetch(APPS_SCRIPT_URL, {
