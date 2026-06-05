@@ -70,20 +70,33 @@
 
         <div id="ticket-summary" class="hidden">
           <div class="max-w-lg mx-auto bg-charcoal border border-gold/20 rounded-xl p-6 md:p-8">
-            <h3 class="font-oswald text-xl text-gold mb-4" data-i18n="order_summary"></h3>
+            <h3 class="font-oswald text-xl text-gold mb-4" data-i18n="order_summary">Sipariş Özeti</h3>
+            
             <div class="flex items-center justify-between mb-4">
-              <span class="text-gray-300" data-i18n="quantity"></span>
+              <span class="text-gray-300" data-i18n="quantity">Adet</span>
               <div class="flex items-center gap-3">
                 <button id="qty-minus" class="w-9 h-9 rounded-full border border-gold/40 text-gold flex items-center justify-center hover:bg-gold/10 font-bold">−</button>
                 <span id="qty-display" class="font-oswald text-2xl text-white w-8 text-center">1</span>
                 <button id="qty-plus" class="w-9 h-9 rounded-full border border-gold/40 text-gold flex items-center justify-center hover:bg-gold/10 font-bold">+</button>
               </div>
             </div>
-            <div class="border-t border-gray-700 pt-4 space-y-2">
-              <div class="flex justify-between text-sm text-gray-400"><span data-i18n="selected_day"></span><span id="sum-day" class="text-white">—</span></div>
-              <div class="flex justify-between text-lg font-bold mt-2 pt-2 border-t border-gray-700"><span data-i18n="total"></span><span id="sum-total" class="text-gold">—</span></div>
+
+            <div class="border-t border-gray-700 pt-4 mb-4">
+              <label class="block text-xs text-gray-400 mb-1" data-i18n="discount_label">İndirim Kodu / Discount Code</label>
+              <div class="flex gap-2">
+                <input type="text" id="discount-input" class="flex-1 bg-slate border border-gray-600 rounded-lg px-3 py-2 text-sm text-white focus:border-gold focus:outline-none uppercase" placeholder="WARRIOR20">
+                <button type="button" id="discount-apply-btn" class="bg-gold hover:bg-gold-dark text-obsidian text-xs font-bold px-4 py-2 rounded-lg transition" data-i18n="discount_apply">Uygula</button>
+              </div>
+              <div id="discount-msg" class="text-xs mt-1 hidden"></div>
             </div>
-            <button id="proceed-btn" class="cta-btn w-full mt-6 py-4 rounded-lg font-oswald text-lg font-bold text-obsidian tracking-wider" data-i18n="proceed_checkout"></button>
+
+            <div class="border-t border-gray-700 pt-4 space-y-2">
+              <div class="flex justify-between text-sm text-gray-400"><span data-i18n="selected_day">Seçili Gün</span><span id="sum-day" class="text-white">—</span></div>
+              <div id="discount-row" class="flex justify-between text-sm text-green-400 hidden"><span data-i18n="discount_rate">İndirim / Discount</span><span id="sum-discount">—</span></div>
+              <div class="flex justify-between text-lg font-bold mt-2 pt-2 border-t border-gray-700"><span data-i18n="total">Toplam</span><span id="sum-total" class="text-gold">—</span></div>
+            </div>
+            
+            <button id="proceed-btn" class="cta-btn w-full mt-6 py-4 rounded-lg font-oswald text-lg font-bold text-obsidian tracking-wider" data-i18n="proceed_checkout">ÖDEMEYE GEÇ</button>
           </div>
         </div>
       </div>
@@ -92,16 +105,16 @@
     <div id="checkout-modal" class="hidden fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
       <div class="bg-charcoal border border-gold/20 rounded-2xl w-full max-w-lg p-6 md:p-8 relative">
         <button id="close-checkout" class="absolute top-4 right-4 text-gray-400 hover:text-white"><i data-lucide="x" class="w-6 h-6"></i></button>
-        <h3 class="font-oswald text-2xl text-gold mb-6" data-i18n="checkout"></h3>
+        <h3 class="font-oswald text-2xl text-gold mb-6" data-i18n="checkout">Ödeme Bilgileri</h3>
         
         <form id="checkout-form" class="space-y-4">
           <div class="grid grid-cols-2 gap-4">
             <div>
-              <label class="block text-xs text-gray-400 mb-1" data-i18n="first_name"></label>
+              <label class="block text-xs text-gray-400 mb-1" data-i18n="first_name">Ad</label>
               <input type="text" id="cust-first-name" required class="w-full bg-slate border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none">
             </div>
             <div>
-              <label class="block text-xs text-gray-400 mb-1" data-i18n="last_name"></label>
+              <label class="block text-xs text-gray-400 mb-1" data-i18n="last_name">Soyad</label>
               <input type="text" id="cust-last-name" required class="w-full bg-slate border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none">
             </div>
           </div>
@@ -110,47 +123,40 @@
             <input type="email" id="cust-email" required class="w-full bg-slate border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none">
           </div>
           <div>
-            <label class="block text-xs text-gray-400 mb-1" data-i18n="phone"></label>
+            <label class="block text-xs text-gray-400 mb-1" data-i18n="phone">Telefon</label>
             <input type="tel" id="cust-phone" placeholder="+90555..." required class="w-full bg-slate border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none">
           </div>
           <div>
-            <label class="block text-xs text-gray-400 mb-1" data-i18n="country"></label>
+            <label class="block text-xs text-gray-400 mb-1" data-i18n="country">Ülke</label>
             <select id="cust-country" required class="w-full bg-slate border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-gold focus:outline-none">
-              <!-- خاورمیانه و آسیا -->
-<option value="Turkey">Türkiye</option>
-<option value="UAE">UAE</option>
-<option value="Saudi Arabia">Saudi Arabia</option>
-<option value="China">China</option>
-<option value="Japan">Japan</option>
-<option value="South Korea">South Korea</option>
-<option value="India">India</option>
-<option value="Iran">Iran</option>
-
-<!-- آمریکا و اروپا -->
-<option value="USA">USA</option>
-<option value="Canada">Canada</option>
-<option value="Mexico">Mexico</option>
-<option value="UK">United Kingdom</option>
-<option value="Germany">Germany</option>
-<option value="France">France</option>
-<option value="Italy">Italy</option>
-<option value="Spain">Spain</option>
-<option value="Netherlands">Netherlands</option>
-<option value="Switzerland">Switzerland</option>
-<option value="Sweden">Sweden</option>
-<option value="Russia">Russia</option>
-
-<!-- آمریکای جنوبی، اقیانوسیه و آفریقا -->
-<option value="Argentina">Argentina</option>
-<option value="Brazil">Brazil</option>
-<option value="Australia">Australia</option>
-<option value="South Africa">South Africa</option>
-
-<!-- گزینه آخر -->
-<option value="Other">Other</option>
+              <option value="Turkey">Türkiye</option>
+              <option value="UAE">UAE</option>
+              <option value="Saudi Arabia">Saudi Arabia</option>
+              <option value="China">China</option>
+              <option value="Japan">Japan</option>
+              <option value="South Korea">South Korea</option>
+              <option value="India">India</option>
+              <option value="Iran">Iran</option>
+              <option value="USA">USA</option>
+              <option value="Canada">Canada</option>
+              <option value="Mexico">Mexico</option>
+              <option value="UK">United Kingdom</option>
+              <option value="Germany">Germany</option>
+              <option value="France">France</option>
+              <option value="Italy">Italy</option>
+              <option value="Spain">Spain</option>
+              <option value="Netherlands">Netherlands</option>
+              <option value="Switzerland">Switzerland</option>
+              <option value="Sweden">Sweden</option>
+              <option value="Russia">Russia</option>
+              <option value="Argentina">Argentina</option>
+              <option value="Brazil">Brazil</option>
+              <option value="Australia">Australia</option>
+              <option value="South Africa">South Africa</option>
+              <option value="Other">Other</option>
             </select>
           </div>
-          <button type="submit" id="pay-submit-btn" class="cta-btn w-full py-4 rounded-lg font-oswald text-lg font-bold text-obsidian tracking-wider mt-4" data-i18n="proceed_payment"></button>
+          <button type="submit" id="pay-submit-btn" class="cta-btn w-full py-4 rounded-lg font-oswald text-lg font-bold text-obsidian tracking-wider mt-4" data-i18n="proceed_payment">GÜVENLİ ÖDEME SAYFASINA GİT</button>
         </form>
       </div>
     </div>
@@ -159,21 +165,23 @@
   <script>
     // آدرس وب‌اپ گوگل اپ اسکریپت خود را پس از دیپلوی اینجا قرار دهید
     const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw4LNwqZv9v6KukhFGeQHVfa-LNGoffJT02Gkw6twOhFmzAP5X0m5vDG2P5eHSc9pkbmg/exec";
-
+    
     const i18n = {
       tr: {
-        buy_tickets: 'BİLET AL', select_tickets: 'BİLETİNİ SEÇ', ticket_desc: 'Etkinlik gününü seç, miktarı belirle ve hemen satın al.',
+        buy_tickets: 'BİLET AL', select_tickets: 'BİLETİNİ SEÇ', ticket_desc: 'Etkinlik gününü seç, miktarı belirle và hemen satın al.',
         price_first: '1. Kişi: 2.800 ₺', price_next: 'Sonraki Kişiler: 2.000 ₺', order_summary: 'Sipariş Özeti', quantity: 'Adet', selected_day: 'Seçili Gün', total: 'Toplam',
         proceed_checkout: 'ÖDEMEYE GEÇ', checkout: 'Ödeme Bilgileri', first_name: 'Ad', last_name: 'Soyad', phone: 'Telefon', country: 'Ülke', proceed_payment: 'GÜVENLİ ÖDEME SAYFASINA GİT',
-        subtitle: 'Dünyanın en heyecan verici yarışması şimdi İstanbul"da!', processing: 'Yönlendiriliyor...', loading_days: 'Güncel doluluk oranları kontrol ediliyor...',
-        sold_out_msg: 'Seçilen gün için 6.000 kişilik bilet kapasitesi tamamen dolmuştur!', tag_sold_out: 'DOLDU'
+        subtitle: 'Dünyanın en heyecan verici yarışması şimdi İstanbul\'da!', processing: 'Yönlendiriliyor...', loading_days: 'Güncel doluluk oranları kontrol ediliyor...',
+        sold_out_msg: 'Seçilen gün için 6.000 kişilik bilet kapasitesi tamamen dolmuştur!', tag_sold_out: 'DOLDU',
+        discount_label: 'İndirim Kodu', discount_apply: 'Uygula', discount_rate: 'İndirim', discount_invalid: 'Geçersiz Kod!', discount_valid_msg: 'Kod uygulandı!'
       },
       en: {
         buy_tickets: 'BUY TICKETS', select_tickets: 'SELECT YOUR TICKETS', ticket_desc: 'Choose your event day, select quantity and purchase instantly.',
         price_first: '1st Person: 2,800 ₺', price_next: 'Next Persons: 2,000 ₺ each', order_summary: 'Order Summary', quantity: 'Quantity', selected_day: 'Selected Day', total: 'Total',
         proceed_checkout: 'PROCEED TO CHECKOUT', checkout: 'Checkout Details', first_name: 'First Name', last_name: 'Last Name', phone: 'Phone', country: 'Country', proceed_payment: 'GO TO SECURE PAYMENT PAGE',
-        subtitle: 'The world"s most thrilling competition is now in Istanbul!', processing: 'Redirecting...', loading_days: 'Checking current availability...',
-        sold_out_msg: 'The 6,000 ticket capacity for the selected day has been fully reached!', tag_sold_out: 'SOLD OUT'
+        subtitle: 'The world\'s most thrilling competition is now in Istanbul!', processing: 'Redirecting...', loading_days: 'Checking current availability...',
+        sold_out_msg: 'The 6,000 ticket capacity for the selected day has been fully reached!', tag_sold_out: 'SOLD OUT',
+        discount_label: 'Discount Code', discount_apply: 'Apply', discount_rate: 'Discount', discount_invalid: 'Invalid Code!', discount_valid_msg: 'Code applied!'
       }
     };
 
@@ -181,7 +189,10 @@
     const days = ['24','25','26','27','28','29'];
     let selectedDay = null;
     let quantity = 1;
-    let soldOutDays = []; 
+    let soldOutDays = [];
+    
+    // وضعیت کد تخفیف جاری در فرانت‌اند
+    let activeDiscount = { code: "", rate: 0 };
 
     function applyLang() {
       document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -211,7 +222,6 @@
       const c = document.getElementById('day-cards');
       c.innerHTML = '';
       const months = lang === 'tr' ? 'Ağustos' : 'August';
-      
       days.forEach(d => {
         const isSoldOut = soldOutDays.includes(d);
         const card = document.createElement('div');
@@ -228,7 +238,7 @@
           card.className = `ticket-card cursor-pointer rounded-xl border ${selectedDay===d?'border-gold bg-gold/5 selected':'border-gray-700 bg-slate hover:border-gold/50'} p-4 text-center`;
           card.innerHTML = `<div class="font-oswald text-3xl font-bold ${selectedDay===d?'text-gold':'text-white'}">${d}</div><div class="text-xs text-gray-400 mt-1">${months}</div>`;
           card.onclick = () => { 
-            selectedDay = d; 
+            selectedDay = d;
             renderDayCards(); 
             document.getElementById('ticket-summary').classList.remove('hidden'); 
             updateSummary(); 
@@ -238,28 +248,84 @@
       });
     }
 
-    function calculateTotal() { return quantity <= 0 ? 0 : 2800 + (quantity - 1) * 2000; }
+    function calculateTotal() { 
+      if (quantity <= 0) return 0;
+      let base = 2800 + (quantity - 1) * 2000;
+      if (activeDiscount.rate > 0) {
+        base = base * (1 - (activeDiscount.rate / 100));
+      }
+      return base;
+    }
 
     function updateSummary() {
       if (!selectedDay) return;
       const months = lang === 'tr' ? 'Ağustos' : 'August';
       document.getElementById('qty-display').textContent = quantity;
       document.getElementById('sum-day').textContent = `${selectedDay} ${months} 2026`;
+      
+      // نمایش سطر تخفیف در صورت فعال بودن
+      const discRow = document.getElementById('discount-row');
+      const discSum = document.getElementById('sum-discount');
+      if (activeDiscount.rate > 0) {
+        discRow.classList.remove('hidden');
+        discSum.textContent = `-%${activeDiscount.rate}`;
+      } else {
+        discRow.classList.add('hidden');
+      }
+      
       document.getElementById('sum-total').textContent = `${calculateTotal().toLocaleString()} ₺`;
     }
+
+    // منطق بررسی زنده کد تخفیف با کلیک بر روی دکمه Uygula
+    document.getElementById('discount-apply-btn').onclick = () => {
+      const input = document.getElementById('discount-input').value.trim();
+      const msgDiv = document.getElementById('discount-msg');
+      
+      if (!input) {
+        activeDiscount = { code: "", rate: 0 };
+        msgDiv.classList.add('hidden');
+        updateSummary();
+        return;
+      }
+      
+      msgDiv.className = "text-xs mt-1 text-gold";
+      msgDiv.textContent = lang === 'tr' ? "Kontrol ediliyor..." : "Checking...";
+      msgDiv.classList.remove('hidden');
+      
+      fetch(`${APPS_SCRIPT_URL}?action=validate_discount&code=${encodeURIComponent(input)}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data && data.valid) {
+            activeDiscount = { code: input, rate: data.rate };
+            msgDiv.className = "text-xs mt-1 text-green-400";
+            msgDiv.textContent = `${i18n[lang].discount_valid_msg} (-%${data.rate})`;
+          } else {
+            activeDiscount = { code: "", rate: 0 };
+            msgDiv.className = "text-xs mt-1 text-red-400";
+            msgDiv.textContent = i18n[lang].discount_invalid;
+          }
+          updateSummary();
+        })
+        .catch(() => {
+          activeDiscount = { code: "", rate: 0 };
+          msgDiv.className = "text-xs mt-1 text-red-400";
+          msgDiv.textContent = "Error!";
+          updateSummary();
+        });
+    };
 
     document.getElementById('qty-minus').onclick = () => { if(quantity > 1) { quantity--; updateSummary(); } };
     document.getElementById('qty-plus').onclick = () => { quantity++; updateSummary(); };
     document.getElementById('proceed-btn').onclick = () => document.getElementById('checkout-modal').classList.remove('hidden');
     document.getElementById('close-checkout').onclick = () => document.getElementById('checkout-modal').classList.add('hidden');
     document.getElementById('lang-toggle').onclick = () => { lang = lang === 'tr' ? 'en' : 'tr'; applyLang(); };
-
+    
     document.getElementById('checkout-form').onsubmit = function(e) {
       e.preventDefault();
       const btn = document.getElementById('pay-submit-btn');
       btn.disabled = true;
       btn.textContent = i18n[lang].processing;
-
+      
       const payload = {
         action: "initiate_payment",
         day: selectedDay,
@@ -268,9 +334,10 @@
         lastName: document.getElementById('cust-last-name').value,
         email: document.getElementById('cust-email').value,
         phone: document.getElementById('cust-phone').value,
-        country: document.getElementById('cust-country').value
+        country: document.getElementById('cust-country').value,
+        discountCode: activeDiscount.code // فرستادن کد تخفیف تایید شده به سمت بک‌اند
       };
-
+      
       fetch(APPS_SCRIPT_URL, {
         method: "POST",
         body: JSON.stringify(payload)
