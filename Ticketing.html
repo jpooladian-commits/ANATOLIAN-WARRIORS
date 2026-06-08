@@ -163,7 +163,6 @@
   </div>
 
   <script>
-    // لینک وب‌اپ گوگل اپ اسکریپت خود را پس از دیپلوی اینجا قرار دهید
     const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw4LNwqZv9v6KukhFGeQHVfa-LNGoffJT02Gkw6twOhFmzAP5X0m5vDG2P5eHSc9pkbmg/exec";
     
     const i18n = {
@@ -173,7 +172,8 @@
         proceed_checkout: 'ÖDEMEYE GEÇ', checkout: 'Ödeme Bilgileri', first_name: 'Ad', last_name: 'Soyad', phone: 'Telefon', country: 'Ülke', proceed_payment: 'GÜVENLİ ÖDEME SAYFASINA GİT',
         subtitle: 'Dünyanın en heyecan verici yarışması şimdi İstanbul\'da!', processing: 'Yönlendiriliyor...', loading_days: 'Güncel doluluk oranları kontrol ediliyor...',
         sold_out_msg: 'Seçilen gün için 6.000 kişilik bilet kapasitesi tamamen dolmuştur!', tag_sold_out: 'DOLDU',
-        discount_label: 'İndirim Kodu', discount_apply: 'Uygula', discount_rate: 'İndirim', discount_invalid: 'Geçersiz Kod!', discount_valid_msg: 'Kod uygulandı!'
+        discount_label: 'İndirim Kodu', discount_apply: 'Uygula', discount_rate: 'İndirim', discount_invalid: 'Geçersiz Kod!', discount_valid_msg: 'Kod uygulandı!',
+        filling_fast: 'KONTENJAN DOLUYOR'
       },
       en: {
         buy_tickets: 'BUY TICKETS', select_tickets: 'SELECT YOUR TICKETS', ticket_desc: 'Choose your event day, select quantity and purchase instantly.',
@@ -181,7 +181,8 @@
         proceed_checkout: 'PROCEED TO CHECKOUT', checkout: 'Checkout Details', first_name: 'First Name', last_name: 'Last Name', phone: 'Phone', country: 'Country', proceed_payment: 'GO TO SECURE PAYMENT PAGE',
         subtitle: 'The world\'s most thrilling competition is now in Istanbul!', processing: 'Redirecting...', loading_days: 'Checking current availability...',
         sold_out_msg: 'The 6,000 ticket capacity for the selected day has been fully reached!', tag_sold_out: 'SOLD OUT',
-        discount_label: 'Discount Code', discount_apply: 'Apply', discount_rate: 'Discount', discount_invalid: 'Invalid Code!', discount_valid_msg: 'Code applied!'
+        discount_label: 'Discount Code', discount_apply: 'Apply', discount_rate: 'Discount', discount_invalid: 'Invalid Code!', discount_valid_msg: 'Code applied!',
+        filling_fast: 'FILLING FAST'
       }
     };
 
@@ -226,7 +227,7 @@
         const card = document.createElement('div');
         
         if (isSoldOut) {
-          card.className = `ticket-card sold-out opacity-30 cursor-not-allowed rounded-xl border border-red-900 bg-red-950/20 p-4 text-center relative`;
+          card.className = `ticket-card sold-out opacity-30 cursor-not-allowed rounded-xl border border-red-900 bg-red-950/20 p-4 pb-6 text-center relative`;
           card.innerHTML = `
             <div class="font-oswald text-3xl font-bold text-gray-500 line-through">${d}</div>
             <div class="text-xs text-gray-600 mt-1">${months}</div>
@@ -234,8 +235,12 @@
           `;
           card.onclick = () => alert(i18n[lang].sold_out_msg);
         } else {
-          card.className = `ticket-card cursor-pointer rounded-xl border ${selectedDay===d?'border-gold bg-gold/5 selected':'border-gray-700 bg-slate hover:border-gold/50'} p-4 text-center`;
-          card.innerHTML = `<div class="font-oswald text-3xl font-bold ${selectedDay===d?'text-gold':'text-white'}">${d}</div><div class="text-xs text-gray-400 mt-1">${months}</div>`;
+          card.className = `ticket-card cursor-pointer rounded-xl border ${selectedDay===d?'border-gold bg-gold/5 selected':'border-gray-700 bg-slate hover:border-gold/50'} p-4 pb-6 text-center relative`;
+          card.innerHTML = `
+            <div class="font-oswald text-3xl font-bold ${selectedDay===d?'text-gold':'text-white'}">${d}</div>
+            <div class="text-xs text-gray-400 mt-1">${months}</div>
+            <div class="absolute inset-x-0 bottom-1 text-[10px] text-amber-500 font-semibold tracking-wider animate-pulse">${i18n[lang].filling_fast}</div>
+          `;
           card.onclick = () => { 
             selectedDay = d;
             renderDayCards(); 
