@@ -22,8 +22,10 @@
     .app-root { height: 100%; overflow-y: auto; overflow-x: hidden; }
     @keyframes pulse-gold { 0%,100%{box-shadow:0 0 20px rgba(212,175,55,0.3)} 50%{box-shadow:0 0 40px rgba(212,175,55,0.6)} }
     @keyframes shimmer { 0%{background-position:-200% 0} 100%{background-position:200% 0} }
+    @keyframes slide-up { 0% { transform: translateY(100px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
     .pulse-gold { animation: pulse-gold 2s infinite; }
     .shimmer { background: linear-gradient(90deg, transparent, rgba(212,175,55,0.1), transparent); background-size: 200% 100%; animation: shimmer 3s infinite; }
+    .animate-slide-up { animation: slide-up 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
     .hero-bg { background: radial-gradient(ellipse at center, #1a1a1a 0%, #0a0a0a 70%); position: relative; overflow: hidden; }
     .hero-bg::before { content:''; position:absolute; inset:0; background: repeating-conic-gradient(rgba(212,175,55,0.02) 0% 25%, transparent 0% 50%) 0 0/80px 80px; }
     .ticket-card { transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
@@ -217,11 +219,14 @@
     
     let activeDiscount = { code: "", rate: 0 };
 
+    // Live Notification Parameter Assets
+    const mockNamesTR = ["Ahmet Y.", "Can K.", "Ayşe T.", "Emre B.", "Mehmet O.", "Fatma A.", "Elif Ş.", "Ali V.", "Yasemin H.", "Burak D.", "Selim T.", "Zeynep Ö.", "Murat K.", "Deniz G."];
+    const mockNamesEN = ["Sarah M.", "David L.", "John D.", "Michael S.", "Elena R.", "James W.", "Emma B.", "Robert P.", "Linda C.", "William H.", "Thomas N.", "Jessica K.", "Daniel F."];
+
     function applyLang() {
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.dataset.i18n;
         if (i18n[lang][key]) {
-          // HTML içeren metinler için innerHTML kullanıyoruz
           if (i18n[lang][key].includes('<a')) {
             el.innerHTML = i18n[lang][key];
           } else {
@@ -307,6 +312,66 @@
       }
       
       document.getElementById('sum-total').textContent = `${calculateTotal().toLocaleString()} ₺`;
+    }
+
+    // Live Notification Module
+    function initLiveNotifications() {
+      const scheduleNext = () => {
+        // Updated: randomized between 4000ms and 6000ms (approx. 5 seconds)
+        const randTime = Math.floor(Math.random() * (6000 - 4000 + 1)) + 4000; 
+        setTimeout(() => {
+          triggerNotification();
+          scheduleNext();
+        }, randTime);
+      };
+      scheduleNext();
+    }
+
+    function triggerNotification() {
+      // Filter out sold out days dynamically
+      const availableDays = days.filter(d => !soldOutDays.includes(d));
+      if (availableDays.length === 0) return;
+
+      const namesList = lang === 'tr' ? mockNamesTR : mockNamesEN;
+      const randomName = namesList[Math.floor(Math.random() * namesList.length)];
+      const randomDay = availableDays[Math.floor(Math.random() * availableDays.length)];
+      const randomQty = Math.floor(Math.random() * 5) + 1; // 1 to 5 tickets
+      const months = lang === 'tr' ? 'Ağustos' : 'August';
+
+      let noticeMarkup = "";
+      if (lang === 'tr') {
+        noticeMarkup = `<strong>${randomName}</strong>, ${randomDay} ${months} günü için <strong>${randomQty} adet</strong> bilet satın aldı!`;
+      } else {
+        noticeMarkup = `<strong>${randomName}</strong> purchased <strong>${randomQty} ticket${randomQty > 1 ? 's' : ''}</strong> for ${months} ${randomDay}!`;
+      }
+
+      // Check or create live notification element container
+      let toastContainer = document.getElementById('live-toast-container');
+      if (!toastContainer) {
+        toastContainer = document.createElement('div');
+        toastContainer.id = 'live-toast-container';
+        toastContainer.className = 'fixed bottom-4 left-4 z-50 flex flex-col gap-3 max-w-sm w-full pointer-events-none px-4 md:px-0';
+        document.body.appendChild(toastContainer);
+      }
+
+      const toast = document.createElement('div');
+      toast.className = 'animate-slide-up pointer-events-auto bg-charcoal/95 border border-gold/30 rounded-xl p-4 shadow-2xl flex items-center gap-3 text-sm text-gray-200 backdrop-blur-md';
+      toast.innerHTML = `
+        <div class="w-8 h-8 rounded-lg bg-gold/10 text-gold flex items-center justify-center shrink-0">
+          <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+        </div>
+        <div class="flex-1">${noticeMarkup}</div>
+      `;
+      toastContainer.appendChild(toast);
+      lucide.createIcons();
+
+      // Dismiss notification smoothly after 5.5 seconds
+      setTimeout(() => {
+        toast.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(-20px)';
+        setTimeout(() => toast.remove(), 500);
+      }, 5500);
     }
 
     document.getElementById('discount-apply-btn').onclick = () => {
@@ -397,6 +462,7 @@
 
     applyLang();
     fetchCapacities();
+    initLiveNotifications();
     lucide.createIcons();
   </script>
 </body>
