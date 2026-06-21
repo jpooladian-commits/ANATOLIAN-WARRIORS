@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="tr"><head><script src="/_sdk/telemetry_sdk.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oğuz Holding × Anatolian Warriors</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <style>
+        :root { --vh: 1vh; }
+        body { font-family: 'DM Sans', sans-serif; }
+        .gold-gradient { background: linear-gradient(135deg, #D4AF37, #F5E6A3, #D4AF37); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .gold-border { border-color: #D4AF37; }
+        .gold-bg { background: linear-gradient(135deg, #D4AF37, #B8960C); }
+        .hero-overlay { background: linear-gradient(180deg, rgba(10,10,15,0.3) 0%, rgba(10,10,15,0.9) 100%); }
+        .card-hover { transition: transform 0.3s, box-shadow 0.3s; }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(212,175,55,0.15); }
+        .animate-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s, transform 0.6s; }
+        .animate-in.visible { opacity: 1; transform: translateY(0); }
+        .section-divider { height: 1px; background: linear-gradient(90deg, transparent, #D4AF3740, transparent); }
+        .timeline-line { position: relative; }
+        .timeline-line::before { content: ''; position: absolute; left: 24px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, #D4AF37, #1E90FF, #D4AF37); }
+        .map-dot { width: 12px; height: 12px; border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.3); } }
+    </style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/resizing_sdk.js" type="text/javascript"></script>
+ </head>
+ <body data-template-id="__page-root" class="w-full min-h-screen text-white" style="background: rgb(10, 10, 15);">
+  <!-- Hero -->
+  <header class="relative w-full" style="min-height: calc(100 * min(var(--vh, 1vh), 1vh));">
+   <img data-template-id="hero-bg" class="canva-image absolute inset-0 w-full h-full object-cover" loading="lazy" src="https://images.pexels.com/photos/26597137/pexels-photo-26597137.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920" alt="Fit man tackling an aerial obstacle course, showcasing strength and agility in a competitive setting.">
+   <div class="hero-overlay absolute inset-0"></div>
+   <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 py-20" style="min-height: calc(100 * min(var(--vh, 1vh), 1vh));">
+    <p data-template-id="hero-badge" class="canva-tag uppercase tracking-[0.3em] text-sm mb-8 opacity-80" style="color: rgb(212, 175, 55); font-weight: 400; font-style: normal; font-size: 16px;">Sponsorluk Sunumu</p>
+    <h1 data-template-id="hero-title" class="canva-text font-black max-w-5xl leading-tight mb-6" style="color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 56px;">Oğuz Holding × Anatolian Ninja Warriors</h1>
+    <p data-template-id="hero-subtitle" class="canva-text max-w-3xl mb-4 opacity-90" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 20px;"> <a href="/">Türkiye'nin En Büyük Ninja Yarışmasında</a> Markalarınızı Binlerce Sporcu ve Seyirci ile Buluşturun</p>
+    <p data-template-id="hero-tagline" class="canva-text max-w-3xl mb-8 opacity-80 italic text-lg" style="color: rgb(212, 175, 55); font-weight: 400; font-style: italic; font-size: 18px;">Anadolu'nun içecek gücü,
+Anadolu'nun yeni spor arenasında.</p>
+    <p data-template-id="hero-dates" class="canva-text mb-10 opacity-70"></p><a href="#contact" data-template-id="hero-cta" class="canva-button inline-block px-10 py-4 rounded-full font-bold text-lg uppercase tracking-wider transition-all hover:scale-105" style="background: linear-gradient(135deg, rgb(212, 175, 55), rgb(184, 150, 12)); color: rgb(10, 10, 15); font-weight: 700; font-style: normal; font-size: 16px;">Sponsorluk Detayları</a>
+   </div>
+  </header>
+  <main>
+   <!-- Bölüm 1: Etkinlik Genel Bakış -->
+   <section class="w-full py-24 px-6">
+    <div class="max-w-6xl mx-auto text-center animate-in">
+     <h2 data-template-id="about-title" class="canva-text font-bold mb-6" style="color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 24px;">Etkinlik Genel Bakış</h2>
+     <p data-template-id="about-desc" class="canva-text max-w-3xl mx-auto mb-16 opacity-80" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">Anatolian Warriors, 200+ elit sporcuyu 15 ülkeden bir araya getiren, televizyon kalitesinde prodüksiyona sahip, 6 gün süren ve binlerce seyirciyle buluşan Türkiye'nin en büyük ninja parkur yarışmasıdır.</p>
+     <div class="grid grid-cols-2 md:grid-cols-5 gap-6 mb-16">
+      <div data-template-id="stat-1-card" class="canva-card p-6 rounded-2xl text-center card-hover" style="background: rgb(26, 26, 36);">
+       <p class="stat-counter text-3xl md:text-4xl font-black mb-2" data-target="6">0</p>
+       <p data-template-id="stat-1-label" class="canva-text text-sm opacity-70" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Gün Süre</p>
+      </div>
+      <div data-template-id="stat-2-card" class="canva-card p-6 rounded-2xl text-center card-hover" style="background: rgb(26, 26, 36);">
+       <p class="stat-counter text-3xl md:text-4xl font-black mb-2" data-target="200">0</p>
+       <p data-template-id="stat-2-label" class="canva-text text-sm opacity-70" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Elit Sporcu</p>
+      </div>
+      <div data-template-id="stat-3-card" class="canva-card p-6 rounded-2xl text-center card-hover" style="background: rgb(26, 26, 36);">
+       <p class="stat-counter text-3xl md:text-4xl font-black mb-2" data-target="30000">0</p>
+       <p data-template-id="stat-3-label" class="canva-text text-sm opacity-70" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Canlı Seyirci</p>
+      </div>
+      <div data-template-id="stat-4-card" class="canva-card p-6 rounded-2xl text-center card-hover" style="background: rgb(26, 26, 36);">
+       <p class="stat-counter text-3xl md:text-4xl font-black mb-2" data-target="15">0</p>
+       <p data-template-id="stat-4-label" class="canva-text text-sm opacity-70" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Ülke</p>
+      </div>
+      <div data-template-id="stat-5-card" class="canva-card p-6 rounded-2xl text-center card-hover" style="background: rgb(26, 26, 36);">
+       <p class="stat-counter text-3xl md:text-4xl font-black mb-2" data-target="100000000">0</p>
+       <p data-template-id="stat-5-label" class="canva-text text-sm opacity-70" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Dijital Erişim</p>
+      </div>
+     </div><img data-template-id="about-image" class="canva-image w-full max-w-4xl mx-auto rounded-2xl object-cover h-64 md:h-96" loading="lazy" src="https://images.pexels.com/photos/33638467/pexels-photo-33638467.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280" alt="Fit man climbing a rope during an outdoor obstacle course challenge.">
+    </div>
+   </section>
+   <div class="section-divider w-full"></div><!-- Bölüm 2: Markalar -->
+   <section class="w-full py-24 px-6">
+    <div class="max-w-6xl mx-auto animate-in">
+     <h2 data-template-id="brands-title" class="canva-text font-bold text-center mb-4" style="color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 24px;">Oğuz Holding Markaları</h2>
+     <p data-template-id="brands-subtitle" class="canva-text text-center max-w-2xl mx-auto mb-16 opacity-80" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">Etkinliğin her anını kapsayan eksiksiz içecek portföyü</p>
+     <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+      <div data-template-id="brand-1" class="canva-card rounded-xl p-5 text-center card-hover" style="background: rgb(26, 26, 36);">
+       <p data-template-id="brand-1-name" class="canva-text font-bold mb-1" style="color: rgb(79, 195, 247); font-weight: 700; font-style: normal; font-size: 16px;">Isosky</p>
+       <p data-template-id="brand-1-cat" class="canva-text text-xs opacity-60" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Sporcu İçeceği</p>
+      </div>
+      <div data-template-id="brand-2" class="canva-card rounded-xl p-5 text-center card-hover" style="background: rgb(26, 26, 36);">
+       <p data-template-id="brand-2-name" class="canva-text font-bold mb-1" style="color: rgb(255, 82, 82); font-weight: 700; font-style: normal; font-size: 16px;">Black Bruin</p>
+       <p data-template-id="brand-2-cat" class="canva-text text-xs opacity-60" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Enerji İçeceği</p>
+      </div>
+      <div data-template-id="brand-3" class="canva-card rounded-xl p-5 text-center card-hover" style="background: rgb(26, 26, 36);">
+       <p data-template-id="brand-3-name" class="canva-text font-bold mb-1" style="color: rgb(124, 77, 255); font-weight: 700; font-style: normal; font-size: 16px;">Skyfall</p>
+       <p data-template-id="brand-3-cat" class="canva-text text-xs opacity-60" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Enerji İçeceği</p>
+      </div>
+      <div data-template-id="brand-4" class="canva-card rounded-xl p-5 text-center card-hover" style="background: rgb(26, 26, 36);">
+       <p data-template-id="brand-4-name" class="canva-text font-bold mb-1" style="color: rgb(105, 240, 174); font-weight: 700; font-style: normal; font-size: 16px;">Weps</p>
+       <p data-template-id="brand-4-cat" class="canva-text text-xs opacity-60" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Enerji İçeceği</p>
+      </div>
+      <div data-template-id="brand-5" class="canva-card rounded-xl p-5 text-center card-hover" style="background: rgb(26, 26, 36);">
+       <p data-template-id="brand-5-name" class="canva-text font-bold mb-1" style="color: rgb(255, 215, 64); font-weight: 700; font-style: normal; font-size: 16px;">Plusis</p>
+       <p data-template-id="brand-5-cat" class="canva-text text-xs opacity-60" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Vitamin Su</p>
+      </div>
+      <div data-template-id="brand-6" class="canva-card rounded-xl p-5 text-center card-hover" style="background: rgb(26, 26, 36);">
+       <p data-template-id="brand-6-name" class="canva-text font-bold mb-1" style="color: rgb(64, 196, 255); font-weight: 700; font-style: normal; font-size: 16px;">Sarıyer</p>
+       <p data-template-id="brand-6-cat" class="canva-text text-xs opacity-60" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Maden Suyu &amp; Limonata</p>
+      </div>
+      <div data-template-id="brand-7" class="canva-card rounded-xl p-5 text-center card-hover" style="background: rgb(26, 26, 36);">
+       <p data-template-id="brand-7-name" class="canva-text font-bold mb-1" style="color: rgb(255, 145, 0); font-weight: 700; font-style: normal; font-size: 16px;">Juss</p>
+       <p data-template-id="brand-7-cat" class="canva-text text-xs opacity-60" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Meyve Suyu &amp; Aile</p>
+      </div>
+      <div data-template-id="brand-8" class="canva-card rounded-xl p-5 text-center card-hover" style="background: rgb(26, 26, 36);">
+       <p data-template-id="brand-8-name" class="canva-text font-bold mb-1" style="color: rgb(255, 171, 64); font-weight: 700; font-style: normal; font-size: 16px;">Daren</p>
+       <p data-template-id="brand-8-cat" class="canva-text text-xs opacity-60" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Meyve Suyu &amp; Ice Tea</p>
+      </div>
+      <div data-template-id="brand-9" class="canva-card rounded-xl p-5 text-center card-hover" style="background: rgb(26, 26, 36);">
+       <p data-template-id="brand-9-name" class="canva-text font-bold mb-1" style="color: rgb(224, 64, 251); font-weight: 700; font-style: normal; font-size: 16px;">Fresso</p>
+       <p data-template-id="brand-9-cat" class="canva-text text-xs opacity-60" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Gazlı İçecek</p>
+      </div>
+      <div data-template-id="brand-10" class="canva-card rounded-xl p-5 text-center card-hover" style="background: rgb(26, 26, 36);">
+       <p data-template-id="brand-10-name" class="canva-text font-bold mb-1" style="color: rgb(141, 110, 99); font-weight: 700; font-style: normal; font-size: 16px;">Malton</p>
+       <p data-template-id="brand-10-cat" class="canva-text text-xs opacity-60" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Malt İçeceği</p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <div class="section-divider w-full"></div><!-- Bölüm 3: Sporcu Yolculuğu -->
+   <section class="w-full py-24 px-6">
+    <div class="max-w-6xl mx-auto animate-in">
+     <h2 data-template-id="journey-title" class="canva-text font-bold text-center mb-4" style="color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 24px;">Sporcunun İlk Adımından Final Çizgisine Kadar</h2>
+     <p data-template-id="journey-subtitle" class="canva-text text-center max-w-2xl mx-auto mb-16 opacity-80" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">Her aşamada Oğuz Holding markalarıyla doğrudan temas</p>
+     <div class="grid md:grid-cols-2 gap-12 items-start">
+      <div class="timeline-line space-y-8 pl-14">
+       <div class="relative">
+        <div class="absolute left-[-38px] top-1 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><i data-lucide="clipboard-list" class="w-5 h-5 text-blue-400"></i>
+        </div>
+        <h3 data-template-id="tl-1-title" class="canva-text font-bold mb-1" style="color: rgb(79, 195, 247); font-weight: 700; font-style: normal; font-size: 19px;">1. Kayıt Alanı</h3>
+        <p data-template-id="tl-1-desc" class="canva-text text-sm opacity-70" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Markalı buzdolapları, ürün teşhir alanları, Isosky &amp; Plusis karşılama ikramları</p>
+       </div>
+       <div class="relative">
+        <div class="absolute left-[-38px] top-1 w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center"><i data-lucide="flame" class="w-5 h-5 text-green-400"></i>
+        </div>
+        <h3 data-template-id="tl-2-title" class="canva-text font-bold mb-1" style="color: rgb(105, 240, 174); font-weight: 700; font-style: normal; font-size: 19px;">2. Isınma Alanı</h3>
+        <p data-template-id="tl-2-desc" class="canva-text text-sm opacity-70" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Isosky ürün dağıtımı, Plusis hidrasyon noktaları, markalı streç alanı</p>
+       </div>
+       <div class="relative">
+        <div class="absolute left-[-38px] top-1 w-12 h-12 rounded-full bg-yellow-500/20 flex items-center justify-center"><i data-lucide="flag" class="w-5 h-5 text-yellow-400"></i>
+        </div>
+        <h3 data-template-id="tl-3-title" class="canva-text font-bold mb-1" style="color: rgb(255, 215, 64); font-weight: 700; font-style: normal; font-size: 19px;">3. Yarış Parkuru</h3>
+        <p data-template-id="tl-3-desc" class="canva-text text-sm opacity-70" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Checkpoint su istasyonları, Sarıyer &amp; Plusis logolu istasyonlar, LED ekranlar</p>
+       </div>
+       <div class="relative">
+        <div class="absolute left-[-38px] top-1 w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center"><i data-lucide="trophy" class="w-5 h-5 text-red-400"></i>
+        </div>
+        <h3 data-template-id="tl-4-title" class="canva-text font-bold mb-1" style="color: rgb(255, 82, 82); font-weight: 700; font-style: normal; font-size: 19px;">4. Final Çizgisi</h3>
+        <p data-template-id="tl-4-desc" class="canva-text text-sm opacity-70" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Sporculara Isosky verilmesi, fotoğraf/video çekimlerinde ürün görünürlüğü</p>
+       </div>
+       <div class="relative">
+        <div class="absolute left-[-38px] top-1 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><i data-lucide="heart-pulse" class="w-5 h-5 text-purple-400"></i>
+        </div>
+        <h3 data-template-id="tl-5-title" class="canva-text font-bold mb-1" style="color: rgb(206, 147, 216); font-weight: 700; font-style: normal; font-size: 19px;">5. Recovery Zone</h3>
+        <p data-template-id="tl-5-desc" class="canva-text text-sm opacity-70" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Black Bruin &amp; Isosky buzdolapları, markalı dinlenme alanları, masaj noktaları</p>
+       </div>
+      </div><img data-template-id="journey-image" class="canva-image w-full rounded-2xl object-cover h-[500px] sticky top-8" loading="lazy" src="https://images.pexels.com/photos/4803670/pexels-photo-4803670.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280" alt="Adult man in park drinking energy drink post-workout, capturing a refreshing moment.">
+     </div>
+    </div>
+   </section>
+   <div class="section-divider w-full"></div><!-- Bölüm 4: Parkur Marka Yerleşimleri -->
+   <section class="w-full py-24 px-6">
+    <div class="max-w-6xl mx-auto animate-in">
+     <h2 data-template-id="obstacle-title" class="canva-text font-bold text-center mb-4" style="color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 24px;">Markalarınız Parkurun Bir Parçası Olsun</h2>
+     <p data-template-id="obstacle-subtitle" class="canva-text text-center max-w-2xl mx-auto mb-16 opacity-80" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">Engeller ikonik marka deneyimlerine dönüşür — sporcular ve seyirciler asla unutmaz</p>
+     <div class="grid md:grid-cols-3 gap-8 mb-16">
+      <div data-template-id="obs-card-1" class="canva-card rounded-2xl overflow-hidden card-hover" style="background: rgb(26, 26, 36);">
+       <img data-template-id="obs-img-1" class="canva-image w-full h-48 object-cover" loading="lazy" src="https://images.pexels.com/photos/26597297/pexels-photo-26597297.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Focused male athlete balancing on a challenging obstacle course in a stadium setting.">
+       <div class="p-6">
+        <h3 data-template-id="obs-name-1" class="canva-text font-bold mb-2" style="color: rgb(79, 195, 247); font-weight: 700; font-style: normal; font-size: 19px;">Isosky Su Engeli</h3>
+        <p data-template-id="obs-desc-1" class="canva-text text-sm opacity-70" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Su bazlı engellerde dev Isosky branding, LED ekranlar ve sporcu hidrasyon noktaları</p>
+       </div>
+      </div>
+      <div data-template-id="obs-card-2" class="canva-card rounded-2xl overflow-hidden card-hover" style="background: rgb(26, 26, 36);">
+       <img data-template-id="obs-img-2" class="canva-image w-full h-48 object-cover" loading="lazy" src="https://images.pexels.com/photos/26569952/pexels-photo-26569952.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Athlete skillfully balances on a beam in a stadium during a summer sports event.">
+       <div class="p-6">
+        <h3 data-template-id="obs-name-2" class="canva-text font-bold mb-2" style="color: rgb(255, 82, 82); font-weight: 700; font-style: normal; font-size: 19px;">Black Bruin Final Engeli</h3>
+        <p data-template-id="obs-desc-2" class="canva-text text-sm opacity-70" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Markalı başlangıç kapıları, güvenlik bariyerleri ve devasa bitiş çizgisi görünürlüğü</p>
+       </div>
+      </div>
+      <div data-template-id="obs-card-3" class="canva-card rounded-2xl overflow-hidden card-hover" style="background: rgb(26, 26, 36);">
+       <img data-template-id="obs-img-3" class="canva-image w-full h-48 object-cover" loading="lazy" src="https://images.pexels.com/photos/26569942/pexels-photo-26569942.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Young male athlete crossing obstacles during a race in an outdoor stadium.">
+       <div class="p-6">
+        <h3 data-template-id="obs-name-3" class="canva-text font-bold mb-2" style="color: rgb(255, 215, 64); font-weight: 700; font-style: normal; font-size: 19px;">Plusis Denge Testi</h3>
+        <p data-template-id="obs-desc-3" class="canva-text text-sm opacity-70" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Hassas denge engeli üzerinde Plusis branding, çevre yapılarda ve ekranlarda logo</p>
+       </div>
+      </div>
+     </div><!-- Additional placements -->
+     <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div data-template-id="place-1" class="canva-card p-4 rounded-xl text-center card-hover" style="background: rgb(26, 26, 36);">
+       <i data-lucide="door-open" class="w-8 h-8 mx-auto mb-3 text-yellow-400"></i>
+       <p data-template-id="place-1-text" class="canva-text text-sm" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">Başlangıç Takı</p>
+      </div>
+      <div data-template-id="place-2" class="canva-card p-4 rounded-xl text-center card-hover" style="background: rgb(26, 26, 36);">
+       <i data-lucide="flag-triangle-right" class="w-8 h-8 mx-auto mb-3 text-yellow-400"></i>
+       <p data-template-id="place-2-text" class="canva-text text-sm" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">Bitiş Takı</p>
+      </div>
+      <div data-template-id="place-3" class="canva-card p-4 rounded-xl text-center card-hover" style="background: rgb(26, 26, 36);">
+       <i data-lucide="monitor" class="w-8 h-8 mx-auto mb-3 text-blue-400"></i>
+       <p data-template-id="place-3-text" class="canva-text text-sm" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">LED Ekranlar</p>
+      </div>
+      <div data-template-id="place-4" class="canva-card p-4 rounded-xl text-center card-hover" style="background: rgb(26, 26, 36);">
+       <i data-lucide="shield" class="w-8 h-8 mx-auto mb-3 text-blue-400"></i>
+       <p data-template-id="place-4-text" class="canva-text text-sm" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">Bariyerler</p>
+      </div>
+      <div data-template-id="place-5" class="canva-card p-4 rounded-xl text-center card-hover" style="background: rgb(26, 26, 36);">
+       <i data-lucide="wind" class="w-8 h-8 mx-auto mb-3 text-yellow-400"></i>
+       <p data-template-id="place-5-text" class="canva-text text-sm" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">Bayraklar</p>
+      </div>
+      <div data-template-id="place-6" class="canva-card p-4 rounded-xl text-center card-hover" style="background: rgb(26, 26, 36);">
+       <i data-lucide="layout" class="w-8 h-8 mx-auto mb-3 text-blue-400"></i>
+       <p data-template-id="place-6-text" class="canva-text text-sm" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">Tribün Reklam Alanları</p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <div class="section-divider w-full"></div><!-- Bölüm 5: Seyirci Deneyimi -->
+   <section class="w-full py-24 px-6">
+    <div class="max-w-6xl mx-auto animate-in">
+     <h2 data-template-id="spectator-title" class="canva-text font-bold text-center mb-4" style="color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 24px;">Binlerce Seyirciyle Doğrudan Temas</h2>
+     <p data-template-id="spectator-subtitle" class="canva-text text-center max-w-2xl mx-auto mb-16 opacity-80" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">30.000+ seyirci için unutulmaz marka deneyimleri yaratın</p>
+     <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div class="grid grid-cols-2 gap-4">
+       <div data-template-id="spec-item-1" class="canva-card p-5 rounded-xl text-center card-hover" style="background: rgb(26, 26, 36);">
+        <i data-lucide="shopping-bag" class="w-8 h-8 mx-auto mb-3 text-yellow-400"></i>
+        <p data-template-id="spec-item-1-text" class="canva-text text-sm" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">İçecek Satış Noktaları</p>
+       </div>
+       <div data-template-id="spec-item-2" class="canva-card p-5 rounded-xl text-center card-hover" style="background: rgb(26, 26, 36);">
+        <i data-lucide="gift" class="w-8 h-8 mx-auto mb-3 text-yellow-400"></i>
+        <p data-template-id="spec-item-2-text" class="canva-text text-sm" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">Ücretsiz Numune Dağıtımı</p>
+       </div>
+       <div data-template-id="spec-item-3" class="canva-card p-5 rounded-xl text-center card-hover" style="background: rgb(26, 26, 36);">
+        <i data-lucide="baby" class="w-8 h-8 mx-auto mb-3 text-yellow-400"></i>
+        <p data-template-id="spec-item-3-text" class="canva-text text-sm" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">Juss Çocuk &amp; Aile Bölgesi</p>
+       </div>
+       <div data-template-id="spec-item-4" class="canva-card p-5 rounded-xl text-center card-hover" style="background: rgb(26, 26, 36);">
+        <i data-lucide="crown" class="w-8 h-8 mx-auto mb-3 text-yellow-400"></i>
+        <p data-template-id="spec-item-4-text" class="canva-text text-sm" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">VIP Lounge</p>
+       </div>
+       <div data-template-id="spec-item-5" class="canva-card p-5 rounded-xl text-center card-hover col-span-2" style="background: rgb(26, 26, 36);">
+        <i data-lucide="sparkles" class="w-8 h-8 mx-auto mb-3 text-yellow-400"></i>
+        <p data-template-id="spec-item-5-text" class="canva-text text-sm" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">Marka Deneyim Alanları</p>
+       </div>
+      </div><img data-template-id="spectator-image" class="canva-image w-full rounded-2xl object-cover h-80" loading="lazy" src="https://images.pexels.com/photos/28457979/pexels-photo-28457979.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280" alt="Excited crowd with raised hands at a vibrant outdoor sports event.">
+     </div>
+    </div>
+   </section>
+   <div class="section-divider w-full"></div><!-- Bölüm 6: Dijital İçerik -->
+   <section class="w-full py-24 px-6">
+    <div class="max-w-6xl mx-auto animate-in">
+     <h2 data-template-id="digital-title" class="canva-text font-bold text-center mb-4" style="color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 24px;">Milyonlarca Dijital Gösterim</h2>
+     <p data-template-id="digital-subtitle" class="canva-text text-center max-w-2xl mx-auto mb-16 opacity-80" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">Instagram, TikTok ve YouTube'da markanız milyonlarca kişiye ulaşır</p>
+     <div class="grid md:grid-cols-3 gap-6 mb-12">
+      <div data-template-id="dig-stat-1" class="canva-card p-8 rounded-2xl text-center card-hover" style="background: rgb(26, 26, 36);">
+       <p class="stat-counter text-4xl font-black mb-2" data-target="5000000">0</p>
+       <p data-template-id="dig-stat-1-label" class="canva-text text-sm opacity-70" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Sosyal Medya Gösterim</p>
+      </div>
+      <div data-template-id="dig-stat-2" class="canva-card p-8 rounded-2xl text-center card-hover" style="background: rgb(26, 26, 36);">
+       <p class="stat-counter text-4xl font-black mb-2" data-target="2000000">0</p>
+       <p data-template-id="dig-stat-2-label" class="canva-text text-sm opacity-70" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Video İzlenme</p>
+      </div>
+      <div data-template-id="dig-stat-3" class="canva-card p-8 rounded-2xl text-center card-hover" style="background: rgb(26, 26, 36);">
+       <p class="stat-counter text-4xl font-black mb-2" data-target="100">0</p>
+       <p data-template-id="dig-stat-3-label" class="canva-text text-sm opacity-70" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Influencer İş Birliği</p>
+      </div>
+     </div><!-- Content examples -->
+     <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+      <div data-template-id="content-1" class="canva-card p-4 rounded-xl text-center" style="background: rgb(26, 26, 36);">
+       <i data-lucide="instagram" class="w-6 h-6 mx-auto mb-2 text-pink-400"></i>
+       <p data-template-id="content-1-text" class="canva-text text-xs" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Sporcu Isosky İçerken</p>
+      </div>
+      <div data-template-id="content-2" class="canva-card p-4 rounded-xl text-center" style="background: rgb(26, 26, 36);">
+       <i data-lucide="video" class="w-6 h-6 mx-auto mb-2 text-red-400"></i>
+       <p data-template-id="content-2-text" class="canva-text text-xs" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Black Bruin Challenge</p>
+      </div>
+      <div data-template-id="content-3" class="canva-card p-4 rounded-xl text-center" style="background: rgb(26, 26, 36);">
+       <i data-lucide="heart-pulse" class="w-6 h-6 mx-auto mb-2 text-green-400"></i>
+       <p data-template-id="content-3-text" class="canva-text text-xs" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Recovery Zone Video</p>
+      </div>
+      <div data-template-id="content-4" class="canva-card p-4 rounded-xl text-center" style="background: rgb(26, 26, 36);">
+       <i data-lucide="camera" class="w-6 h-6 mx-auto mb-2 text-blue-400"></i>
+       <p data-template-id="content-4-text" class="canva-text text-xs" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Kamera Arkası</p>
+      </div>
+      <div data-template-id="content-5" class="canva-card p-4 rounded-xl text-center" style="background: rgb(26, 26, 36);">
+       <i data-lucide="award" class="w-6 h-6 mx-auto mb-2 text-yellow-400"></i>
+       <p data-template-id="content-5-text" class="canva-text text-xs" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Ödül Töreni</p>
+      </div>
+     </div><img data-template-id="digital-image" class="canva-image w-full max-w-3xl mx-auto rounded-2xl object-cover h-64 mt-12" loading="lazy" src="https://images.pexels.com/photos/8360497/pexels-photo-8360497.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280" alt="Man filming creative content with smartphone on gimbal indoors.">
+    </div>
+   </section>
+   <div class="section-divider w-full"></div><!-- Bölüm 7: Ürün Numuneleme -->
+   <section class="w-full py-24 px-6">
+    <div class="max-w-6xl mx-auto animate-in">
+     <h2 data-template-id="sampling-title" class="canva-text font-bold text-center mb-4" style="color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 24px;">30.000+ Doğrudan Tüketici Teması</h2>
+     <p data-template-id="sampling-subtitle" class="canva-text text-center max-w-2xl mx-auto mb-16 opacity-80" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">6 gün boyunca her gün 5.000 ziyaretçiyle birebir ürün deneyimi</p>
+     <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="grid grid-cols-2 gap-4">
+       <div data-template-id="sample-card-1" class="canva-card p-6 rounded-2xl text-center card-hover" style="background: rgb(26, 26, 36);">
+        <p class="text-4xl font-black gold-gradient mb-2">50m²</p>
+        <p data-template-id="sample-card-1-label" class="canva-text text-sm opacity-70" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Marka Standı</p>
+       </div>
+       <div data-template-id="sample-card-2" class="canva-card p-6 rounded-2xl text-center card-hover" style="background: rgb(26, 26, 36);">
+        <p class="text-4xl font-black gold-gradient mb-2">6</p>
+        <p data-template-id="sample-card-2-label" class="canva-text text-sm opacity-70" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Etkinlik Günü</p>
+       </div>
+       <div data-template-id="sample-card-3" class="canva-card p-6 rounded-2xl text-center card-hover" style="background: rgb(26, 26, 36);">
+        <p class="text-4xl font-black gold-gradient mb-2">30K+</p>
+        <p data-template-id="sample-card-3-label" class="canva-text text-sm opacity-70" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Tüketici Teması</p>
+       </div>
+       <div data-template-id="sample-card-4" class="canva-card p-6 rounded-2xl text-center card-hover" style="background: rgb(26, 26, 36);">
+        <p class="text-4xl font-black gold-gradient mb-2">QR</p>
+        <p data-template-id="sample-card-4-label" class="canva-text text-sm opacity-70" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Online Yönlendirme</p>
+       </div>
+      </div><img data-template-id="sampling-image" class="canva-image w-full rounded-2xl object-cover h-80" loading="lazy" src="https://images.pexels.com/photos/13051285/pexels-photo-13051285.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280" alt="People interacting at an outdoor festival booth wearing colorful outfits and hats.">
+     </div>
+    </div>
+   </section>
+   <div class="section-divider w-full"></div><!-- Bölüm 8: Kategori Münhasırlığı -->
+   <section class="w-full py-24 px-6">
+    <div class="max-w-4xl mx-auto animate-in text-center border-2 gold-border rounded-3xl p-12 md:p-16" style="background: linear-gradient(135deg, rgba(212,175,55,0.05), rgba(10,10,15,0.9));">
+     <p data-template-id="excl-badge" class="canva-tag uppercase tracking-[0.3em] text-sm mb-6" style="color: rgb(212, 175, 55); font-weight: 400; font-style: normal; font-size: 16px;">Kategori Münhasırlığı</p>
+     <h2 data-template-id="excl-title" class="canva-text font-black mb-8" style="color: rgb(212, 175, 55); font-weight: 900; font-style: normal; font-size: 36px;">Resmi İçecek Sponsoru</h2>
+     <div class="grid md:grid-cols-2 gap-4 text-left max-w-2xl mx-auto">
+      <div class="flex items-center gap-3">
+       <i data-lucide="shield-check" class="w-5 h-5 text-yellow-500 shrink-0"></i>
+       <p data-template-id="excl-1" class="canva-text text-sm" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">Rakip içecek markaları etkinlikte yer alamaz</p>
+      </div>
+      <div class="flex items-center gap-3">
+       <i data-lucide="shield-check" class="w-5 h-5 text-yellow-500 shrink-0"></i>
+       <p data-template-id="excl-2" class="canva-text text-sm" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">Isosky = Resmi Sporcu İçeceği</p>
+      </div>
+      <div class="flex items-center gap-3">
+       <i data-lucide="shield-check" class="w-5 h-5 text-yellow-500 shrink-0"></i>
+       <p data-template-id="excl-3" class="canva-text text-sm" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">Black Bruin = Resmi Enerji İçeceği</p>
+      </div>
+      <div class="flex items-center gap-3">
+       <i data-lucide="shield-check" class="w-5 h-5 text-yellow-500 shrink-0"></i>
+       <p data-template-id="excl-4" class="canva-text text-sm" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">Sarıyer = Resmi Hidrasyon Partneri</p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <div class="section-divider w-full"></div><!-- Bölüm 9: Etkinlik Haritası -->
+   <section class="w-full py-24 px-6">
+    <div class="max-w-6xl mx-auto animate-in">
+     <h2 data-template-id="map-title" class="canva-text font-bold text-center mb-4" style="color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 24px;">Marka Görünürlük Haritası</h2>
+     <p data-template-id="map-subtitle" class="canva-text text-center max-w-2xl mx-auto mb-16 opacity-80" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 16px;">Etkinlik alanındaki tüm marka temas noktaları</p><!-- Stylized map -->
+     <div data-template-id="map-container" class="canva-card rounded-3xl p-8 md:p-12 relative overflow-hidden" style="min-height: 400px; background: rgb(18, 18, 28);">
+      <!-- Map grid -->
+      <div class="grid grid-cols-3 md:grid-cols-4 gap-6">
+       <div class="flex flex-col items-center gap-2">
+        <div class="map-dot bg-blue-400"></div>
+        <p data-template-id="map-p1" class="canva-text text-xs text-center" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Checkpointler
+(Sarıyer &amp; Plusis)</p>
+       </div>
+       <div class="flex flex-col items-center gap-2">
+        <div class="map-dot bg-purple-400"></div>
+        <p data-template-id="map-p2" class="canva-text text-xs text-center" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Recovery Zone
+(Isosky &amp; Black Bruin)</p>
+       </div>
+       <div class="flex flex-col items-center gap-2">
+        <div class="map-dot bg-red-400"></div>
+        <p data-template-id="map-p3" class="canva-text text-xs text-center" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Finish Line
+(Isosky)</p>
+       </div>
+       <div class="flex flex-col items-center gap-2">
+        <div class="map-dot bg-yellow-400"></div>
+        <p data-template-id="map-p4" class="canva-text text-xs text-center" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">VIP Alanı
+(Tüm Markalar)</p>
+       </div>
+       <div class="flex flex-col items-center gap-2">
+        <div class="map-dot bg-green-400"></div>
+        <p data-template-id="map-p5" class="canva-text text-xs text-center" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Satış Noktaları
+(Oğuz Holding)</p>
+       </div>
+       <div class="flex flex-col items-center gap-2">
+        <div class="map-dot bg-pink-400"></div>
+        <p data-template-id="map-p6" class="canva-text text-xs text-center" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Numune Dağıtım
+(Isosky &amp; Juss)</p>
+       </div>
+       <div class="flex flex-col items-center gap-2">
+        <div class="map-dot bg-orange-400"></div>
+        <p data-template-id="map-p7" class="canva-text text-xs text-center" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">LED Ekranlar
+(Tüm Markalar)</p>
+       </div>
+       <div class="flex flex-col items-center gap-2">
+        <div class="map-dot bg-cyan-400"></div>
+        <p data-template-id="map-p8" class="canva-text text-xs text-center" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Parkur Engelleri
+(Isosky, Black Bruin, Plusis)</p>
+       </div>
+       <div class="flex flex-col items-center gap-2">
+        <div class="map-dot bg-amber-400"></div>
+        <p data-template-id="map-p9" class="canva-text text-xs text-center" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">Seyirci Alanları
+(Bayrak &amp; Bariyer)</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <div class="section-divider w-full"></div><!-- Final CTA -->
+   <section id="contact" class="w-full py-24 px-6 relative">
+    <img data-template-id="final-image" class="canva-image absolute inset-0 w-full h-full object-cover opacity-30" loading="lazy" src="https://images.pexels.com/photos/5735788/pexels-photo-5735788.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920" alt="Triathlete in red uniform celebrates victory with arms raised outdoors.">
+    <div class="relative z-10 max-w-4xl mx-auto text-center animate-in">
+     <h2 data-template-id="final-title" class="canva-text font-black mb-6" style="color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 40px;">Anatolian Warriors'ın Resmi İçecek Sponsoru Olmaya Hazır mısınız?</h2>
+     <p data-template-id="final-subtitle" class="canva-text mb-12 opacity-80" style="color: rgb(212, 175, 55); font-weight: 600; font-style: normal; font-size: 18px;">6 Günlük Etkinlik • Binlerce Sporcu • Binlerce Seyirci • Milyonlarca Dijital Gösterim</p><!-- Contact Form -->
+     <form id="contact-form" class="max-w-lg mx-auto mb-8 space-y-4">
+      <label for="name-input" class="sr-only">Ad Soyad</label> <input id="name-input" data-template-id="form-name" type="text" class="canva-input w-full px-5 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:outline-none focus:border-yellow-500" placeholder="Ad Soyad" style="font-weight: 400; font-style: normal; font-size: 16px;"> <label for="email-input" class="sr-only">E-posta</label> <input id="email-input" data-template-id="form-email" type="email" class="canva-input w-full px-5 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:outline-none focus:border-yellow-500" placeholder="E-posta Adresi" style="font-weight: 400; font-style: normal; font-size: 16px;"> <label for="phone-input" class="sr-only">Telefon</label> <input id="phone-input" data-template-id="form-phone" type="tel" class="canva-input w-full px-5 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:outline-none focus:border-yellow-500" placeholder="Telefon Numarası" style="font-weight: 400; font-style: normal; font-size: 16px;"> <button data-template-id="form-submit" type="submit" class="canva-button w-full px-10 py-4 rounded-full font-bold text-lg uppercase tracking-wider transition-all hover:scale-105" style="background: linear-gradient(135deg, rgb(212, 175, 55), rgb(184, 150, 12)); color: rgb(10, 10, 15); font-weight: 700; font-style: normal; font-size: 16px;">Toplantı Talep Et</button>
+     </form>
+     <p data-template-id="final-contact" class="canva-text opacity-60 text-sm" style="color: rgb(160, 160, 176); font-weight: 400; font-style: normal; font-size: 16px;">partnerships@anatolianwarriors.com • +90 212 000 0000 • İstanbul, Türkiye</p>
+    </div>
+   </section>
+  </main>
+  <script src="/_sdk/editing_sdk.js"></script>
+  <script>
+    lucide.createIcons();
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
+
+    const counterObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (!e.isIntersecting) return;
+            const el = e.target;
+            const target = parseInt(el.dataset.target);
+            if (!target) return;
+            counterObs.unobserve(el);
+            const duration = 2000;
+            const startTime = performance.now();
+            function tick(now) {
+                const progress = Math.min((now - startTime) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const current = Math.floor(eased * target);
+                el.textContent = current >= 1000000 ? (current/1000000).toFixed(1) + 'M+' : current >= 1000 ? Math.floor(current/1000) + 'K+' : current + '+';
+                if (progress < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+        });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.stat-counter').forEach(el => counterObs.observe(el));
+
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('button[type="submit"]');
+        btn.textContent = '✓ Gönderildi!';
+        btn.style.background = '#16a34a';
+        setTimeout(() => { btn.textContent = 'Toplantı Talep Et'; btn.style.background = ''; }, 3000);
+    });
+</script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0f1be0ba27e8b96',t:'MTc4MjAzMTU4Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body></html>
