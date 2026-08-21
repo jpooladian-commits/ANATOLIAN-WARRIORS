@@ -47,7 +47,7 @@
 
     <section class="hero-bg min-h-[600px] flex items-center justify-center text-center px-4 pt-20 pb-16 relative">
       <div class="relative z-10 max-w-4xl mx-auto">
-        <div class="inline-block px-4 py-1 border border-gold/40 rounded-full text-gold text-xs font-semibold tracking-widest mb-6 shimmer">24-29 AUGUST 2026</div>
+        <div class="inline-block px-4 py-1 border border-gold/40 rounded-full text-gold text-xs font-semibold tracking-widest mb-6 shimmer">24-29 Temmuz 2027</div>
         <a href="/"><h1 class="font-oswald text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none mb-4"><span class="text-white">ANATOLIAN</span><br><span class="text-gold">WARRIORS</span> <span class="text-white">2026</span></h1></a>
         <p id="hero-subtitle" class="text-lg md:text-xl text-gray-300 font-light mb-8 max-w-2xl mx-auto"></p>
         <a href="#tickets" class="cta-btn inline-block px-10 py-4 rounded-lg font-oswald text-lg font-bold text-obsidian tracking-wider pulse-gold" data-i18n="buy_tickets">BİLET AL</a>
@@ -288,7 +288,7 @@
     function renderDayCards() {
       const c = document.getElementById('day-cards');
       c.innerHTML = '';
-      const months = lang === 'tr' ? 'Ağustos' : 'August';
+      const months = lang === 'tr' ? 'Temmuz' : 'Temmuz';
       days.forEach(d => {
         const isSoldOut = soldOutDays.includes(d);
         const card = document.createElement('div');
@@ -337,7 +337,7 @@
 
     function updateSummary() {
       if (!selectedDay) return;
-      const months = lang === 'tr' ? 'Ağustos' : 'August';
+      const months = lang === 'tr' ? 'Temmuz' : 'Temmuz';
       document.getElementById('qty-display').textContent = quantity;
       document.getElementById('sum-day').textContent = `${selectedDay} ${months} 2026`;
       
@@ -374,7 +374,7 @@
       const randomName = namesList[Math.floor(Math.random() * namesList.length)];
       const randomDay = availableDays[Math.floor(Math.random() * availableDays.length)];
       const randomQty = Math.floor(Math.random() * 5) + 1;
-      const months = lang === 'tr' ? 'Ağustos' : 'August';
+      const months = lang === 'tr' ? 'Temmuz' : 'Temmuz';
 
       let noticeMarkup = "";
       if (lang === 'tr') {
