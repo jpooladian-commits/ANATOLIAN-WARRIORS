@@ -53,6 +53,11 @@
       box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
     }
 
+    .birth-date-parts { display: grid; grid-template-columns: 1fr 1.3fr 1.2fr; gap: 8px; }
+    .birth-date-parts > div { min-width: 0; }
+    .birth-date-parts label { display: block; color: #d1d5db; font-size: 14px; margin-bottom: 4px; }
+    .birth-date-parts select { width: 100%; min-height: 48px; padding: 10px 4px; color: white; background: #000; border: 2px solid #374151; border-radius: 8px; font-size: 16px; color-scheme: dark; }
+
     .warrior-silhouette {
       position: absolute;
       opacity: 0.05;
@@ -174,8 +179,16 @@
 
               <div class="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label class="block font-rajdhani text-white font-semibold mb-2" for="birth-date">Doğum Tarihi *</label>
-                  <input type="date" id="birth-date" required class="w-full bg-black border-2 border-gray-700 rounded-lg px-4 py-3 text-white font-rajdhani focus:border-red-600 transition-all">
+                  <fieldset aria-describedby="birth-date-help">
+                    <legend class="block font-rajdhani text-white font-semibold mb-2">Doğum Tarihi *</legend>
+                    <div class="birth-date-parts">
+                      <div><label for="birth-day"></label><select id="birth-day" autocomplete="bday-day" required><option value="">Gün</option></select></div>
+                      <div><label for="birth-month"></label><select id="birth-month" autocomplete="bday-month" required><option value="">Ay</option></select></div>
+                      <div><label for="birth-year"></label><select id="birth-year" autocomplete="bday-year" required><option value="">Yıl</option></select></div>
+                    </div>
+                    <input type="hidden" id="birth-date">
+                    <p id="birth-date-help" class="font-rajdhani text-sm text-gray-400 mt-2">Doğum gününüzü, ayınızı ve yılınızı seçin (Miladi takvim).</p>
+                  </fieldset>
                 </div>
                 <div>
                   <label class="block font-rajdhani text-white font-semibold mb-2" for="gender">Cinsiyet *</label>
@@ -384,8 +397,53 @@
     const submitText = document.getElementById("submit-button-text");
     const successBox = document.getElementById("success-message");
 
+    // Independent of the browser's native date picker. Keep the API's ISO format.
+    const birthDay = document.getElementById("birth-day");
+    const birthMonth = document.getElementById("birth-month");
+    const birthYear = document.getElementById("birth-year");
+    const birthDate = document.getElementById("birth-date");
+    const padDatePart = value => String(value).padStart(2, "0");
+    ["Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara"].forEach((name, index) => {
+      birthMonth.add(new Option(name, padDatePart(index + 1)));
+    });
+    for (let year = new Date().getFullYear(); year >= 1900; year--) {
+      birthYear.add(new Option(String(year), String(year)));
+    }
+    function syncBirthDate() {
+      const year = Number(birthYear.value);
+      const month = Number(birthMonth.value);
+      const selectedDay = birthDay.value;
+      // Allow February 29 until a year is selected, then apply leap-year rules.
+      const days = month ? new Date(year || 2000, month, 0).getDate() : 31;
+      birthDay.options.length = 1;
+      for (let day = 1; day <= days; day++) {
+        birthDay.add(new Option(String(day), padDatePart(day)));
+      }
+      birthDay.value = Number(selectedDay) <= days ? selectedDay : "";
+      birthYear.setCustomValidity("");
+      birthDate.value = "";
+      if (birthYear.value && birthMonth.value && birthDay.value) {
+        const value = `${birthYear.value}-${birthMonth.value}-${birthDay.value}`;
+        const now = new Date();
+        const today = `${now.getFullYear()}-${padDatePart(now.getMonth() + 1)}-${padDatePart(now.getDate())}`;
+        if (value > today) {
+          birthYear.setCustomValidity("Doğum tarihi gelecekte olamaz.");
+        } else {
+          birthDate.value = value;
+        }
+      }
+    }
+    [birthDay, birthMonth, birthYear].forEach(control => {
+      control.addEventListener("change", syncBirthDate);
+      control.addEventListener("input", syncBirthDate);
+    });
+    form.addEventListener("reset", () => setTimeout(syncBirthDate, 0));
+    syncBirthDate();
+
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
+      syncBirthDate();
+      if (!form.reportValidity() || !birthDate.value) return;
 
       submitBtn.disabled = true;
       submitText.innerText = "📤 GÖNDERİLİYOR...";
@@ -484,7 +542,6 @@
 
 </body>
 </html>
-
 
 
 
