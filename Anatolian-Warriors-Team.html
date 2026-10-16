@@ -49,6 +49,12 @@
   .mobile-apply.form-visible + .whatsapp-support{bottom:calc(18px + env(safe-area-inset-bottom,0px))}
 }
 @media(prefers-reduced-motion:reduce){.whatsapp-support{transition:none}}
+/* Keep angled artwork inside its frame and the document inside the viewport. */
+html{max-width:100%;overflow-x:hidden}
+body{min-width:0;max-width:100%}
+.hero-art{max-width:100%;overflow:hidden;overflow:clip}
+.hero-copy,.intro-grid>*,.section-heading>*,.process-layout>*,.application>*,.faq-layout>*,.role>div{min-width:0}
+@supports(overflow:clip){html{overflow-x:clip}}
 
 </style>
   <script>window.AW_CONFIG = Object.freeze({"scriptUrl": "https://script.google.com/macros/s/AKfycbxFqfS57T7b7GDWqv3xGnpFnGSIPSnbeG10y5kMPgwnIz-VE9KcPptuiMGm6n8QDd9ndA/exec"});</script>
