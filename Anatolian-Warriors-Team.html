@@ -323,7 +323,7 @@ document.querySelectorAll("[data-aw-logo]").forEach(el => { if (el.tagName === "
       availability: String(data.get('availability') || ''),
       motivation: String(data.get('motivation') || '').trim(),
       portfolio: String(data.get('portfolio') || '').trim(),
-      consent: data.get('consent') === 'on',
+      consent: document.querySelector('#consent').checked === true,
       website: String(data.get('website') || ''),
       source: 'web'
     };
@@ -343,6 +343,7 @@ document.querySelectorAll("[data-aw-logo]").forEach(el => { if (el.tagName === "
     return {
       phone: document.querySelector('#phone').value.trim(),
       email: document.querySelector('#email').value.trim().toLowerCase(),
+      consent: document.querySelector('#consent').checked === true,
       website: document.querySelector('#website').value,
       sessionToken
     };
@@ -351,6 +352,16 @@ document.querySelectorAll("[data-aw-logo]").forEach(el => { if (el.tagName === "
   function setOtpStatus(message, isError = false) {
     otpStatus.textContent = message;
     otpStatus.classList.toggle('has-error', isError);
+  }
+
+  function backendVersionError() {
+    return new Error('SMS doğrulama bağlantısı güncel değil. Lütfen WhatsApp destek hattına yaz. (AW-VER)');
+  }
+
+  // Legacy registration handlers mistake an OTP request for a whole application
+  // and return a consent error. Report the protocol mismatch instead.
+  function checkOtpProtocol(result) {
+    if (!result || typeof result.ok !== 'boolean' || (!result.ok && (!result.code || ['CONSENT', 'REQUEST'].includes(result.code)))) throw backendVersionError();
   }
 
   function proofIsValid() { return Boolean(otp?.proof && otp.proofExpiresAt > Date.now()); }
@@ -406,12 +417,13 @@ document.querySelectorAll("[data-aw-logo]").forEach(el => { if (el.tagName === "
     setBusy(true); clearError(); setOtpStatus('Kod gönderimi başlatılıyor…');
     try {
       const result = await sendWithExternalBridge(data);
+      checkOtpProtocol(result);
       if (!result?.ok) {
         pendingSendId = '';
         if (result?.retryAfter) cooldownUntil = Date.now() + Number(result.retryAfter) * 1000;
         throw new Error(result?.error || 'Kod gönderilemedi. Lütfen tekrar dene.');
       }
-      if (!/^[a-zA-Z0-9_-]{16,80}$/.test(result.challengeId || '')) throw new Error('Doğrulama yanıtı okunamadı. Gönderimi tekrar kontrol et.');
+      if (!/^[a-zA-Z0-9_-]{16,80}$/.test(result.challengeId || '')) throw backendVersionError();
       otp = { challengeId: result.challengeId, channel: result.channel, expiresAt: Number(result.expiresAt), proof: result.verified ? result.proof : '', proofExpiresAt: Number(result.proofExpiresAt) || 0 };
       pendingSendId = ''; cooldownUntil = Number(result.resendAt) || Date.now() + 60000;
       codeInput.value = '';
@@ -430,6 +442,8 @@ document.querySelectorAll("[data-aw-logo]").forEach(el => { if (el.tagName === "
     setBusy(true); clearError();
     try {
       const result = await sendWithExternalBridge(data);
+      checkOtpProtocol(result);
+      if (result.ok && (!result.verified || !/^[a-f0-9]{64}$/.test(result.proof || ''))) throw backendVersionError();
       if (!result?.ok || !result.verified || !/^[a-f0-9]{64}$/.test(result.proof || '')) {
         if (result?.code === 'EXPIRED' || result?.code === 'ATTEMPTS' || result?.attemptsRemaining === 0) otp.expiresAt = 0;
         throw new Error(result?.error || 'Kod doğrulanamadı. Lütfen tekrar dene.');
